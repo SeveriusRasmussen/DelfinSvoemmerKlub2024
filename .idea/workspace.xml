@@ -4,15 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1631485a-b898-48d6-b9bd-658763b50935" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DelfinSvoemmerKlub2024.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-    </list>
+    <list default="true" id="1631485a-b898-48d6-b9bd-658763b50935" name="Changes" comment="First Commit 2024/05/13" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -53,11 +45,32 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1715596849209</updated>
-      <workItem from="1715596850210" duration="1284000" />
+      <workItem from="1715596850210" duration="1634000" />
     </task>
+    <task id="LOCAL-00001" summary="First Commit 2024/05/13">
+      <option name="closed" value="true" />
+      <created>1715600925441</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1715600925441</updated>
+    </task>
+    <task id="LOCAL-00002" summary="First Commit 2024/05/13">
+      <option name="closed" value="true" />
+      <created>1715601008055</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1715601008055</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="First Commit 2024/05/13" />
+    <option name="LAST_COMMIT_MESSAGE" value="First Commit 2024/05/13" />
   </component>
 </project>
