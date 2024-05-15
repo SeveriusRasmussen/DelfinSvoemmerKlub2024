@@ -1,19 +1,14 @@
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Scanner;
+import java.util.*;
 
 public class Main {
 
     public static void main(String[] args) throws Exception {
-
-
+        
         //making a list for the employees
         ArrayList<Employee> employees = new ArrayList<>();
-        //Making some employees, and adding them to the list
 
+        //Reading employees from EmployeeList.txt and adding them into the ArrayList employees
         Filehandler.loadEmployeeTxt(employees);
-        Scanner scan = new Scanner(System.in);
-
 
         //make login object
         Login newLogin = new Login(employees);
