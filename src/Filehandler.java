@@ -16,8 +16,26 @@ public class Filehandler {
             String employeePassword = employeeData[5];
             String employeeTitle = employeeData[6];
             String employeeUserName = employeeData[7];
-            employees.add(new Employee(employeeName,employeePhoneNumber,employeeAddress,employeeAge,employeeAccesGroup,employeePassword,employeeTitle,employeeUserName));
+            employees.add(new Employee(employeeName, employeePhoneNumber, employeeAddress, employeeAge, employeeAccesGroup, employeePassword, employeeTitle, employeeUserName));
 
         }
+    } //end of loadEmployeeTxt
+
+    public static void loadMemberTxt(ArrayList<Member> members) throws FileNotFoundException {
+        File memberFile = new File("src/MemberList.txt");
+        Scanner scan = new Scanner(memberFile);
+        Member member;
+        while (scan.hasNextLine()) {
+            String[] memberData = scan.nextLine().split(",");
+            String memberName = memberData[0];
+            String memberPhoneNumber = memberData[1];
+            String memberAddress = memberData[2];
+            int memberAge = Integer.parseInt(memberData[3]);
+            int memberNr = Integer.parseInt(memberData[4]);
+            double kontingent = Double.parseDouble(memberData[5]);
+            boolean aktiv = Boolean.parseBoolean(memberData[6]);
+            member = new Member(memberName, memberPhoneNumber, memberAddress, memberAge, memberNr, kontingent, aktiv);
+            members.add(member);
+        } //end of loadMemberTxt
     }
-}
+}//end of class

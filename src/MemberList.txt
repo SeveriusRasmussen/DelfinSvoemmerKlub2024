@@ -1,1 +1,2 @@
-String name, String phoneNumber, String adress, int age
+Jørgen Leth,12345678,KokkensVej 42,86,1000001,500.0,True
+Dee Z. Nots,87654321,DragonVej 42,69,1000002,250.0,False
