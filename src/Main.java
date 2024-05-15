@@ -10,8 +10,8 @@ public class Main {
         //making a list for the employees
         ArrayList<Employee> employees = new ArrayList<>();
         //Making some employees, and adding them to the list
-        employees.add(new Employee("Karsten","12345678","På gaden",58,1,"password","Formand","Karsten med stort K"));
-        employees.add(new Employee("Connie","87654321","Derhjemme ",41,3,"ConniePigen","Træner","Connie82"));
+
+        Filehandler.loadEmployeeTxt(employees);
         Scanner scan = new Scanner(System.in);
 
 
