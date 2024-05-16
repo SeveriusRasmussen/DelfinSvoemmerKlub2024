@@ -30,6 +30,7 @@ public class Main {
         Login newLogin = new Login(employees);
 
         Employee currentUser = Login.attemptLogin(newLogin.makeLogins(),employees);
+        UI.userRole(currentUser, members);
         UI.userRole(currentUser);
 
     }
