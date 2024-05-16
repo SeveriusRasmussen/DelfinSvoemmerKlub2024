@@ -1,4 +1,8 @@
-public class Employee extends Person{
+package People;
+
+import People.Person;
+
+public class Employee extends Person {
 
     private int accesGroup;
     private String password;
