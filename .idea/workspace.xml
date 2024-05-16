@@ -4,10 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1631485a-b898-48d6-b9bd-658763b50935" name="Changes" comment="First Commit 2024/05/13&#10;- added CompetitionMember&#10;- added Employee&#10;- added Filehandler&#10;- added Member&#10;- added Person">
+    <list default="true" id="1631485a-b898-48d6-b9bd-658763b50935" name="Changes" comment="First Commit 2024/05/13">
+      <change afterPath="$PROJECT_DIR$/src/Login.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/UI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Filehandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Filehandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Employee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,13 +27,23 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "Lasse-OT"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/SeveriusRasmussen/DelfinSvoemmerKlub2024",
+    "accountId": "27e1eb71-ac51-481e-9070-5880ac49ab5c"
+  }
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
 }</component>
   <component name="ProjectId" id="2gPQh2DPl9dJRKfJktSNDNR3tQU" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -53,8 +66,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="jdk-21.0.2-openjdk-21.0.2-4caba194b151-4f524021" />
-        <option value="jdk-22-openjdk-22-4caba194b151-f504ca98" />
+        <option value="bundled-jdk-9f38398b9061-18abd8497189-intellij.indexing.shared.core-IU-241.14494.240" />
+        <option value="bundled-js-predefined-1d06a55b98c1-74d2a5396914-JavaScript-IU-241.14494.240" />
       </set>
     </attachedChunks>
   </component>
@@ -67,11 +80,7 @@
       <option name="presentableId" value="Default" />
       <updated>1715596849209</updated>
       <workItem from="1715596850210" duration="1634000" />
-      <workItem from="1715675544240" duration="51000" />
-      <workItem from="1715675609888" duration="819000" />
-      <workItem from="1715760309018" duration="56000" />
-      <workItem from="1715762328437" duration="1441000" />
-      <workItem from="1715835368541" duration="3000" />
+      <workItem from="1715775658706" duration="1114000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit 2024/05/13">
       <option name="closed" value="true" />
@@ -89,15 +98,7 @@
       <option name="project" value="LOCAL" />
       <updated>1715601008055</updated>
     </task>
-    <task id="LOCAL-00003" summary="First Commit 2024/05/13&#10;- added CompetitionMember&#10;- added Employee&#10;- added Filehandler&#10;- added Member&#10;- added Person">
-      <option name="closed" value="true" />
-      <created>1715763715248</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1715763715248</updated>
-    </task>
-    <option name="localTasksCounter" value="4" />
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -105,7 +106,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="First Commit 2024/05/13" />
-    <MESSAGE value="First Commit 2024/05/13&#10;- added CompetitionMember&#10;- added Employee&#10;- added Filehandler&#10;- added Member&#10;- added Person" />
-    <option name="LAST_COMMIT_MESSAGE" value="First Commit 2024/05/13&#10;- added CompetitionMember&#10;- added Employee&#10;- added Filehandler&#10;- added Member&#10;- added Person" />
+    <option name="LAST_COMMIT_MESSAGE" value="First Commit 2024/05/13" />
   </component>
 </project>

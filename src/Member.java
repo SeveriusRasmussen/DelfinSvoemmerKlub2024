@@ -3,7 +3,7 @@ public class Member extends Person{
     private double kontingent;
     private boolean aktiv;
 
-    public Member(String name, String phoneNumber, String adress, int age) {
+    public Member(String name, String phoneNumber, String adress, int age, int memberNr, double kontingent, boolean aktiv) {
         super(name, phoneNumber, adress, age);
         this.memberNr = memberNr;
         this.kontingent = kontingent;

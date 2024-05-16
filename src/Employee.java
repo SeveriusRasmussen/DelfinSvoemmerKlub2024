@@ -4,7 +4,7 @@ public class Employee extends Person{
     private String password;
     private String jobtitle;
     private String username;
-    public Employee(String name, String phoneNumber, String adress, int age) {
+    public Employee(String name, String phoneNumber, String adress, int age,int accesGroup, String password, String jobtitle, String username) {
         super(name, phoneNumber, adress, age);
         this.accesGroup = accesGroup;
         this.password = password;
