@@ -21,6 +21,6 @@ public class Main {
         Login newLogin = new Login(employees);
 
         Employee currentUser = Login.attemptLogin(newLogin.makeLogins(),employees);
-        UI.userRole(currentUser);
+        UI.userRole(currentUser, members);
     }
 }
