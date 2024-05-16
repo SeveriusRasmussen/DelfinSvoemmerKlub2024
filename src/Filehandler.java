@@ -1,9 +1,12 @@
+import People.Employee;
+import People.Member;
+
 import java.util.*;
 import java.io.*;
 
 public class Filehandler {
     public static void loadEmployeeTxt(ArrayList<Employee> employees) throws FileNotFoundException {
-        File employeeFile = new File("src/EmployeeList.txt");
+        File employeeFile = new File("src/Db/EmployeeList.txt");
         Scanner scan = new Scanner(employeeFile);
         while (scan.hasNextLine()) {
             String[] employeeData = scan.nextLine().split(",");
@@ -22,7 +25,7 @@ public class Filehandler {
     } //end of loadEmployeeTxt
 
     public static void loadMemberTxt(ArrayList<Member> members) throws FileNotFoundException {
-        File memberFile = new File("src/MemberList.txt");
+        File memberFile = new File("src/Db/MemberList.txt");
         Scanner scan = new Scanner(memberFile);
         Member member;
         while (scan.hasNextLine()) {

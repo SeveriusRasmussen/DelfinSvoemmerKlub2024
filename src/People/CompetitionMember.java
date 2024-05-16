@@ -1,3 +1,7 @@
+package People;
+
+import People.Member;
+
 public class CompetitionMember extends Member {
     private String disciplin;
 

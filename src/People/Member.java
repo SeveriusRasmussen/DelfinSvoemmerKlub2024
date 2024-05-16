@@ -1,4 +1,8 @@
-public class Member extends Person{
+package People;
+
+import People.Person;
+
+public class Member extends Person {
     private int memberNr;
     private double kontingent;
     private boolean aktiv;
@@ -37,7 +41,7 @@ public class Member extends Person{
     public String toString() {
         String aktivString = aktiv? "Aktivt medlem" : "Passivt medlem";  // True : false
         return super.toString() + "\n" +
-                "Member Number: " + memberNr + "\n" +
+                "People.Member Number: " + memberNr + "\n" +
                 "Kontingent: " + kontingent + "\n" +
                 aktivString;
     }

@@ -1,3 +1,6 @@
+import People.Employee;
+import People.Person;
+
 import java.util.Scanner;
 
 public class UI {
@@ -74,7 +77,7 @@ public class UI {
             return;
         }
 
-        for (Person person : people) {
+        for (People.Person person : people) {
             System.out.println(person);
         }
     }
@@ -92,7 +95,7 @@ public class UI {
             return;
         }
 
-        Person personToEdit = people.get(memberNumber - 1);
+        People.Person personToEdit = people.get(memberNumber - 1);
 
         System.out.println("""
                            Which information do you want to change on the chosen person?
@@ -148,7 +151,7 @@ public class UI {
             return;
         }
 
-        Person personToDelete = people.remove(memberNumber - 1);
+        People.Person personToDelete = people.remove(memberNumber - 1);
         System.out.println(personToDelete.getName() + " deleted successfully.");
     }
 
