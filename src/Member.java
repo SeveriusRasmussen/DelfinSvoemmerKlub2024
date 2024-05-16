@@ -1,58 +1,36 @@
-public class Member {
-    private String name;
-    private int age;
-    private String address;
-    private int phoneNr;
+public class Member extends Person{
+    private int memberNr;
+    private double kontingent;
+    private boolean aktiv;
 
-    public Member(String name, int age, String address, int phoneNr) {
-        this.name = name;
-        this.age = age;
-        this.address = address;
-        this.phoneNr = phoneNr;
+    public Member(String name, String phoneNumber, String adress, int age, int memberNr, double kontingent, boolean aktiv) {
+        super(name, phoneNumber, adress, age);
+        this.memberNr = memberNr;
+        this.kontingent = kontingent;
+        this.aktiv = aktiv;
     }
 
-    // Getters
-    public String getName() {
-        return name;
-    }
-    // unused getters
-    /*
-    public int getAge() {
-        return age;
+    public int getMemberNr() {
+        return memberNr;
     }
 
-    public String getAddress() {
-        return address;
+    public void setMemberNr(int memberNr) {
+        this.memberNr = memberNr;
     }
 
-    public int getPhoneNr() {
-        return phoneNr;
-    }
-    */
-
-    // Setters
-    public void setName(String name) {
-        this.name = name;
+    public double getKontingent() {
+        return kontingent;
     }
 
-    public void setAge(int age) {
-        this.age = age;
+    public void setKontingent(double kontingent) {
+        this.kontingent = kontingent;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public boolean isAktiv() {
+        return aktiv;
     }
 
-    public void setPhoneNr(int phoneNr) {
-        this.phoneNr = phoneNr;
-    }
-
-    @Override
-    public String toString() {
-        return "Name: " + name + "\n" +
-                "Age: " + age + "\n" +
-                "Address: " + address + "\n" +
-                "Phone number: " + phoneNr + "\n" +
-                "_________________________";
+    public void setAktiv(boolean aktiv) {
+        this.aktiv = aktiv;
     }
 }

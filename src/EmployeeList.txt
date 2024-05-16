@@ -1,0 +1,3 @@
+Joakim,40405050,TestGade 21,50,2,pass1234,Træner,BossKim
+Karsten,12345678,På gaden,58,1,password,Formand,Karsten med stort K
+Connie,87654321,Derhjemme,41,3,ConniePigen,Træner,Connie82
