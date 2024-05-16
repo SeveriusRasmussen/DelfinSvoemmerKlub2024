@@ -1,0 +1,338 @@
+Index: src/Main.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import java.util.Scanner;\r\n\r\npublic class Main {\r\n    public static void main(String[] args) {\r\n        Scanner input = new Scanner(System.in);\r\n\r\n        while (true) {\r\n            System.out.println(\"\"\"\r\n                               Welcome to the Dolphine Swimming Club\r\n                               1.\r\n                               2.\r\n                               3.\r\n                               4.\r\n                               LOL\r\n                               \r\n                               \r\n                               \"\"\");\r\n            int choice = input.nextInt();\r\n\r\n\r\n            switch (choice) {\r\n                case 1:\r\n                    System.out.println(\"Welcome\");\r\n                    break;\r\n                case 2:\r\n                    System.out.println(\"WELCOME\");\r\n                    break;\r\n                case 3:\r\n                    System.out.println(\"VELKOMMEN!\");\r\n                    break;\r\n                case 4:\r\n                    System.out.println(\"YOU'RE ABANDONING ME?! I AM CRYING!\");\r\n                    return;\r\n                default:\r\n                    System.out.println(\"WRONG INPUT! YOU WORD BLIND OR WHAT.\");\r\n            }\r\n        }\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Main.java b/src/Main.java
+--- a/src/Main.java	(revision eb2d467ce1d2fb7b4701938b046ec8a07eb3aff6)
++++ b/src/Main.java	(date 1715779159178)
+@@ -1,39 +1,193 @@
++import java.util.ArrayList;
+ import java.util.Scanner;
+ 
+ public class Main {
++    // Arraylist if no file handling.
++    private static ArrayList<Member> members = new ArrayList<>();
++
+     public static void main(String[] args) {
+         Scanner input = new Scanner(System.in);
+ 
+         while (true) {
+             System.out.println("""
+                                Welcome to the Dolphine Swimming Club
+-                               1.
+-                               2.
+-                               3.
+-                               4.
+-                               LOL
+-                               
+-                               
++                               Formand:
++                               1. Create a member
++                               2. Edit a member
++                               3. Delete a member
++                               4. Print the member list
++                               5. Exit
+                                """);
++
+             int choice = input.nextInt();
+-
++            input.nextLine();
+ 
+             switch (choice) {
+                 case 1:
+-                    System.out.println("Welcome");
++                    System.out.println("Create a member");
++                    createMember(input);
+                     break;
+                 case 2:
+-                    System.out.println("WELCOME");
+-                    break;
+-                case 3:
+-                    System.out.println("VELKOMMEN!");
+-                    break;
+-                case 4:
+-                    System.out.println("YOU'RE ABANDONING ME?! I AM CRYING!");
+-                    return;
+-                default:
+-                    System.out.println("WRONG INPUT! YOU WORD BLIND OR WHAT.");
+-            }
++                    System.out.println("Edit a member");
++                    editMember(input);
++                    break;
++                case 3:
++                    System.out.println("Delete a member");
++                    deleteMember(input);
++                    break;
++                case 4:
++                    System.out.println("Print the member list");
++                    System.out.println("_________________________");
++                    printTheMemberList();
++                   // printTheMemberList();
++                    break;
++                case 5:
++                    System.out.println("The program is closing.");
++                    return;
++                default:
++                    System.out.println("Wrong input. Please provide a number from 1 to 5.");
++            }
++        }
++    }
++    // Create one new member into the arraylist
++    public static void createMember(Scanner input) {
++        System.out.println("Enter name:");
++        String newName = input.nextLine();
++
++        System.out.println("Enter age:");
++        int newAge = input.nextInt();
++        input.nextLine(); // Consume the newLine
++
++        System.out.println("Enter address:");
++        String newAddress = input.nextLine();
++
++        System.out.println("Enter phone number:");
++        int newPhoneNr = input.nextInt();
++        input.nextLine(); // Consume the newLine
++
++        Member nyMember = new Member(newName, newAge, newAddress, newPhoneNr);
++        members.add(nyMember); // saves to the arraylist instead of file.
++        System.out.println("New member created successfully.");
++        //writeMemberToFile(nyMember);  //File handling
++    }
++
++    // Print the member list
++    public static void printTheMemberList() {
++        if (members.isEmpty()) {
++            System.out.println("No members found.");
++            return;
++        }
++
++        for (Member member : members) {
++            System.out.println(member);
++        }
++    }
++
++    // Edit one of the members in the member list
++    public static void editMember(Scanner input) {
++        printNumberedMemberNames();
++
++        System.out.println("Enter the number of the member you want to edit:");
++        int memberNumber = input.nextInt();
++        input.nextLine(); // consume the newline
++
++        if (memberNumber < 1 || memberNumber > members.size()) {
++            System.out.println("Invalid member number");
++            return;
++        }
++
++        Member memberToEdit = members.get(memberNumber - 1);
++
++        System.out.println("""
++                           Which information do you want to change on the chosen member?
++                           1. Name
++                           2. Age
++                           3. Address
++                           4. Phone Number
++                           5. Cancel
++                           """);
++
++        int attributeChoice = input.nextInt();
++        input.nextLine(); // Consume the newline
++
++        switch (attributeChoice) {
++            case 1:
++                System.out.println("Enter new name:");
++                memberToEdit.setName(input.nextLine());
++                System.out.println("Name updated successfully.");
++                break;
++            case 2:
++                System.out.println("Enter new age:");
++                memberToEdit.setAge(input.nextInt());
++                System.out.println("Age updated successfully.");
++                break;
++            case 3:
++                System.out.println("Enter new address:");
++                memberToEdit.setAddress(input.nextLine());
++                System.out.println("Address updated successfully.");
++                break;
++            case 4:
++                System.out.println("Enter new Phone number:");
++                memberToEdit.setPhoneNr(input.nextInt());
++                System.out.println("Phone number updated successfully.");
++                break;
++            case 5:
++                System.out.println("Edit cancelled");
++                return;
++            default:
++                System.out.println("Invalid choice");
++        }
++    }
++
++    // delete one of the members in the member list
++    public static void deleteMember(Scanner input) {
++        printNumberedMemberNames();
++
++        System.out.println("Enter the number of the member you want to delete:");
++        int memberNumber = input.nextInt();
++        input.nextLine(); // consume the newline
++
++        if (memberNumber < 1 || memberNumber > members.size()) {
++            System.out.println("Invalid member number.");
++            return;
+         }
++
++        Member memberToDelete = members.remove(memberNumber - 1);
++        System.out.println(memberToDelete.getName() + " deleted successfully.");
+     }
+-}
+\ No newline at end of file
++
++    // print the member list in a numbered list for edit and delete methods.
++    public static void printNumberedMemberNames() {
++        for (int i = 0; i < members.size(); i++) {
++            System.out.println((i + 1) + ". " + members.get(i).getName());
++        }
++    }
++
++    //____________________________________
++    // write file to the file metode and print the member list (file .txt)
++    /*public static void writeMemberToFile(Member member) {
++        try (BufferedWriter writer = new BufferedWriter(new FileWriter("members.txt", true))) {
++            writer.write(member.toString());
++            writer.newLine();
++        } catch (IOException e) {
++            System.out.println("An error occurred while writing the member to the file.");
++        }
++    }*/
++    /*public static void printTheMemberList() {
++        File file = new File("members.txt");
++
++        try {
++            Scanner fileScanner = new Scanner(file);
++
++            while (fileScanner.hasNextLine()) {
++                String member = fileScanner.nextLine();
++                System.out.println(member);
++            }
++
++            fileScanner.close();
++        } catch (FileNotFoundException e) {
++            System.out.println("File not found. Please make sure the members.txt file exists.");
++        }
++    }*/
++    //___________________________________________
++}
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"1631485a-b898-48d6-b9bd-658763b50935\" name=\"Changes\" comment=\"First Commit 2024/05/13\" />\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"ProjectColorInfo\"><![CDATA[{\r\n  \"associatedIndex\": 7\r\n}]]></component>\r\n  <component name=\"ProjectId\" id=\"2gPQh2DPl9dJRKfJktSNDNR3tQU\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"Application.Main.executor\": \"Run\",\r\n    \"RunOnceActivity.OpenProjectViewOnStart\": \"true\",\r\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\r\n    \"git-widget-placeholder\": \"main\",\r\n    \"kotlin-language-version-configured\": \"true\",\r\n    \"node.js.detected.package.eslint\": \"true\",\r\n    \"node.js.detected.package.tslint\": \"true\",\r\n    \"node.js.selected.package.eslint\": \"(autodetect)\",\r\n    \"node.js.selected.package.tslint\": \"(autodetect)\",\r\n    \"nodejs_package_manager_path\": \"npm\",\r\n    \"vue.rearranger.settings.migration\": \"true\"\r\n  }\r\n}]]></component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"1631485a-b898-48d6-b9bd-658763b50935\" name=\"Changes\" comment=\"\" />\r\n      <created>1715596849209</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1715596849209</updated>\r\n      <workItem from=\"1715596850210\" duration=\"1634000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"First Commit 2024/05/13\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1715600925441</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1715600925441</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"First Commit 2024/05/13\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1715601008055</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1715601008055</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"3\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"First Commit 2024/05/13\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"First Commit 2024/05/13\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision eb2d467ce1d2fb7b4701938b046ec8a07eb3aff6)
++++ b/.idea/workspace.xml	(date 1715778940586)
+@@ -4,39 +4,55 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="1631485a-b898-48d6-b9bd-658763b50935" name="Changes" comment="First Commit 2024/05/13" />
++    <list default="true" id="1631485a-b898-48d6-b9bd-658763b50935" name="Changes" comment="First Commit 2024/05/13">
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
++    </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+     <option name="LAST_RESOLUTION" value="IGNORE" />
++  </component>
++  <component name="FileTemplateManagerImpl">
++    <option name="RECENT_TEMPLATES">
++      <list>
++        <option value="Class" />
++      </list>
++    </option>
+   </component>
+   <component name="Git.Settings">
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+   </component>
+-  <component name="ProjectColorInfo"><![CDATA[{
+-  "associatedIndex": 7
+-}]]></component>
++  <component name="ProjectColorInfo">{
++  &quot;associatedIndex&quot;: 7
++}</component>
+   <component name="ProjectId" id="2gPQh2DPl9dJRKfJktSNDNR3tQU" />
+   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+   <component name="ProjectViewState">
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+-  <component name="PropertiesComponent"><![CDATA[{
+-  "keyToString": {
+-    "Application.Main.executor": "Run",
+-    "RunOnceActivity.OpenProjectViewOnStart": "true",
+-    "RunOnceActivity.ShowReadmeOnStart": "true",
+-    "git-widget-placeholder": "main",
+-    "kotlin-language-version-configured": "true",
+-    "node.js.detected.package.eslint": "true",
+-    "node.js.detected.package.tslint": "true",
+-    "node.js.selected.package.eslint": "(autodetect)",
+-    "node.js.selected.package.tslint": "(autodetect)",
+-    "nodejs_package_manager_path": "npm",
+-    "vue.rearranger.settings.migration": "true"
++  <component name="PropertiesComponent">{
++  &quot;keyToString&quot;: {
++    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
++    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
++    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
++    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
++    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
++    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
++    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
++    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
++    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
++    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
++    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.completion&quot;,
++    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+   }
+-}]]></component>
++}</component>
++  <component name="RecentsManager">
++    <key name="MoveFile.RECENT_KEYS">
++      <recent name="C:\Users\MSI\IdeaProjects\DelfinSvoemmerKlub2024" />
++    </key>
++  </component>
+   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+   <component name="TaskManager">
+     <task active="true" id="Default" summary="Default task">
+@@ -45,7 +61,9 @@
+       <option name="number" value="Default" />
+       <option name="presentableId" value="Default" />
+       <updated>1715596849209</updated>
+-      <workItem from="1715596850210" duration="1634000" />
++      <workItem from="1715596850210" duration="2862000" />
++      <workItem from="1715754815562" duration="6567000" />
++      <workItem from="1715769846879" duration="8986000" />
+     </task>
+     <task id="LOCAL-00001" summary="First Commit 2024/05/13">
+       <option name="closed" value="true" />
+@@ -63,7 +81,15 @@
+       <option name="project" value="LOCAL" />
+       <updated>1715601008055</updated>
+     </task>
+-    <option name="localTasksCounter" value="3" />
++    <task id="LOCAL-00003" summary="First Commit 2024/05/13">
++      <option name="closed" value="true" />
++      <created>1715604731135</created>
++      <option name="number" value="00003" />
++      <option name="presentableId" value="LOCAL-00003" />
++      <option name="project" value="LOCAL" />
++      <updated>1715604731135</updated>
++    </task>
++    <option name="localTasksCounter" value="4" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
