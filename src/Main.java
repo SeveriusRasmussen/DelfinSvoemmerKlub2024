@@ -24,14 +24,14 @@ public class Main {
         ArrayList<SwimmingResult> swimmingResults=new ArrayList<>();
 
         //reading swim results from file: SwimResult.txt
-        Filehandler.readFromFile();
+        Filehandler.readFromFileSwimResult();
 
         //make login object
         Login newLogin = new Login(employees);
 
         Employee currentUser = Login.attemptLogin(newLogin.makeLogins(),employees);
         UI.userRole(currentUser, members);
-        UI.userRole(currentUser);
+        //UI.userRole(currentUser);
 
     }
 }
