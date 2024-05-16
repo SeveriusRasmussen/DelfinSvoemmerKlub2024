@@ -17,7 +17,6 @@ public class Main {
         //Reading employees from EmployeeList.txt and adding them into the ArrayList employees
         Filehandler.loadEmployeeTxt(employees);
 
-
         //make login object
         Login newLogin = new Login(employees);
 
