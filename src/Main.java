@@ -20,10 +20,17 @@ public class Main {
         //Reading employees from EmployeeList.txt and adding them into the ArrayList employees
         Filehandler.loadEmployeeTxt(employees);
 
+        //making a list of the swimresults
+        ArrayList<SwimmingResult> swimmingResults=new ArrayList<>();
+
+        //reading swim results from file: SwimResult.txt
+        Filehandler.readFromFile();
+
         //make login object
         Login newLogin = new Login(employees);
 
         Employee currentUser = Login.attemptLogin(newLogin.makeLogins(),employees);
         UI.userRole(currentUser);
+
     }
 }

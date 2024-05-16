@@ -1,6 +1,7 @@
 import People.Employee;
 import People.Member;
 
+import java.time.LocalDate;
 import java.util.*;
 import java.io.*;
 
@@ -40,5 +41,44 @@ public class Filehandler {
             member = new Member(memberName, memberPhoneNumber, memberAddress, memberAge, memberNr, kontingent, aktiv);
             members.add(member);
         } //end of loadMemberTxt
-    }
+    }//end of loadMemberTxt
+
+    public static ArrayList<SwimmingResult> readFromFileSwimResult () throws FileNotFoundException {
+        Scanner scan=new Scanner(new File("src/Db/SwimResultList"));
+        ArrayList<SwimmingResult> swimmingResults=new ArrayList<>();
+        while (scan.hasNextLine()){
+            String line=scan.nextLine();
+            Scanner linescan=new Scanner(line);
+            int memberNr=0;
+            while ((linescan.hasNext()) && !linescan.hasNext(",")){
+                memberNr=linescan.nextInt();
+            }
+            linescan.next();
+
+            SwimmingDisciplin disciplin=SwimmingDisciplin.valueOf("");
+            while ((linescan.hasNext()) && !linescan.hasNext(",")){
+                disciplin= SwimmingDisciplin.valueOf(linescan.next());
+            }
+            //linescan.next();
+
+            int time=0;
+            while ((linescan.hasNext()) && !linescan.hasNext(",")){
+                time= linescan.nextInt();
+            }
+            linescan.next();
+
+            LocalDate dateOfResult=LocalDate.now();
+            while ((linescan.hasNext()) && !linescan.hasNext(",")){
+                dateOfResult= LocalDate.parse(linescan.next());
+            }
+            //linescan.next();
+
+            SwimmingResult newSwimminResult = new SwimmingResult(memberNr, disciplin, time, dateOfResult);
+            swimmingResults.add(newSwimminResult);
+
+        }//end while
+        return swimmingResults;
+
+    }//end readFromFileSwimResult
+
 }//end of class
