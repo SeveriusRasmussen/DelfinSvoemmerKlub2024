@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+
 public class UI {
 
     public static void userRole(Employee currentUser, ArrayList<Member> members){
@@ -26,7 +27,11 @@ public class UI {
     }
 
     public static void foremanMenu(Employee currentUser, ArrayList<Member> members){
-        System.out.println("""
+        //kald scanner class og brug den i stedet for at have scanner her
+        Scanner input = new Scanner(System.in);
+
+        while (true) {
+            System.out.println("""
                            Here are your options:
                            1. Create a new member
                            2. Print out the list of members
@@ -34,38 +39,38 @@ public class UI {
                            4. Delete one of members
                            7. Exit
                            """);
-        //kald scanner class og brug den i stedet for at have scanner her
-        Scanner input = new Scanner(System.in);
-        int nav = input.nextInt();
-        input.nextLine(); // consume the newline
-        switch(nav){
-            case 1:
-                System.out.println("Create a member");
-                createMember(input, members);
-                break;
-            case 2:
-                System.out.println("Print the member list");
-                printTheMemberList(members);
-                break;
-            case 3:
-                System.out.println("Edit one of the members");
-                editMember(input, members);
-                break;
-            case 4:
-                System.out.println("Delete one of the members");
-                deleteMember(input, members);
-                break;
-            case 5:
-                break;
-            case 6:
-                break;
-            case 7:
-                System.out.println("The program is closing.");
-                return;
-            default:
-                foremanMenu(currentUser, members);
 
+            int choice = input.nextInt();
+            input.nextLine(); // consume the newline
 
+            switch(choice){
+                case 1:
+                    System.out.println("Create a member");
+                    createMember(input, members);
+                    break;
+                case 2:
+                    System.out.println("Print the member list");
+                    printTheMemberList(members);
+                    break;
+                case 3:
+                    System.out.println("Edit one of the members");
+                    editMember(input, members);
+                    break;
+                case 4:
+                    System.out.println("Delete one of the members");
+                    deleteMember(input, members);
+                    break;
+                case 5:
+                    break;
+                case 6:
+                    break;
+                case 7:
+                    System.out.println("The program is closing.");
+
+                    return;
+                default:
+                    foremanMenu(currentUser, members);
+            }
         }
     }
 
@@ -84,19 +89,37 @@ public class UI {
         System.out.println("Enter phone number:");
         String newPhoneNumber = input.nextLine();
 
-        System.out.println("Enter member number:");
-        int newMemberNr = input.nextInt();
+        System.out.println("The member gets a member number.");
+        int newMemberNr = Util.createMemberShipNumber(members);
+        System.out.println("Member number added.");
 
-        System.out.println("Enter kontingent: (comma is with , not .)");
-        double newKontingent = input.nextDouble();
+        double newKontingent = 0;
+        boolean validInput = false;
+        while (!validInput) {
+            System.out.println("Enter kontingent: (You can use , or .)");
+            String kontingentInput = input.nextLine().trim();
+            if (!kontingentInput.isEmpty()) {
+                kontingentInput = kontingentInput.replace(",",".");
+                try {
+                    newKontingent = Double.parseDouble(kontingentInput);
+                    validInput = true;
+                } catch (NumberFormatException e) {
+                    System.out.println("Invalid kontingent format. Please enter a valid number.");
+                }
+            } else {
+                System.out.println("Kontingent cannot be empty. Please enter a valid number.");
+            }
+        }
 
         System.out.println("Is the member active? (True/false):");
         boolean newAktiv = input.nextBoolean();
+        input.nextLine(); // Consume the newline character
 
         Member newMember = new Member(newName, newPhoneNumber, newAddress, newAge, newMemberNr, newKontingent, newAktiv);
         members.add(newMember); // Added to the ArrayList in Main.
         System.out.println("New person created successfully.");
-        //writeMemberToFile(nyPerson);  //File handling
+        //TODO add save to the MemberList file here.
+        //writeMemberToFile(nyPerson);  //File handling (Save to file)
     }
 
     // Print the person list
@@ -105,9 +128,10 @@ public class UI {
             System.out.println("No people found.");
             return;
         }
-
+        System.out.println("_______________________________");
         for (Member member : members) {
             System.out.println(member);
+            System.out.println("_______________________________");
         }
     }
 
@@ -164,24 +188,18 @@ public class UI {
                 System.out.println("Phone number updated successfully.");
                 break;
             case 5:
-                System.out.println("Enter new member number:");
-                memberToEdit.setMemberNr(input.nextInt());
-                input.nextLine(); // Consume the newline
-                System.out.println("Member number updated successfully.");
-                break;
-            case 6:
                 System.out.println("Enter new kontingent:");
                 memberToEdit.setKontingent(input.nextDouble());
                 input.nextLine(); // Consume the newline
                 System.out.println("Kontingent updated successfully.");
                 break;
-            case 7:
+            case 6:
                 System.out.println("Is the member active? (true/false):");
                 memberToEdit.setAktiv(input.nextBoolean());
                 input.nextLine(); // Consume the newline
                 System.out.println("Active status updated successfully.");
                 break;
-            case 8:
+            case 7:
                 System.out.println("Edit cancelled");
                 return;
             default:

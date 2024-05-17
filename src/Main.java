@@ -24,7 +24,7 @@ public class Main {
         ArrayList<SwimmingResult> swimmingResults=new ArrayList<>();
 
         //reading swim results from file: SwimResult.txt
-        Filehandler.readFromFileSwimResult();
+        //Filehandler.readFromFileSwimResult();
 
         //make login object
         Login newLogin = new Login(employees);

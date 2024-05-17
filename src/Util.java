@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class Util {
 
-    public int createMemberShipNumber(ArrayList<Member> members){
+    public static int createMemberShipNumber(ArrayList<Member> members){
         int max=0;
         for(Member m:members){
             if(m.getMemberNr()>max){
