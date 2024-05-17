@@ -47,6 +47,9 @@ public class Filehandler {
         } //end of loadMemberTxt
     }//end of loadMemberTxt
 
+    // Mangler save to file methods here.
+
+
     public static ArrayList<SwimmingResult> readFromFileSwimResult () throws FileNotFoundException {
         Scanner scan=new Scanner(new File("src/Db/SwimResultList"));
         ArrayList<SwimmingResult> swimmingResults=new ArrayList<>();
