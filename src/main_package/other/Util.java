@@ -2,6 +2,8 @@ package main_package.other;
 
 import main_package.people.Member;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.InputMismatchException;
@@ -46,4 +48,20 @@ public class Util {
         double output = scan.nextDouble();
         return output;
     }
+
+    public static LocalDate LocalDateInput() {
+        DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        LocalDate date = null;
+        do {
+            String enterDate = stringPrompt("Enter a date (yyyy-MM-dd): ");
+            try {
+                date = LocalDate.parse(enterDate, dateFormatter);
+            } catch (Exception e) {
+                System.out.println("Invalid date format. Please enter date in yyyy-MM-dd format.");
+            }
+        } while (date == null);
+        return date;
+    }
+
+
 }
