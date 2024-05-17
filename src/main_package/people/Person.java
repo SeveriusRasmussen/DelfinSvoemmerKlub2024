@@ -1,4 +1,4 @@
-package People;
+package main_package.people;
 
 import java.util.Scanner;
 

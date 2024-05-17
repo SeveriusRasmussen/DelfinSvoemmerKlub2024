@@ -1,9 +1,9 @@
-import People.Employee;
-import People.Member;
+package main_package;
 
+import main_package.people.Employee;
+import main_package.people.Member;
 
 import java.util.ArrayList;
-import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class UI {
@@ -94,7 +94,7 @@ public class UI {
         boolean newAktiv = input.nextBoolean();
 
         Member newMember = new Member(newName, newPhoneNumber, newAddress, newAge, newMemberNr, newKontingent, newAktiv);
-        members.add(newMember); // Added to the ArrayList in Main.
+        members.add(newMember); // Added to the ArrayList in main_package.Main.
         System.out.println("New person created successfully.");
         //writeMemberToFile(nyPerson);  //File handling
     }
@@ -132,7 +132,7 @@ public class UI {
                            2. Age
                            3. Address
                            4. Phone Number
-                           5. Member Number
+                           5. main_package.people.Member Number
                            6. Kontingent
                            7. Active status
                            8. Cancel
@@ -167,7 +167,7 @@ public class UI {
                 System.out.println("Enter new member number:");
                 memberToEdit.setMemberNr(input.nextInt());
                 input.nextLine(); // Consume the newline
-                System.out.println("Member number updated successfully.");
+                System.out.println("main_package.people.Member number updated successfully.");
                 break;
             case 6:
                 System.out.println("Enter new kontingent:");

@@ -1,5 +1,9 @@
-import People.Employee;
-import People.Member;
+package main_package;
+
+import main_package.other.Filehandler;
+import main_package.other.Login;
+import main_package.people.Employee;
+import main_package.people.Member;
 
 import java.io.FileNotFoundException;
 import java.util.*;
@@ -20,18 +24,13 @@ public class Main {
         //Reading employees from EmployeeList.txt and adding them into the ArrayList employees
         Filehandler.loadEmployeeTxt(employees);
 
-        //making a list of the swimresults
-        ArrayList<SwimmingResult> swimmingResults=new ArrayList<>();
-
-        //reading swim results from file: SwimResult.txt
-        Filehandler.readFromFileSwimResult();
 
         //make login object
         Login newLogin = new Login(employees);
 
         Employee currentUser = Login.attemptLogin(newLogin.makeLogins(),employees);
         UI.userRole(currentUser, members);
-        //UI.userRole(currentUser);
+        //main_package.UI.userRole(currentUser);
 
     }
 }

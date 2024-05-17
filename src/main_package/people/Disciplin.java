@@ -1,15 +1,9 @@
+package main_package.people;
+
 public class Disciplin {
     private SwimmingDisciplin disciplin;
     private int bestTime;
     private String competitionName;
-
-    //private String competitionName = SwimmingCompetition.getCompetitionName();
-    /*jeg vil hellere have en klasse der hedder SwimminCompetition
-    som jeg lavede, og så kan vi hente competitionName fra klassen getCompetitionName();
-    men jeg er lidt i tvivl om resten af gruppen er enige med mig..
-    så indtil videre klassen: SwimmingCompetition er ikke brugt til noget
-    og competitionName er bare en String
-     */
 
     public Disciplin(SwimmingDisciplin disciplin, int bestTime, String competitionName ){
         this.disciplin=disciplin;

@@ -1,4 +1,6 @@
-import People.Employee;
+package main_package.other;
+
+import main_package.people.Employee;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -10,7 +12,7 @@ public class Login {
     HashMap<String,String> logininfo = new HashMap<String,String>();
 
 
-    Login(ArrayList<Employee> users){
+    public Login(ArrayList<Employee> users){
         this.users=users;
     }
 

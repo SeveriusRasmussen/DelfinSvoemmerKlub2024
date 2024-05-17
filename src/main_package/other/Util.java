@@ -1,6 +1,9 @@
-import People.Member;
+package main_package.other;
+
+import main_package.people.Member;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -15,6 +18,8 @@ public class Util {
         }
         return max+1;
     }
+
+
 
     public boolean containsIgnoreCase(String s1,String s2){
        return s1.toLowerCase().contains(s2.toLowerCase());

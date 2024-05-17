@@ -1,5 +1,9 @@
-import People.Employee;
-import People.Member;
+package main_package.other;
+
+import main_package.people.Employee;
+import main_package.people.Member;
+import main_package.people.SwimmingDisciplin;
+import main_package.people.SwimmingResult;
 
 import java.time.LocalDate;
 import java.util.*;
@@ -55,7 +59,7 @@ public class Filehandler {
             }
             linescan.next();
 
-            SwimmingDisciplin disciplin=SwimmingDisciplin.valueOf("");
+            SwimmingDisciplin disciplin= SwimmingDisciplin.valueOf("");
             while ((linescan.hasNext()) && !linescan.hasNext(",")){
                 disciplin= SwimmingDisciplin.valueOf(linescan.next());
             }

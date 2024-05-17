@@ -1,3 +1,7 @@
+package main_package.people;
+
+import main_package.people.SwimmingDisciplin;
+
 import java.time.LocalDate;
 
     public class SwimmingResult {
@@ -14,9 +18,17 @@ import java.time.LocalDate;
             this.dateOfResult = dateOfResult;
         }
 
+        public SwimmingDisciplin getDiscipline(){
+            return swimmingDiscipline;
+        }
         public static void registrerSwimResult(){
 
         }//end of registrerSwimResult
+        public int getTime(){
+            return time;
+        }
+
+        //vi laver en liste af resultater til hver konkurrence medlem i main_package.people.CompetitionMember
 
     }
 
