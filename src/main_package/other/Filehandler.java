@@ -11,7 +11,7 @@ import java.io.*;
 
 public class Filehandler {
     public static void loadEmployeeTxt(ArrayList<Employee> employees) throws FileNotFoundException {
-        File employeeFile = new File("src/Db/EmployeeList.txt");
+        File employeeFile = new File("src/main_package/Db/EmployeeList.txt");
         Scanner scan = new Scanner(employeeFile);
         while (scan.hasNextLine()) {
             String[] employeeData = scan.nextLine().split(",");
@@ -30,7 +30,7 @@ public class Filehandler {
     } //end of loadEmployeeTxt
 
     public static void loadMemberTxt(ArrayList<Member> members) throws FileNotFoundException {
-        File memberFile = new File("src/Db/MemberList.txt");
+        File memberFile = new File("src/main_package/db/MemberList.txt");
         Scanner scan = new Scanner(memberFile);
         Member member;
         while (scan.hasNextLine()) {
@@ -51,34 +51,34 @@ public class Filehandler {
 
 
     public static ArrayList<SwimmingResult> readFromFileSwimResult () throws FileNotFoundException {
-        Scanner scan=new Scanner(new File("src/Db/SwimResultList"));
+        Scanner scan=new Scanner(new File("src/main_package/db/SwimResultList.txt"));
         ArrayList<SwimmingResult> swimmingResults=new ArrayList<>();
         while (scan.hasNextLine()){
             String line=scan.nextLine();
             Scanner linescan=new Scanner(line);
             int memberNr=0;
-            while ((linescan.hasNext()) && !linescan.hasNext(",")){
+            while ((linescan.hasNext()) && !linescan.hasNext(";")){
                 memberNr=linescan.nextInt();
             }
             linescan.next();
 
-            SwimmingDisciplin disciplin= SwimmingDisciplin.valueOf("");
-            while ((linescan.hasNext()) && !linescan.hasNext(",")){
+            SwimmingDisciplin disciplin= SwimmingDisciplin.valueOf("BUTTERFLY");
+            while ((linescan.hasNext()) && !linescan.hasNext(";")){
                 disciplin= SwimmingDisciplin.valueOf(linescan.next());
             }
-            //linescan.next();
+            linescan.next();
 
             int time=0;
-            while ((linescan.hasNext()) && !linescan.hasNext(",")){
+            while ((linescan.hasNext()) && !linescan.hasNext(";")){
                 time= linescan.nextInt();
             }
             linescan.next();
 
             LocalDate dateOfResult=LocalDate.now();
-            while ((linescan.hasNext()) && !linescan.hasNext(",")){
+            while (linescan.hasNext() && !linescan.hasNext(";")){
                 dateOfResult= LocalDate.parse(linescan.next());
             }
-            //linescan.next();
+            linescan.next();
 
             SwimmingResult newSwimminResult = new SwimmingResult(memberNr, disciplin, time, dateOfResult);
             swimmingResults.add(newSwimminResult);
