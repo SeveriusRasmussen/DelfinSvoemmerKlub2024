@@ -88,4 +88,25 @@ public class Filehandler {
 
     }//end readFromFileSwimResult
 
+    public static List<Member> readMembersFromFile(String fileName) throws IOException {
+        List<Member> members = new ArrayList<>();
+        BufferedReader reader = new BufferedReader(new FileReader ("src/main_package/db/SwimResultList.txt"));
+        String line;
+
+        while ((line = reader.readLine()) != null) {
+            String[] fields = line.split(",");
+            String name = fields[0];
+            String phoneNumber = fields[1];
+            String address = fields[2];
+            int age = Integer.parseInt(fields[3]);
+            int memberNr = Integer.parseInt(fields[4]);
+            int kontingent = Integer.parseInt(fields[5]);
+            boolean aktiv = Boolean.parseBoolean(fields[6]);
+
+            Member member = new Member(name, phoneNumber, address, age, memberNr, kontingent, aktiv);
+            members.add(member);
+        }
+        return members;
+    }
+
 }//end of class
