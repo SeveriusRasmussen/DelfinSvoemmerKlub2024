@@ -1,10 +1,12 @@
-public class Member extends Person{
+package main_package.people;
+
+public class Member extends Person {
     private int memberNr;
     private double kontingent;
     private boolean aktiv;
 
-    public Member(String name, String phoneNumber, String adress, int age, int memberNr, double kontingent, boolean aktiv) {
-        super(name, phoneNumber, adress, age);
+    public Member(String name, String phoneNumber, String address, int age, int memberNr, double kontingent, boolean aktiv) {
+        super(name, phoneNumber, address, age);
         this.memberNr = memberNr;
         this.kontingent = kontingent;
         this.aktiv = aktiv;
@@ -32,5 +34,13 @@ public class Member extends Person{
 
     public void setAktiv(boolean aktiv) {
         this.aktiv = aktiv;
+    }
+
+    public String toString() {
+        String aktivString = aktiv? "Aktivt medlem" : "Passivt medlem";  // True : false
+        return super.toString() + "\n" +
+                "main_package.people.Member Number: " + memberNr + "\n" +
+                "Kontingent: " + kontingent + "\n" +
+                aktivString;
     }
 }

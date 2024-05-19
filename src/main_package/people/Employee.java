@@ -1,4 +1,6 @@
-public class Employee extends Person{
+package main_package.people;
+
+public class Employee extends Person {
 
     private int accesGroup;
     private String password;
@@ -43,4 +45,14 @@ public class Employee extends Person{
     public void setUsername(String username) {
         this.username = username;
     }
+
+
+    // Bare en anden eksempel.
+    /*public String toString() {
+        return super.toString() +
+               "Access Group: " + accesGroup + "\n" +
+               "Password: Nothing to show. Private" + "\n" +
+               "Jobtitel: " + jobtitle + "\n" +
+               "Username: " + username;
+    }*/
 }

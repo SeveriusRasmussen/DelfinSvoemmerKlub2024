@@ -1,14 +1,18 @@
+package main_package.people;
+
+import java.util.Scanner;
+
 public class Person {
 
     private String name;
     private String phoneNumber;
-    private String adress;
+    private String address;
     private int age;
 
-    public Person(String name, String phoneNumber, String adress, int age){
+    public Person(String name, String phoneNumber, String address, int age){
         this.name = name;
         this.phoneNumber = phoneNumber;
-        this.adress = adress;
+        this.address = address;
         this.age = age;
     }
 
@@ -28,12 +32,12 @@ public class Person {
         this.phoneNumber = phoneNumber;
     }
 
-    public String getAdress() {
-        return adress;
+    public String getAddress() {
+        return address;
     }
 
-    public void setAdress(String adress) {
-        this.adress = adress;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     public int getAge() {
@@ -42,5 +46,14 @@ public class Person {
 
     public void setAge(int age) {
         this.age = age;
+    }
+
+
+    @Override
+    public String toString() {
+        return "Name: " + name + "\n" +
+               "Age: " + age + "\n" +
+               "Address: " + address + "\n" +
+               "Phone number: " + phoneNumber;
     }
 }
