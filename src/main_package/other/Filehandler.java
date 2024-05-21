@@ -44,7 +44,7 @@ public class Filehandler {
             boolean aktiv = Boolean.parseBoolean(memberData[6]);
             member = new Member(memberName, memberPhoneNumber, memberAddress, memberAge, memberNr, kontingent, aktiv);
             members.add(member);
-        } //end of loadMemberTxt
+        }
     }//end of loadMemberTxt
 
     // Mangler save to file methods here.
@@ -87,6 +87,27 @@ public class Filehandler {
         return swimmingResults;
 
     }//end readFromFileSwimResult
+    public static void loadContingentTxt(ArrayList<Contingent> contigents) throws FileNotFoundException {
+        File contigentFile = new File("src/main_package/db/Contingent.txt");
+        Scanner scan = new Scanner(contigentFile);
+        Contingent memberContingent;
+        while (scan.hasNextLine()) {
+            String[] contingentData = scan.nextLine().split(",");
+            String memberName = contingentData[0];
+            String memberPhoneNumber = contingentData[1];
+            String memberAddress = contingentData[2];
+            int memberAge = Integer.parseInt(contingentData[3]);
+            int memberNr = Integer.parseInt(contingentData[4]);
+            double kontingent = Double.parseDouble(contingentData[5]);
+            boolean aktiv = Boolean.parseBoolean(contingentData[6]);
+            String dateOfPayment = contingentData[7];
+            String membershipType = contingentData[8];
+            double arrears = Double.parseDouble(contingentData[9]);
+
+            memberContingent = new Contingent(memberName, memberPhoneNumber, memberAddress, memberAge, memberNr, kontingent, aktiv,dateOfPayment,membershipType,arrears);
+            contigents.add(memberContingent);
+        }
+    }//end of loadMemberTxt
 
     public static List<Member> readMembersFromFile(String fileName) throws IOException {
         List<Member> members = new ArrayList<>();

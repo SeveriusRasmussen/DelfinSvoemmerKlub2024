@@ -1,2 +1,3 @@
-Jørgen Leth,12345678,KokkensVej 42,86,1000001,500.0,True
-Dee Z. Nots,87654321,DragonVej 42,69,1000002,250.0,False
+Jørgen Leth,12345678,KokkensVej 42,86,1000001,500.0,false
+Dee Z. Nots,87654321,DragonVej 42,69,1000002,250.0,true
+Joa,3120321,Fghjisdfoå,49,1000005,750.0,true
