@@ -9,13 +9,13 @@ import java.util.*;
 public class Util {
 
     public static int createMemberShipNumber(ArrayList<Member> members){
-        int max=0;
-        for(Member m:members){
-            if(m.getMemberNr()>max){
-                max=m.getMemberNr();
+        int max = 0;
+        for(Member m : members){
+            if(m.getMemberNr() > max){
+                max = m.getMemberNr();
             }
         }
-        return max+1;
+        return max + 1;
     }
 
 

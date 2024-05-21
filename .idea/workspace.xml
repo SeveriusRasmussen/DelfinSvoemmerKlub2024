@@ -7,6 +7,10 @@
     <list default="true" id="1631485a-b898-48d6-b9bd-658763b50935" name="Changes" comment="Commit Lina">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main_package/UI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main_package/UI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main_package/db/MemberList.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main_package/db/MemberList.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main_package/other/Util.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main_package/other/Util.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main_package/people/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main_package/people/Member.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main_package/people/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main_package/people/Person.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
