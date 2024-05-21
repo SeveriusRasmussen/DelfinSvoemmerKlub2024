@@ -1,5 +1,7 @@
 package main_package.people;
 
+import java.time.LocalDate;
+import java.time.Period;
 import java.util.Scanner;
 
 public class Person {
@@ -7,13 +9,14 @@ public class Person {
     private String name;
     private String phoneNumber;
     private String address;
-    private int age;
+    private LocalDate dateOfBirth;
+    //private int age;
 
-    public Person(String name, String phoneNumber, String address, int age){
+    public Person(String name, String phoneNumber, String address, LocalDate dateOfBirth){
         this.name = name;
         this.phoneNumber = phoneNumber;
         this.address = address;
-        this.age = age;
+        this.dateOfBirth = dateOfBirth;
     }
 
     public String getName() {
@@ -40,19 +43,29 @@ public class Person {
         this.address = address;
     }
 
-    public int getAge() {
-        return age;
+    private int calculateAge () {
+        LocalDate currentDate=LocalDate.now();
+        Period period = Period.between(dateOfBirth, currentDate);
+        return (period.getYears());
     }
 
-    public void setAge(int age) {
-        this.age = age;
+    public int getAge(){
+        return calculateAge();
+    }
+
+    public LocalDate getDateOfBirth() {
+        return dateOfBirth;
+    }
+
+    public void setDateOfBirth(LocalDate dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
     }
 
 
     @Override
     public String toString() {
         return "Name: " + name + "\n" +
-               "Age: " + age + "\n" +
+               "Date of birth: " + dateOfBirth + "\n" +
                "Address: " + address + "\n" +
                "Phone number: " + phoneNumber;
     }

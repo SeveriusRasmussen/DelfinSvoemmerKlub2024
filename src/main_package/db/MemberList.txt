@@ -1,3 +1,5 @@
-Jørgen Leth,12345678,KokkensVej 42,86,1000001,500.0,false
-Dee Z. Nots,87654321,DragonVej 42,69,1000002,250.0,true
-Joa,3120321,Fghjisdfoå,49,1000005,750.0,true
+Jørgen Leth,12345678,KokkensVej 42,1939-12-03,1000001,500.0,false
+Dee Z. Nots,87654321,DragonVej 42,1956-07-12,1000002,250.0,true
+Joa,3120321,Fghjisdfoå,1985-03-03,1000005,750.0,true
+Steffen,9876532,på vej,1987-02-20,4,670.0,true
+Oline,098765432,derhjemme eller på vej,1985-12-13,5,755.0,false

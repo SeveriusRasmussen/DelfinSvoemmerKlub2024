@@ -1,12 +1,14 @@
 package main_package.people;
 
+import java.time.LocalDate;
+
 public class Member extends Person {
     private int memberNr;
     private double kontingent;
     private boolean aktiv;
 
-    public Member(String name, String phoneNumber, String address, int age, int memberNr, double kontingent, boolean aktiv) {
-        super(name, phoneNumber, address, age);
+    public Member(String name, String phoneNumber, String address, LocalDate dateOfBirth, int memberNr, double kontingent, boolean aktiv) {
+        super(name, phoneNumber, address, dateOfBirth);
         this.memberNr = memberNr;
         this.kontingent = kontingent;
         this.aktiv = aktiv;
@@ -45,5 +47,9 @@ public class Member extends Person {
                 "Member Number: " + memberNr + "\n" +
                 "Kontingent: " + kontingent + "\n" +
                 aktivString;
+    }
+
+    public String toPrint() {
+        return (getName() + "," + getPhoneNumber()+ "," + getAddress() + "," + getDateOfBirth() + "," + memberNr + "," + kontingent + "," + aktiv+"\n");
     }
 }
