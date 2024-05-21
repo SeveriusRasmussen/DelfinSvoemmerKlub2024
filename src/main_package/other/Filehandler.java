@@ -19,12 +19,13 @@ public class Filehandler {
             String employeeName = employeeData[0];
             String employeePhoneNumber = employeeData[1];
             String employeeAddress = employeeData[2];
-            int employeeAge = Integer.parseInt(employeeData[3]);
+            LocalDate employeeDateOfBirth=LocalDate.parse(employeeData[3]);
+            //int employeeAge = Integer.parseInt(employeeData[3]);
             int employeeAccesGroup = Integer.parseInt(employeeData[4]);
             String employeePassword = employeeData[5];
             String employeeTitle = employeeData[6];
             String employeeUserName = employeeData[7];
-            employees.add(new Employee(employeeName, employeePhoneNumber, employeeAddress, employeeAge, employeeAccesGroup, employeePassword, employeeTitle, employeeUserName));
+            employees.add(new Employee(employeeName, employeePhoneNumber, employeeAddress, employeeDateOfBirth, employeeAccesGroup, employeePassword, employeeTitle, employeeUserName));
 
         }
     } //end of loadEmployeeTxt
@@ -38,11 +39,12 @@ public class Filehandler {
             String memberName = memberData[0];
             String memberPhoneNumber = memberData[1];
             String memberAddress = memberData[2];
-            int memberAge = Integer.parseInt(memberData[3]);
+            LocalDate memeberDateOfBirth =LocalDate.parse(memberData[3]);
+            //int memberAge = Integer.parseInt(memberData[3]);
             int memberNr = Integer.parseInt(memberData[4]);
             double kontingent = Double.parseDouble(memberData[5]);
             boolean aktiv = Boolean.parseBoolean(memberData[6]);
-            member = new Member(memberName, memberPhoneNumber, memberAddress, memberAge, memberNr, kontingent, aktiv);
+            member = new Member(memberName, memberPhoneNumber, memberAddress, memeberDateOfBirth, memberNr, kontingent, aktiv);
             members.add(member);
         }
     }//end of loadMemberTxt
@@ -96,7 +98,8 @@ public class Filehandler {
             String memberName = contingentData[0];
             String memberPhoneNumber = contingentData[1];
             String memberAddress = contingentData[2];
-            int memberAge = Integer.parseInt(contingentData[3]);
+            LocalDate memberDateOfBirth =LocalDate.parse(contingentData[3]);
+            //int memberAge = Integer.parseInt(contingentData[3]);
             int memberNr = Integer.parseInt(contingentData[4]);
             double kontingent = Double.parseDouble(contingentData[5]);
             boolean aktiv = Boolean.parseBoolean(contingentData[6]);
@@ -104,30 +107,17 @@ public class Filehandler {
             String membershipType = contingentData[8];
             double arrears = Double.parseDouble(contingentData[9]);
 
-            memberContingent = new Contingent(memberName, memberPhoneNumber, memberAddress, memberAge, memberNr, kontingent, aktiv,dateOfPayment,membershipType,arrears);
+            memberContingent = new Contingent(memberName, memberPhoneNumber, memberAddress, memberDateOfBirth, memberNr, kontingent, aktiv,dateOfPayment,membershipType,arrears);
             contigents.add(memberContingent);
         }
     }//end of loadMemberTxt
 
-    public static List<Member> readMembersFromFile(String fileName) throws IOException {
-        List<Member> members = new ArrayList<>();
-        BufferedReader reader = new BufferedReader(new FileReader ("src/main_package/db/SwimResultList.txt"));
-        String line;
-
-        while ((line = reader.readLine()) != null) {
-            String[] fields = line.split(",");
-            String name = fields[0];
-            String phoneNumber = fields[1];
-            String address = fields[2];
-            int age = Integer.parseInt(fields[3]);
-            int memberNr = Integer.parseInt(fields[4]);
-            int kontingent = Integer.parseInt(fields[5]);
-            boolean aktiv = Boolean.parseBoolean(fields[6]);
-
-            Member member = new Member(name, phoneNumber, address, age, memberNr, kontingent, aktiv);
-            members.add(member);
+    public static void writeToFileMember(ArrayList<Member> members)throws IOException{
+        BufferedWriter out = new BufferedWriter(new FileWriter("src/main_package/db/MemberList.txt"));
+        for (Member member:members){
+            out.write(member.toPrint());
         }
-        return members;
+        out.close();
     }
 
 }//end of class

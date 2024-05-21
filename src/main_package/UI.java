@@ -2,10 +2,12 @@ package main_package;
 
 import main_package.other.Contingent;
 import main_package.other.ContingentMethods;
+import main_package.other.Filehandler;
 import main_package.people.Employee;
 import main_package.people.Member;
 
 import java.io.*;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.PriorityQueue;
 import java.util.Scanner;
@@ -78,8 +80,9 @@ public class UI {
         System.out.println("Enter name:");
         String newName = input.nextLine();
 
-        System.out.println("Enter age:");
-        int newAge = input.nextInt();
+        System.out.println("Enter date of birth in the form year-month-day:");
+        LocalDate dateOfBirth =LocalDate.parse(input.next());
+        //int newAge = input.nextInt();
         input.nextLine(); // Consume the newLine
 
         System.out.println("Enter address:");
@@ -88,23 +91,23 @@ public class UI {
         System.out.println("Enter phone number:");
         String newPhoneNumber = input.nextLine();
 
-        System.out.println("Enter member number:");
+        System.out.println("Enter member number:"); //brug den metode der udregner member number automatisk: lasses metode eller spørg i gruppen
         int newMemberNr = input.nextInt();
 
-        System.out.println("Enter kontingent: (comma is with , not .)");
+        System.out.println("medlem fees of the new member are: "); //metode der tildeler kontingenten (medlem's fees: Linas metode eller spørg i gruppen)
         double newKontingent = input.nextDouble();
 
-        System.out.println("Is the member active? (True/false):");
+        System.out.println("Is the member active? (True/false):"); //Søren retter den til active and not active
         boolean newAktiv = input.nextBoolean();
 
-        Member newMember = new Member(newName, newPhoneNumber, newAddress, newAge, newMemberNr, newKontingent, newAktiv);
+        Member newMember = new Member(newName, newPhoneNumber, newAddress, dateOfBirth, newMemberNr, newKontingent, newAktiv);
         members.add(newMember); // Added to the ArrayList in main_package.Main.
 
         String file = "src/main_package/db/MemberList.txt";
         PrintWriter writer = new PrintWriter(new FileWriter(file));
         int i = 0;
         for (Member writeMember : members) {
-            writer.write(writeMember.getName()+","+writeMember.getPhoneNumber()+","+writeMember.getAddress()+","+writeMember.getAge()+","+writeMember.getMemberNr()+","+writeMember.getKontingent()+","+writeMember.getAktiv());
+            writer.write(writeMember.getName()+","+writeMember.getPhoneNumber()+","+writeMember.getAddress()+","+writeMember.getDateOfBirth()+","+writeMember.getMemberNr()+","+writeMember.getKontingent()+","+writeMember.getAktiv());
             i++;
             if (i < members.size()) {
                 writer.write("\n");
@@ -129,7 +132,7 @@ public class UI {
     }
 
     // Edit one of the people in the person list
-    public static void editMember(Scanner input, ArrayList<Member> members) {
+    public static void editMember(Scanner input, ArrayList<Member> members) throws IOException{
         printNumberedMemberNames(members);
 
         System.out.println("Enter the number of the person you want to edit:");
@@ -146,11 +149,11 @@ public class UI {
         System.out.println("""
                            Which information do you want to change on the chosen person?
                            1. Name
-                           2. Age
+                           2. Date Of Birth
                            3. Address
                            4. Phone Number
-                           5. main_package.people.Member Number
-                           6. Kontingent
+                           5. main_package.people.Member Number//skal slettes
+                           6. Kontingent//skal slettes
                            7. Active status
                            8. Cancel
                            """);
@@ -165,10 +168,11 @@ public class UI {
                 System.out.println("Name updated successfully.");
                 break;
             case 2:
-                System.out.println("Enter new age:");
-                memberToEdit.setAge(input.nextInt());
+                System.out.println("Enter new date of birth in the form year-month-day:");
+                LocalDate newdateOfBirth=LocalDate.parse(input.next());
+                memberToEdit.setDateOfBirth(newdateOfBirth);
                 input.nextLine(); // consume the newline
-                System.out.println("Age updated successfully.");
+                System.out.println("Date of birth updated successfully.");
                 break;
             case 3:
                 System.out.println("Enter new address:");
@@ -181,12 +185,12 @@ public class UI {
                 System.out.println("Phone number updated successfully.");
                 break;
             case 5:
-                System.out.println("Enter new member number:");
+                System.out.println("Enter new member number:"); //skal slettes helt
                 memberToEdit.setMemberNr(input.nextInt());
                 input.nextLine(); // Consume the newline
                 System.out.println("main_package.people.Member number updated successfully.");
                 break;
-            case 6:
+            case 6: //skal slettes helt
                 System.out.println("Enter new kontingent:");
                 memberToEdit.setKontingent(input.nextDouble());
                 input.nextLine(); // Consume the newline
@@ -204,6 +208,7 @@ public class UI {
             default:
                 System.out.println("Invalid choice");
         }
+        Filehandler.writeToFileMember(members);
     }
 
     // delete one of the people in the person list
