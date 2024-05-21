@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1631485a-b898-48d6-b9bd-658763b50935" name="Changes" comment="16 may final commit&#10;Soeren Added the methods into the UI menu of chairman/foreman.">
+    <list default="true" id="1631485a-b898-48d6-b9bd-658763b50935" name="Changes" comment="16 may second final commit&#10;Soeren Changed the Create, edit, show, delete methods">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main_package/db/MemberList.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main_package/db/MemberList.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,7 +70,10 @@
       <workItem from="1715596850210" duration="1634000" />
       <workItem from="1715775658706" duration="1114000" />
       <workItem from="1715852370385" duration="6000" />
-      <workItem from="1715880914464" duration="868000" />
+      <workItem from="1715880914464" duration="1204000" />
+      <workItem from="1715933020442" duration="7696000" />
+      <workItem from="1715942961671" duration="603000" />
+      <workItem from="1716273617887" duration="5236000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit 2024/05/13">
       <option name="closed" value="true" />
@@ -104,7 +107,23 @@
       <option name="project" value="LOCAL" />
       <updated>1715851617254</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="16 may second final commit&#10;Soeren Added the methods into the UI menu of chairman/foreman.">
+      <option name="closed" value="true" />
+      <created>1715881868809</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1715881868809</updated>
+    </task>
+    <task id="LOCAL-00006" summary="16 may second final commit&#10;Soeren Changed the Create, edit, show, delete methods">
+      <option name="closed" value="true" />
+      <created>1715938745715</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1715938745715</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -125,6 +144,8 @@
     <MESSAGE value="First Commit 2024/05/13" />
     <MESSAGE value="Second Commit 2024/05/16" />
     <MESSAGE value="third Commit 2024/05/16" />
-    <option name="LAST_COMMIT_MESSAGE" value="third Commit 2024/05/16" />
+    <MESSAGE value="16 may second final commit&#10;Soeren Added the methods into the UI menu of chairman/foreman." />
+    <MESSAGE value="16 may second final commit&#10;Soeren Changed the Create, edit, show, delete methods" />
+    <option name="LAST_COMMIT_MESSAGE" value="16 may second final commit&#10;Soeren Changed the Create, edit, show, delete methods" />
   </component>
 </project>
