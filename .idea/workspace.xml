@@ -4,13 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1631485a-b898-48d6-b9bd-658763b50935" name="Changes" comment="Test Commit 2">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_16-05-2024_08_16__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_16-05-2024_08_16__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_16-05-2024_19_23__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_16-05-2024_19_23__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_15_2024_3_20_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_15_2024_3_20_PM__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_15_2024_3_22_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_15_2024_3_22_PM__Changes_.xml" afterDir="false" />
+    <list default="true" id="1631485a-b898-48d6-b9bd-658763b50935" name="Changes" comment="Commit Lina">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main_package/UI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main_package/UI.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,9 +39,7 @@
   &quot;associatedIndex&quot;: 7
 }</component>
   <component name="ProjectId" id="2gPQh2DPl9dJRKfJktSNDNR3tQU" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -57,6 +51,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Lina/IdeaProjects/honolulu_CarRental2&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -65,11 +60,17 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Lina\IdeaProjects\DelfinSvoemmerKlub2024\src\main_package\db" />
+      <recent name="C:\Users\Lina\IdeaProjects\DelfinSvoemmerKlub2024\src" />
+      <recent name="C:\Users\Lina\IdeaProjects\DelfinSvoemmerKlub2024\src\db" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
         <option value="jdk-21.0.2-openjdk-21.0.2-4caba194b151-4f524021" />
-        <option value="jdk-22-openjdk-22-4caba194b151-f504ca98" />
       </set>
     </attachedChunks>
   </component>
@@ -85,8 +86,10 @@
       <workItem from="1715775658706" duration="1114000" />
       <workItem from="1715852370385" duration="6000" />
       <workItem from="1715880914464" duration="868000" />
-      <workItem from="1716229704405" duration="1228000" />
-      <workItem from="1716273147282" duration="2388000" />
+      <workItem from="1715936855426" duration="907000" />
+      <workItem from="1715937826078" duration="20414000" />
+      <workItem from="1716016662297" duration="6359000" />
+      <workItem from="1716108161268" duration="7634000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit 2024/05/13">
       <option name="closed" value="true" />
@@ -120,23 +123,47 @@
       <option name="project" value="LOCAL" />
       <updated>1715851617254</updated>
     </task>
-    <task id="LOCAL-00005" summary="19/05/24&#10;getRevenue metode + filereader tilføjet">
+    <task id="LOCAL-00005" summary="method: readFromFileSwimResultList: done&#10;er i gang med use case: Registrer Svømme Resultater">
       <option name="closed" value="true" />
-      <created>1716118339325</created>
+      <created>1715895783270</created>
       <option name="number" value="00005" />
       <option name="presentableId" value="LOCAL-00005" />
       <option name="project" value="LOCAL" />
-      <updated>1716118339325</updated>
+      <updated>1715895783270</updated>
     </task>
-    <task id="LOCAL-00006" summary="Test Commit 2">
+    <task id="LOCAL-00006" summary="added some methods for finding 5 best swimmers in each discipline, and moved classes into packages">
       <option name="closed" value="true" />
-      <created>1716275601197</created>
+      <created>1715953274887</created>
       <option name="number" value="00006" />
       <option name="presentableId" value="LOCAL-00006" />
       <option name="project" value="LOCAL" />
-      <updated>1716275601197</updated>
+      <updated>1715953274888</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="registrerSwimResult method done. method that search a swimmer with a specific disciplin and update his inf if the new result is better">
+      <option name="closed" value="true" />
+      <created>1715980277724</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1715980277724</updated>
+    </task>
+    <task id="LOCAL-00008" summary="returnBestResultsByDisciplin METHOD + bestFive METHOD + ComparableBestTime class">
+      <option name="closed" value="true" />
+      <created>1716040047202</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1716040047202</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Commit Lina">
+      <option name="closed" value="true" />
+      <created>1716273683798</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1716273683798</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -157,8 +184,11 @@
     <MESSAGE value="First Commit 2024/05/13" />
     <MESSAGE value="Second Commit 2024/05/16" />
     <MESSAGE value="third Commit 2024/05/16" />
-    <MESSAGE value="19/05/24&#10;getRevenue metode + filereader tilføjet" />
-    <MESSAGE value="Test Commit 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="Test Commit 2" />
+    <MESSAGE value="method: readFromFileSwimResultList: done&#10;er i gang med use case: Registrer Svømme Resultater" />
+    <MESSAGE value="added some methods for finding 5 best swimmers in each discipline, and moved classes into packages" />
+    <MESSAGE value="registrerSwimResult method done. method that search a swimmer with a specific disciplin and update his inf if the new result is better" />
+    <MESSAGE value="returnBestResultsByDisciplin METHOD + bestFive METHOD + ComparableBestTime class" />
+    <MESSAGE value="Commit Lina" />
+    <option name="LAST_COMMIT_MESSAGE" value="Commit Lina" />
   </component>
 </project>

@@ -88,13 +88,13 @@ public class UI {
         System.out.println("Enter phone number:");
         String newPhoneNumber = input.nextLine();
 
-        System.out.println("Enter member number:");
+        System.out.println("Enter member number:"); //brug den metode der udregner member number automatisk: lasses metode eller spørg i gruppen
         int newMemberNr = input.nextInt();
 
-        System.out.println("Enter kontingent: (comma is with , not .)");
+        System.out.println("medlem fees of the new member are: "); //metode der tildeler kontingenten (medlem's fees: Linas metode eller spørg i gruppen)
         double newKontingent = input.nextDouble();
 
-        System.out.println("Is the member active? (True/false):");
+        System.out.println("Is the member active? (True/false):"); //Søren retter den til active and not active
         boolean newAktiv = input.nextBoolean();
 
         Member newMember = new Member(newName, newPhoneNumber, newAddress, newAge, newMemberNr, newKontingent, newAktiv);
@@ -149,8 +149,8 @@ public class UI {
                            2. Age
                            3. Address
                            4. Phone Number
-                           5. main_package.people.Member Number
-                           6. Kontingent
+                           5. main_package.people.Member Number//skal slettes
+                           6. Kontingent//skal slettes
                            7. Active status
                            8. Cancel
                            """);
@@ -181,12 +181,12 @@ public class UI {
                 System.out.println("Phone number updated successfully.");
                 break;
             case 5:
-                System.out.println("Enter new member number:");
+                System.out.println("Enter new member number:"); //skal slettes helt
                 memberToEdit.setMemberNr(input.nextInt());
                 input.nextLine(); // Consume the newline
                 System.out.println("main_package.people.Member number updated successfully.");
                 break;
-            case 6:
+            case 6: //skal slettes helt
                 System.out.println("Enter new kontingent:");
                 memberToEdit.setKontingent(input.nextDouble());
                 input.nextLine(); // Consume the newline
