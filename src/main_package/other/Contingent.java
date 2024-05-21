@@ -2,6 +2,8 @@ package main_package.other;
 
 import main_package.people.Member;
 
+import java.util.List;
+
 public class Contingent extends Member{
 
     String dateOfPayment;
@@ -28,4 +30,6 @@ public class Contingent extends Member{
     public String toString() {
         return "Last payment: " + this.dateOfPayment + "\nMembership Type: " + this.membershipType + "\nArrears: " + arrears;
     }
+
+
 }
