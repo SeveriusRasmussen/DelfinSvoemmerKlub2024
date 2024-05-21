@@ -241,7 +241,7 @@ public class UI {
             case 2:
                 ContingentMethods.checkArrears(membersContingent, member);
             case 3:
-                break;
+                ContingentMethods.calculateRevenue(member);
             case 4:
                 break;
             case 5:
