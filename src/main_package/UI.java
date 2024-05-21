@@ -1,21 +1,25 @@
 package main_package;
 
+import main_package.other.Contingent;
+import main_package.other.ContingentMethods;
 import main_package.people.Employee;
 import main_package.people.Member;
 
+import java.io.*;
 import java.util.ArrayList;
+import java.util.PriorityQueue;
 import java.util.Scanner;
 
 public class UI {
 
-    public static void userRole(Employee currentUser, ArrayList<Member> members){
+    public static void userRole(Employee currentUser, ArrayList<Member> members, ArrayList<Contingent> membersContingent) throws IOException {
 
         switch(currentUser.getAccesGroup()){
             case 1:
                 foremanMenu(currentUser, members);
                 break;
             case 2:
-                accountantMenu(currentUser);
+                accountantMenu(currentUser, membersContingent, members);
                 break;
             case 3:
                 trainerMenu(currentUser);
@@ -25,7 +29,7 @@ public class UI {
         }
     }
 
-    public static void foremanMenu(Employee currentUser, ArrayList<Member> members){
+    public static void foremanMenu(Employee currentUser, ArrayList<Member> members) throws IOException {
         System.out.println("""
                            Here are your options:
                            1. Create a new member
@@ -70,7 +74,7 @@ public class UI {
     }
 
     // Create one new person into the arraylist
-    public static void createMember(Scanner input, ArrayList<Member> members) {
+    public static void createMember(Scanner input, ArrayList<Member> members) throws IOException {
         System.out.println("Enter name:");
         String newName = input.nextLine();
 
@@ -95,9 +99,22 @@ public class UI {
 
         Member newMember = new Member(newName, newPhoneNumber, newAddress, newAge, newMemberNr, newKontingent, newAktiv);
         members.add(newMember); // Added to the ArrayList in main_package.Main.
-        System.out.println("New person created successfully.");
-        //writeMemberToFile(nyPerson);  //File handling
+
+        String file = "src/main_package/db/MemberList.txt";
+        PrintWriter writer = new PrintWriter(new FileWriter(file));
+        int i = 0;
+        for (Member writeMember : members) {
+            writer.write(writeMember.getName()+","+writeMember.getPhoneNumber()+","+writeMember.getAddress()+","+writeMember.getAge()+","+writeMember.getMemberNr()+","+writeMember.getKontingent()+","+writeMember.getAktiv());
+            i++;
+            if (i < members.size()) {
+                writer.write("\n");
+            }
+        }
+        writer.close();
+        System.out.println("New person created and saved successfully.");
+
     }
+
 
     // Print the person list
     public static void printTheMemberList(ArrayList<Member> members) {
@@ -213,7 +230,7 @@ public class UI {
         }
     }
 
-    public static void accountantMenu(Employee currentUser) {
+    public static void accountantMenu(Employee currentUser, ArrayList<Contingent> membersContingent, ArrayList<Member> member) {
         System.out.println("Here are your options: ");
         //kald scanner class og brug den i stedet for at have scanner her
         int nav = 1;
@@ -222,7 +239,7 @@ public class UI {
                 System.out.println("kassér login Success");
                 break;
             case 2:
-                break;
+                ContingentMethods.checkArrears(membersContingent, member);
             case 3:
                 break;
             case 4:
@@ -234,7 +251,7 @@ public class UI {
             case 7:
                 break;
             default:
-                accountantMenu(currentUser);
+                accountantMenu(currentUser, membersContingent, member);
         }
     }
 

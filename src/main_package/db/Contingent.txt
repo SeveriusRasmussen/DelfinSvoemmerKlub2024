@@ -1,0 +1,2 @@
+Jørgen Leth,12345678,KokkensVej 42,86,1000001,500.0,False,05/05/2000,Senior,1000.0
+Dee Z. Nots,87654321,DragonVej 42,69,1000002,250.0,True,05/06/2024,Senior,0.0

@@ -23,6 +23,9 @@ public class Member extends Person {
     public double getKontingent() {
         return kontingent;
     }
+    public boolean getAktiv() {
+        return aktiv;
+    }
 
     public void setKontingent(double kontingent) {
         this.kontingent = kontingent;
@@ -39,7 +42,7 @@ public class Member extends Person {
     public String toString() {
         String aktivString = aktiv? "Aktivt medlem" : "Passivt medlem";  // True : false
         return super.toString() + "\n" +
-                "main_package.people.Member Number: " + memberNr + "\n" +
+                "Member Number: " + memberNr + "\n" +
                 "Kontingent: " + kontingent + "\n" +
                 aktivString;
     }
