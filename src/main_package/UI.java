@@ -9,6 +9,7 @@ import main_package.people.Member;
 
 import java.io.*;
 import java.time.LocalDate;
+import java.time.Period;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.PriorityQueue;
@@ -84,22 +85,41 @@ public class UI {
 
     // Create one new person into the arraylist
     public static void createMember(Scanner input, ArrayList<Member> members) throws IOException {
+        // Name input
         System.out.println("Enter name:");
         String newName = input.nextLine();
 
+        // Date of Birth input
         System.out.println("Enter date of birth in the form year-month-day:");
         LocalDate dateOfBirth =LocalDate.parse(input.next());
         input.nextLine(); // Consume the newLine
 
+        // Address input
         System.out.println("Enter address:");
         String newAddress = input.nextLine();
 
+        // Phone nr input
         System.out.println("Enter phone number:");
         String newPhoneNumber = input.nextLine();
 
+        // Active or passive input
+        System.out.println("Is the member active? (Yes/No):");
+        boolean newAktiv = false;
+        while (true) {
+            String aktivInput = input.nextLine().trim();
+            if (aktivInput.equalsIgnoreCase("yes")) {
+                newAktiv = true;
+                break;
+            } else if (aktivInput.equalsIgnoreCase("no")) {
+                break;
+            } else {
+                System.out.println("Invalid input. Please give me a 'Yes' or a 'no':");
+            }
+        }
+
         // Getting the new member a generated number.
         try {
-            System.out.println("The member is getting an number: ");
+            System.out.println("The member is getting an number...");
             Thread.sleep(2000);
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
@@ -108,11 +128,30 @@ public class UI {
         int newMemberNr = Util.createMemberShipNumber(members);
         System.out.println("The new member got the number: " + newMemberNr);
 
-        System.out.println("medlem fees of the new member are: "); //metode der tildeler kontingenten (medlem's fees: Linas metode eller spørg i gruppen)
-        double newKontingent = input.nextDouble();
-
-        System.out.println("Is the member active? (True/false):"); //Søren retter den til active and not active
-        boolean newAktiv = input.nextBoolean();
+        // Contingent of the member.
+        System.out.println("The membership fees of the new member are: "); //metode der tildeler kontingenten (medlem's fees: Linas metode eller spørg i gruppen)
+        // Finding out the age of the new member
+        LocalDate now = LocalDate.now();
+        int age = Period.between(dateOfBirth, now).getYears();
+        //Give the member a contingent based of their age and membership status.
+        double newKontingent = 0;
+        if (!newAktiv) {
+            System.out.println("Passive Membership for all age: 500 DKK per year.");
+            newKontingent = 500;
+        } else if (newAktiv) {
+            if (age > 60) {
+                System.out.println("Active Membership for the pensions over 60 years old: 1200 DKK per year.");
+                newKontingent = 1200;
+            } else if (18 <= age && age < 60) {
+                System.out.println("Active Membership for Seniors between 18-59 years old: 1600 DKK per year.");
+                newKontingent = 1600;
+            } else if (18 > age) {
+                System.out.println("Active Membership for juniors below 18 years old: 1000 DDK per year.");
+                newKontingent = 1000;
+            } else {
+                System.out.println("Unable to determine membership type. Using default contingent.");
+            }
+        }
 
         Member newMember = new Member(newName, newPhoneNumber, newAddress, dateOfBirth, newMemberNr, newKontingent, newAktiv);
         members.add(newMember); // Added to the ArrayList in main_package.Main.
