@@ -1,6 +1,13 @@
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
+import BCrypt;
+
+
+
+
+
+
 
 public class Login {
     ArrayList<Employee> users;
@@ -83,5 +90,6 @@ public class Login {
         }
         return null;
     }
+
 
 }
