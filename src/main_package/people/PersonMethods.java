@@ -285,16 +285,67 @@ public class PersonMethods {
         } else {
             System.out.println("No matches found for the swimmer and disciplin you are looking for," +
                     "Do you want to add it? Yes / No");
-            /*String svar=scan.nextLine();
+            String svar=scan.nextLine();
             if (Util.containsIgnoreCase(svar,"yes")){
-                swimmingResults.add();
-
-            }*/
+                int time = intPrompt("Enter the swimmer's time: ");
+                LocalDate dateOfResult=Util.LocalDateInput();
+                SwimmingResult newSwimmingResult= new SwimmingResult(memberNb,disciplin,time,dateOfResult);
+                swimmingResults.add(newSwimmingResult);
+                System.out.println("the new swimming result is successfully added.");
+            }
 
         }
         Filehandler.writeToFileSwimmingResult(swimmingResults);
 
     }//end of registrerSwimResult
+
+    public static void seSwimmerResultAllDisciplines(ArrayList<Member>members, ArrayList<SwimmingResult>swimmingResults){
+        String name =Util.stringPrompt("what is the name of the swimmer you want to se results? ");
+        ArrayList<Member> listOFSearchedMembers = new ArrayList<>();
+        int test2=0;
+        for (Member member:members){
+            if (Util.containsIgnoreCase(member.getName(),name)){
+                listOFSearchedMembers.add(member);
+                test2=1;
+            }
+        }//end for
+        if (test2==0){
+            System.out.println("No member with this name found \n");
+        }else {
+            System.out.println("here is a list of the members who have the same name you searched:");
+            for (Member member : listOFSearchedMembers) {
+                System.out.println("Member nr. " + member.getMemberNr() + " : " + member.getName() + "\n");
+            }
+            int numberToSee = Util.intPrompt("write the number of the member you want to se the results?\n");
+            //Member memberToSee=null;
+            String nameToSee = "";
+            for (Member member : members) {
+                if (member.getMemberNr() == numberToSee) {
+                    //memberToSee=member;
+                    nameToSee = member.getName();
+                }
+            }
+            int test = 0;
+            //SwimmingResult swimmingResultTest = null;
+            ArrayList<SwimmingResult>swimmingResultsDisciplin=new ArrayList<>();
+            for (SwimmingResult swR : swimmingResults) {
+                if (numberToSee == swR.getMemberNr()) {
+                    test = 1;
+                    swimmingResultsDisciplin.add(swR) ;
+                }
+            }
+            if (test == 1) {
+                System.out.println("Here is a list of the results of the member: " + nameToSee + " , in all disciplines he/she participated:");
+
+                for(SwimmingResult swR:swimmingResultsDisciplin){
+                    System.out.println("Name of the discipline: " + swR.getDiscipline() + "\n----------resul: " + swR.getTime() + "\n----------date of the resul: " + swR.getDateOfResult() + "\n");
+                }
+            } else {
+                System.out.println("No swimming results found to the chosen member.\n");
+            }
+        }
+
+    }//end of seSwimmerResultAllDisciplines
 
 
 }

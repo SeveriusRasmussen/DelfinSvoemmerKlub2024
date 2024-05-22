@@ -133,19 +133,20 @@ public class UI {
             nav = Util.getIntInputSwitch("choose a number from the list: ", "wrong input, only a number between 1 and 6: ", 1, 6);
             //kald scanner class og brug den i stedet for at have scanner her
             switch (nav) {
-                case 1:
-                    System.out.println("Træner login Success");//choose between: all swimmers, junior- eller seniorsvømmer, motionist eller konkurrencesvømmer.
+                case 1: //LASSE: View list of all swimmers
+                    //choose between: all swimmers, junior- eller seniorsvømmer, motionist eller konkurrencesvømmer.
                     break;
-                case 2:
+                case 2: //2. Change member type: LASSE
+                    //FROM MEMBER TO COMPETITION MEMBER
                     break;
-                case 3:
-                    System.out.println("View a swimmer's result in all disciplines");
+                case 3: //LINA DONE
+                    PersonMethods.seSwimmerResultAllDisciplines(members, swimmingResults);
                     break;
-                case 4:
+                case 4: //LINA DONE
                     System.out.println("Register a swimmer's best result and date");
                     PersonMethods.registrerSwimResult(swimmingResults);
                     break;
-                case 5:
+                case 5: //LASSE DONE
                     ArrayList<CompetitionMember> compMembers = PersonMethods.getCompMembers(members);
                     compMembers=PersonMethods.getBestFive(compMembers);
                     for(CompetitionMember cm: compMembers){
@@ -153,10 +154,10 @@ public class UI {
                     }
                     break;
                 case 6:
-                    break;
-                case 7:
+                    System.exit(0);
                     break;
                 default:
+                    System.out.println("you should only choose w number between 1 and 6.");
                     trainerMenu(currentUser,members);
             }
         } while (nav != 6);

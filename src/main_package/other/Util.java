@@ -50,7 +50,7 @@ public class Util {
         DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         LocalDate date = null;
         do {
-            String enterDate = stringPrompt("Enter a date (yyyy-MM-dd): ");
+            String enterDate = stringPrompt("Enter the date (yyyy-MM-dd): ");
             try {
                 date = LocalDate.parse(enterDate, dateFormatter);
             } catch (Exception e) {
