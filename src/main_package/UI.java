@@ -4,6 +4,7 @@ import main_package.other.Contingent;
 import main_package.other.ContingentMethods;
 import main_package.other.Filehandler;
 import main_package.other.Util;
+import main_package.people.CompetitionMember;
 import main_package.people.Employee;
 import main_package.people.Member;
 import main_package.people.PersonMethods;
@@ -26,7 +27,7 @@ public class UI {
                 accountantMenu(currentUser, membersContingent, members);
                 break;
             case 3:
-                trainerMenu(currentUser);
+                trainerMenu(currentUser,members);
                 break;
             default:
                 System.out.println("Invalid access group");
@@ -130,6 +131,16 @@ public class UI {
                     6. Exit
                     """);
             nav = Util.getIntInputSwitch("choose a number from the list: ", "wrong input, only a number between 1 and 6: ", 1, 6);
+    public static void trainerMenu(Employee currentUser,ArrayList<Member> members) {
+        System.out.println("""
+                           Here are your options:
+                           1. View list of all swimmers 
+                           2. Change member type 
+                           3. View a swimmer's result in all disciplines
+                           4. Register a swimmer's best result and date
+                           5. View the top five results for a chosen discipline for each age group
+                           6. Exit
+                           """);
 
             //kald scanner class og brug den i stedet for at have scanner her
             switch (nav) {
@@ -156,6 +167,33 @@ public class UI {
             }
         } while (nav != 6);
     }//end of trainer menu
+        //kald scanner class og brug den i stedet for at have scanner her
+        int nav = 5;
+        switch(nav){
+            case 1:
+                System.out.println("Træner login Success");//choose between: all swimmers, junior- eller seniorsvømmer, motionist eller konkurrencesvømmer.
+                break;
+            case 2:
+                break;
+            case 3:
+                break;
+            case 4:
+                break;
+            case 5:
+                ArrayList<CompetitionMember> compMembers = PersonMethods.getCompMembers(members);
+                compMembers=PersonMethods.getBestFive(compMembers);
+                for(CompetitionMember cm: compMembers){
+                    cm.toPrint();
+                }
+                break;
+            case 6:
+                break;
+            case 7:
+                break;
+            default:
+                trainerMenu(currentUser,members);
+        }
+    }
 
 
 
