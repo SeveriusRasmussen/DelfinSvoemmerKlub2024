@@ -9,7 +9,8 @@ import java.time.LocalDate;
 import java.time.Period;
 import java.util.*;
 
-public class PersonMethods {
+public class
+PersonMethods {
     ArrayList<Member> listOfMembers;
     ArrayList<SwimmingResult>listOfResults;
 
@@ -17,21 +18,49 @@ public class PersonMethods {
         this.listOfMembers=listOfMembers;
     }
 
-    public static void getBestFive(ArrayList<CompetitionMember>members){
+    public static ArrayList<CompetitionMember> getBestFive(ArrayList<CompetitionMember>members){
         String disciplin = Util.stringPrompt("Which disciplin");
         SwimmingDisciplin disciplin1= SwimmingDisciplin.valueOf(disciplin);
-        List<Integer>competingMembers =null;
-        HashMap<Integer, Integer>record=null;
+        ArrayList<Integer>storedTimes = new ArrayList<>();
+        ArrayList<CompetitionMember>bestPerformingMembers=new ArrayList<>();
+        HashMap<Integer, Integer>record=new HashMap<>();
         for(CompetitionMember cm:members){
             ArrayList<SwimmingResult> currentSwimmersResults=cm.getResults();
             for(SwimmingResult sr:currentSwimmersResults ){
                 if(sr.getDiscipline().equals(disciplin1)){
-                    record.put(cm.getMemberNr(),sr.getTime());
-                    competingMembers.add(cm.getMemberNr());
+                    record.put(sr.getTime(),cm.getMemberNr());
+                    storedTimes.add(sr.getTime());
+
                 }
 
             }
         }
+        if(storedTimes.isEmpty()){
+            return null;
+        }
+        else {
+            Collections.sort(storedTimes);
+            for (int i = 0; i < 5; i++) {
+                record.get(storedTimes.get(i));
+                for (CompetitionMember cm : members) {
+                    if (cm.getMemberNr() == record.get(storedTimes.get(i))) {
+                        bestPerformingMembers.add(cm);
+                    }
+                }
+
+            }
+            return bestPerformingMembers;
+        }
+    }
+
+    public static ArrayList<CompetitionMember> getCompMembers(ArrayList<Member>members){
+        ArrayList<CompetitionMember>compMembers = new ArrayList<>();
+        for(Member m:members){
+            if (m instanceof CompetitionMember){
+                compMembers.add((CompetitionMember) m);
+            }
+        }
+        return compMembers;
     }
 
     public static void createMember(Scanner input, ArrayList<Member> members) throws IOException {

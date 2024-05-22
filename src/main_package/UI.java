@@ -2,6 +2,7 @@ package main_package;
 
 import main_package.other.Contingent;
 import main_package.other.ContingentMethods;
+import main_package.people.CompetitionMember;
 import main_package.people.Employee;
 import main_package.people.Member;
 import main_package.people.PersonMethods;
@@ -23,7 +24,7 @@ public class UI {
                 accountantMenu(currentUser, membersContingent, members);
                 break;
             case 3:
-                trainerMenu(currentUser);
+                trainerMenu(currentUser,members);
                 break;
             default:
                 System.out.println("Invalid access group");
@@ -113,7 +114,7 @@ public class UI {
         }
     }// end of accountantMenu
 
-    public static void trainerMenu(Employee currentUser) {
+    public static void trainerMenu(Employee currentUser,ArrayList<Member> members) {
         System.out.println("""
                            Here are your options:
                            1. View list of all swimmers 
@@ -125,7 +126,7 @@ public class UI {
                            """);
 
         //kald scanner class og brug den i stedet for at have scanner her
-        int nav = 1;
+        int nav = 5;
         switch(nav){
             case 1:
                 System.out.println("Træner login Success");//choose between: all swimmers, junior- eller seniorsvømmer, motionist eller konkurrencesvømmer.
@@ -137,13 +138,18 @@ public class UI {
             case 4:
                 break;
             case 5:
+                ArrayList<CompetitionMember> compMembers = PersonMethods.getCompMembers(members);
+                compMembers=PersonMethods.getBestFive(compMembers);
+                for(CompetitionMember cm: compMembers){
+                    cm.toPrint();
+                }
                 break;
             case 6:
                 break;
             case 7:
                 break;
             default:
-                trainerMenu(currentUser);
+                trainerMenu(currentUser,members);
         }
     }
 
