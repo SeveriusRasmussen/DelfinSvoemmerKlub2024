@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1631485a-b898-48d6-b9bd-658763b50935" name="Changes" comment="Commit test" />
+    <list default="true" id="1631485a-b898-48d6-b9bd-658763b50935" name="Changes" comment="22 may Second commit&#10;Søren R.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -36,9 +38,7 @@
   &quot;associatedIndex&quot;: 7
 }</component>
   <component name="ProjectId" id="2gPQh2DPl9dJRKfJktSNDNR3tQU" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -162,7 +162,23 @@
       <option name="project" value="LOCAL" />
       <updated>1716273683798</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="22 may first commit&#10;Søren R.">
+      <option name="closed" value="true" />
+      <created>1716331398372</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1716331398372</updated>
+    </task>
+    <task id="LOCAL-00011" summary="22 may Second commit&#10;Søren R.">
+      <option name="closed" value="true" />
+      <created>1716335300779</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1716335300779</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -188,6 +204,8 @@
     <MESSAGE value="registrerSwimResult method done. method that search a swimmer with a specific disciplin and update his inf if the new result is better" />
     <MESSAGE value="returnBestResultsByDisciplin METHOD + bestFive METHOD + ComparableBestTime class" />
     <MESSAGE value="Commit Lina" />
-    <option name="LAST_COMMIT_MESSAGE" value="Commit Lina" />
+    <MESSAGE value="22 may first commit&#10;Søren R." />
+    <MESSAGE value="22 may Second commit&#10;Søren R." />
+    <option name="LAST_COMMIT_MESSAGE" value="22 may Second commit&#10;Søren R." />
   </component>
 </project>

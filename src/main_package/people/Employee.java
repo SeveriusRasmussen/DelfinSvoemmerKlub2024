@@ -1,13 +1,15 @@
 package main_package.people;
 
+import java.time.LocalDate;
+
 public class Employee extends Person {
 
     private int accesGroup;
     private String password;
     private String jobtitle;
     private String username;
-    public Employee(String name, String phoneNumber, String adress, int age,int accesGroup, String password, String jobtitle, String username) {
-        super(name, phoneNumber, adress, age);
+    public Employee(String name, String phoneNumber, String adress, LocalDate dateOfBirth, int accesGroup, String password, String jobtitle, String username) {
+        super(name, phoneNumber, adress, dateOfBirth);
         this.accesGroup = accesGroup;
         this.password = password;
         this.jobtitle = jobtitle;
