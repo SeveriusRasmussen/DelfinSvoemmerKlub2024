@@ -12,10 +12,8 @@ import java.util.*;
 import static main_package.other.Util.*;
 
 public class PersonMethods {
-public class
-PersonMethods {
-    ArrayList<Member> listOfMembers;
     ArrayList<SwimmingResult>listOfResults;
+    ArrayList<Member>listOfMembers;
 
     PersonMethods(ArrayList<Member>listOfMembers){
         this.listOfMembers=listOfMembers;
