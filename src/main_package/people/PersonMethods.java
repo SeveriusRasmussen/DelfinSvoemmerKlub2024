@@ -1,7 +1,6 @@
 package main_package.people;
 //package main_package.other.Util;
 
-import main_package.other.ComparableDisciplines;
 import main_package.other.Filehandler;
 import main_package.other.Util;
 
@@ -10,11 +9,11 @@ import java.time.LocalDate;
 import java.time.Period;
 import java.util.*;
 
-public class MemberMethods {
+public class PersonMethods {
     ArrayList<Member> listOfMembers;
     ArrayList<SwimmingResult>listOfResults;
 
-    MemberMethods(ArrayList<Member>listOfMembers){
+    PersonMethods(ArrayList<Member>listOfMembers){
         this.listOfMembers=listOfMembers;
     }
 
