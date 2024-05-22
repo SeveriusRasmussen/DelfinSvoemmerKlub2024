@@ -9,6 +9,8 @@ import java.time.LocalDate;
 import java.time.Period;
 import java.util.*;
 
+import static main_package.other.Util.*;
+
 public class PersonMethods {
     ArrayList<Member> listOfMembers;
     ArrayList<SwimmingResult>listOfResults;
@@ -220,10 +222,51 @@ public class PersonMethods {
         Member memberToDelete = members.remove(memberNumber - 1);
         System.out.println(memberToDelete.getName() + " deleted successfully.");
         Filehandler.writeToFileMember(members);
+    }//end of deleteMember
 
-    }
+    public static void registrerSwimResult(ArrayList <SwimmingResult> swimmingResults)throws IOException {
+        Scanner scan=new Scanner(System.in);
+        int memberNb= intPrompt("Enter the swimmer ID: ");
+        String discipline = stringPrompt("Enter the discipline: ");
+        SwimmingDisciplin disciplin= SwimmingDisciplin.valueOf(discipline);
+        int newTime=Integer.MAX_VALUE;
+        LocalDate date=LocalDate.now();
 
+        //forloop to search if the swimmer with this ID+disciplin already has an old time
+        SwimmingResult resultExist=null;
+        int j=0;
+        for (SwimmingResult swR: swimmingResults){
+            if ((swR.getMemberNr()==memberNb)&&(swR.getDiscipline().equals(disciplin))){
+                resultExist=swR;
+                j=1;
+                System.out.println("match found: the swimmer you are searching for is found: \n" + swR);
+                newTime = intPrompt("Enter the swimmer new time: ");
+                date =LocalDateInput();
+                break;
+            }
+        }//end for
 
+        if (j==1){ //once the swimmer is found, we will compare the 2 times
+            if (newTime< resultExist.getTime()){
+                resultExist.setTime(newTime);
+                resultExist.setDateOfResult(date);
+                System.out.println("the swimmer is updated with the new time and date");
+            } else {
+                System.out.println("the old time was better, the swimmer will not be updated");
+            }
+        } else {
+            System.out.println("No matches found for the swimmer and disciplin you are looking for," +
+                    "Do you want to add it? Yes / No");
+            /*String svar=scan.nextLine();
+            if (Util.containsIgnoreCase(svar,"yes")){
+                swimmingResults.add();
+
+            }*/
+
+        }
+        Filehandler.writeToFileSwimmingResult(swimmingResults);
+
+    }//end of registrerSwimResult
 
 
 }

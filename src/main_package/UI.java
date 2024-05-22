@@ -2,9 +2,12 @@ package main_package;
 
 import main_package.other.Contingent;
 import main_package.other.ContingentMethods;
+import main_package.other.Filehandler;
+import main_package.other.Util;
 import main_package.people.Employee;
 import main_package.people.Member;
 import main_package.people.PersonMethods;
+import main_package.people.SwimmingResult;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -113,39 +116,46 @@ public class UI {
         }
     }// end of accountantMenu
 
-    public static void trainerMenu(Employee currentUser) {
-        System.out.println("""
-                           Here are your options:
-                           1. View list of all swimmers 
-                           2. Change member type 
-                           3. View a swimmer's result in all disciplines
-                           4. Register a swimmer's best result and date
-                           5. View the top five results for a chosen discipline for each age group
-                           6. Exit
-                           """);
+    public static void trainerMenu(Employee currentUser) throws IOException{
+        ArrayList <SwimmingResult> swimmingResults= Filehandler.readFromFileSwimResult ();
+        int nav;
+        do {
+            System.out.println("""
+                    Here are your options:
+                    1. View list of all swimmers 
+                    2. Change member type 
+                    3. View a swimmer's result in all disciplines
+                    4. Register a swimmer's best result and date
+                    5. View the top five results for a chosen discipline for each age group
+                    6. Exit
+                    """);
+            nav = Util.getIntInputSwitch("choose a number from the list: ", "wrong input, only a number between 1 and 6: ", 1, 6);
 
-        //kald scanner class og brug den i stedet for at have scanner her
-        int nav = 1;
-        switch(nav){
-            case 1:
-                System.out.println("Træner login Success");//choose between: all swimmers, junior- eller seniorsvømmer, motionist eller konkurrencesvømmer.
-                break;
-            case 2:
-                break;
-            case 3:
-                break;
-            case 4:
-                break;
-            case 5:
-                break;
-            case 6:
-                break;
-            case 7:
-                break;
-            default:
-                trainerMenu(currentUser);
-        }
-    }
+            //kald scanner class og brug den i stedet for at have scanner her
+            switch (nav) {
+                case 1:
+                    System.out.println("Træner login Success");//choose between: all swimmers, junior- eller seniorsvømmer, motionist eller konkurrencesvømmer.
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    System.out.println("View a swimmer's result in all disciplines");
+                    break;
+                case 4:
+                    System.out.println("Register a swimmer's best result and date");
+                    PersonMethods.registrerSwimResult(swimmingResults);
+                    break;
+                case 5:
+                    break;
+                case 6:
+                    break;
+                case 7:
+                    break;
+                default:
+                    trainerMenu(currentUser);
+            }
+        } while (nav != 6);
+    }//end of trainer menu
 
 
 
