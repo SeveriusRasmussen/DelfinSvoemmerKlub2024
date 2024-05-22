@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1631485a-b898-48d6-b9bd-658763b50935" name="Changes" comment="Commit igen">
+    <list default="true" id="1631485a-b898-48d6-b9bd-658763b50935" name="Changes" comment="22 may Second commit&#10;Søren R.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -88,9 +88,7 @@
       <workItem from="1715936855426" duration="907000" />
       <workItem from="1715937826078" duration="20414000" />
       <workItem from="1716016662297" duration="6359000" />
-      <workItem from="1716108161268" duration="7937000" />
-      <workItem from="1716293949261" duration="4029000" />
-      <workItem from="1716301703296" duration="1964000" />
+      <workItem from="1716108161268" duration="7634000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit 2024/05/13">
       <option name="closed" value="true" />
@@ -164,31 +162,23 @@
       <option name="project" value="LOCAL" />
       <updated>1716273683798</updated>
     </task>
-    <task id="LOCAL-00010" summary="med alle bemærkninger så er vi klar til næste sprint">
+    <task id="LOCAL-00010" summary="22 may first commit&#10;Søren R.">
       <option name="closed" value="true" />
-      <created>1716281345410</created>
+      <created>1716331398372</created>
       <option name="number" value="00010" />
       <option name="presentableId" value="LOCAL-00010" />
       <option name="project" value="LOCAL" />
-      <updated>1716281345410</updated>
+      <updated>1716331398372</updated>
     </task>
-    <task id="LOCAL-00011" summary="age er ændret til date of birth&#10;Metode der udregner age er lavet i person class: private int calculateAge&#10;WriteToFileMember metode er færdig">
+    <task id="LOCAL-00011" summary="22 may Second commit&#10;Søren R.">
       <option name="closed" value="true" />
-      <created>1716297944745</created>
+      <created>1716335300779</created>
       <option name="number" value="00011" />
       <option name="presentableId" value="LOCAL-00011" />
       <option name="project" value="LOCAL" />
-      <updated>1716297944745</updated>
+      <updated>1716335300779</updated>
     </task>
-    <task id="LOCAL-00012" summary="Commit igen">
-      <option name="closed" value="true" />
-      <created>1716303646506</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1716303646507</updated>
-    </task>
-    <option name="localTasksCounter" value="13" />
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -214,9 +204,8 @@
     <MESSAGE value="registrerSwimResult method done. method that search a swimmer with a specific disciplin and update his inf if the new result is better" />
     <MESSAGE value="returnBestResultsByDisciplin METHOD + bestFive METHOD + ComparableBestTime class" />
     <MESSAGE value="Commit Lina" />
-    <MESSAGE value="med alle bemærkninger så er vi klar til næste sprint" />
-    <MESSAGE value="age er ændret til date of birth&#10;Metode der udregner age er lavet i person class: private int calculateAge&#10;WriteToFileMember metode er færdig" />
-    <MESSAGE value="Commit igen" />
-    <option name="LAST_COMMIT_MESSAGE" value="Commit igen" />
+    <MESSAGE value="22 may first commit&#10;Søren R." />
+    <MESSAGE value="22 may Second commit&#10;Søren R." />
+    <option name="LAST_COMMIT_MESSAGE" value="22 may Second commit&#10;Søren R." />
   </component>
 </project>

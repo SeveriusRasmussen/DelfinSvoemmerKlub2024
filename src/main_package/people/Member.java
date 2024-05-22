@@ -43,7 +43,7 @@ public class Member extends Person {
 
     public String toString() {
         String aktivString = aktiv? "Aktivt medlem" : "Passivt medlem";  // True : false
-        return super.toString() + "\n" +
+        return super.toString() +
                 "Member Number: " + memberNr + "\n" +
                 "Kontingent   : " + kontingent + "\n" +
                 aktivString;
