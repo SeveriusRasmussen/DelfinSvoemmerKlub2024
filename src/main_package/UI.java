@@ -102,11 +102,15 @@ public class UI {
                 break;
             case 2:
                 ContingentMethods.checkArrears(membersContingent, member);
+                break;
             case 3:
+                System.out.println("Oversigt over årlige revenue");
+                ContingentMethods.calculateRevenue(member);
                 break;
             case 4:
                 break;
             case 5:
+
                 break;
             case 6:
                 break;
