@@ -54,6 +54,7 @@ public class Filehandler {
 
     public static ArrayList<SwimmingResult> readFromFileSwimResult () throws FileNotFoundException {
         Scanner scan=new Scanner(new File("src/main_package/db/SwimResultList.txt"));
+        //2;CRAWL;42;2024-02-10;
         ArrayList<SwimmingResult> swimmingResults=new ArrayList<>();
         while (scan.hasNextLine()){
             String line=scan.nextLine();
@@ -103,11 +104,12 @@ public class Filehandler {
             int memberNr = Integer.parseInt(contingentData[4]);
             double kontingent = Double.parseDouble(contingentData[5]);
             boolean aktiv = Boolean.parseBoolean(contingentData[6]);
-            String dateOfPayment = contingentData[7];
-            String membershipType = contingentData[8];
-            double arrears = Double.parseDouble(contingentData[9]);
+            LocalDate dateOfPayment = LocalDate.parse(contingentData[7]);
+            LocalDate nextPayment = LocalDate.parse(contingentData[8]);
+            String membershipType = contingentData[9];
+            double arrears = Double.parseDouble(contingentData[10]);
 
-            memberContingent = new Contingent(memberName, memberPhoneNumber, memberAddress, memberDateOfBirth, memberNr, kontingent, aktiv,dateOfPayment,membershipType,arrears);
+            memberContingent = new Contingent(memberName, memberPhoneNumber, memberAddress, memberDateOfBirth, memberNr, kontingent, aktiv,dateOfPayment,nextPayment,membershipType,arrears);
             contigents.add(memberContingent);
         }
     }//end of loadMemberTxt
@@ -119,5 +121,22 @@ public class Filehandler {
         }
         out.close();
     }
+
+    public static void writeToFileEmployee(ArrayList<Employee> employees)throws IOException{
+        BufferedWriter out = new BufferedWriter(new FileWriter("src/main_package/db/EmployeeList.txt"));
+        for (Employee emp: employees){
+            out.write(emp.toPrint());
+        }
+        out.close();
+    }
+
+    public static void writeToFileSwimmingResult(ArrayList<SwimmingResult> swimmingResults)throws IOException{
+        BufferedWriter out = new BufferedWriter(new FileWriter("src/main_package/db/SwimResultList.txt"));
+        for (SwimmingResult swR:swimmingResults){
+            out.write(swR.toPrint());
+        }
+        out.close();
+    }
+
 
 }//end of class

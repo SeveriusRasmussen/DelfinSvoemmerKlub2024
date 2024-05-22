@@ -48,13 +48,10 @@ public class Employee extends Person {
         this.username = username;
     }
 
+    //Joakim,40405050,TestGade 21,1974-03-12,2,pass1234,Kasser,BossKim
 
-    // Bare en anden eksempel.
-    /*public String toString() {
-        return super.toString() +
-               "Access Group: " + accesGroup + "\n" +
-               "Password: Nothing to show. Private" + "\n" +
-               "Jobtitel: " + jobtitle + "\n" +
-               "Username: " + username;
-    }*/
+    public String toPrint(){
+        return (getName() +","+ getPhoneNumber()+","+getAddress()+","+getDateOfBirth()+","+getAccesGroup()+","+getPassword()+","+getJobtitle()+","+getUsername());
+    }
+
 }

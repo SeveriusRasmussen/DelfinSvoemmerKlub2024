@@ -53,7 +53,7 @@ public class ContingentMethods{
         System.out.println("There are " + seniorCount + " senior members that generate " + seniorRevenue + " revenue");
         System.out.println("There are " + verySeniorCount + " very senior members that generate " + verySeniorRevenue + " revenue");
         System.out.println("There are " + passiveCount + " passive members that generate " + passiveRevenue + " revenue");
-        System.out.println("The total yearly revenue is " + totalRevenue);
+        System.out.println("The total yearly revenue is " + totalRevenue + " Kr.");
     }
 }
 
