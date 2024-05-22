@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1631485a-b898-48d6-b9bd-658763b50935" name="Changes" comment="22 may Second commit&#10;Søren R.">
+    <list default="true" id="1631485a-b898-48d6-b9bd-658763b50935" name="Changes" comment="22 may (NIGHT) third and final commit&#10;Søren R.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -66,13 +66,6 @@
       <recent name="C:\Users\Lina\IdeaProjects\DelfinSvoemmerKlub2024\src\db" />
     </key>
   </component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="jdk-21.0.2-openjdk-21.0.2-4caba194b151-4f524021" />
-      </set>
-    </attachedChunks>
-  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -89,6 +82,8 @@
       <workItem from="1715937826078" duration="20414000" />
       <workItem from="1716016662297" duration="6359000" />
       <workItem from="1716108161268" duration="7634000" />
+      <workItem from="1716359037689" duration="2189000" />
+      <workItem from="1716392913359" duration="602000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit 2024/05/13">
       <option name="closed" value="true" />
@@ -178,7 +173,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716335300779</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="22 may (NIGHT) third and final commit&#10;Søren R.">
+      <option name="closed" value="true" />
+      <created>1716335774189</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1716335774189</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -206,6 +209,7 @@
     <MESSAGE value="Commit Lina" />
     <MESSAGE value="22 may first commit&#10;Søren R." />
     <MESSAGE value="22 may Second commit&#10;Søren R." />
-    <option name="LAST_COMMIT_MESSAGE" value="22 may Second commit&#10;Søren R." />
+    <MESSAGE value="22 may (NIGHT) third and final commit&#10;Søren R." />
+    <option name="LAST_COMMIT_MESSAGE" value="22 may (NIGHT) third and final commit&#10;Søren R." />
   </component>
 </project>
