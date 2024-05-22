@@ -7,9 +7,11 @@ import java.util.List;
 
 public class Contingent extends Member{
 
-    String dateOfPayment;
-    String membershipType;
-    double arrears;
+    private String dateOfPayment; // skal være LocalDate
+    //private LocalDate nextpayment;
+    private String membershipType;
+    private double arrears;
+
     public  Contingent(String name, String phoneNumber, String address, LocalDate dateOfBirth, int memberNr, double kontingent, boolean aktiv, String dateOfPayment, String membershipType, double arrears) {
         super(name, phoneNumber, address, dateOfBirth, memberNr, kontingent, aktiv);
         this.dateOfPayment = dateOfPayment;

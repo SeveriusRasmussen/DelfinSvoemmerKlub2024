@@ -2,18 +2,13 @@ package main_package;
 
 import main_package.other.Contingent;
 import main_package.other.ContingentMethods;
-import main_package.other.Filehandler;
-import main_package.other.Util;
 import main_package.people.Employee;
 import main_package.people.Member;
-import main_package.people.MemberMethods;
+import main_package.people.PersonMethods;
 
 import java.io.*;
-import java.time.LocalDate;
-import java.time.Period;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
-import java.util.PriorityQueue;
 import java.util.Scanner;
 
 public class UI {
@@ -55,19 +50,19 @@ public class UI {
                 switch(nav){
                     case 1:
                         System.out.println("Create a member");
-                        MemberMethods.createMember(input, members);
+                        PersonMethods.createMember(input, members);
                         break;
                     case 2:
                         System.out.println("Print the member list");
-                        MemberMethods.printTheMemberList(members);
+                        PersonMethods.printTheMemberList(members);
                         break;
                     case 3:
                         System.out.println("Edit one of the members");
-                        MemberMethods.editMember(input, members);
+                        PersonMethods.editMember(input, members);
                         break;
                     case 4:
                         System.out.println("Delete one of the members");
-                        MemberMethods.deleteMember(input, members);
+                        PersonMethods.deleteMember(input, members);
                         break;
                     case 7:
                         System.out.println("The program is closing.");
@@ -81,53 +76,59 @@ public class UI {
                 input.nextLine(); // consume invalid input.
             }
         }
-    }
-
-
-    // Create one new person into the arraylist
-
-
-    // Print the person list
-
-
-
+    }// end of formand menu
 
     public static void accountantMenu(Employee currentUser, ArrayList<Contingent> membersContingent, ArrayList<Member> member) {
-        System.out.println("Here are your options: ");
         //kald scanner class og brug den i stedet for at have scanner her
-        int nav = 1;
-        switch(nav){
-            case 1:
-                System.out.println("kassér login Success");
-                break;
-            case 2:
-                ContingentMethods.checkArrears(membersContingent, member);
-                break;
-            case 3:
-                System.out.println("Oversigt over årlige revenue");
-                ContingentMethods.calculateRevenue(member);
-                break;
-            case 4:
-                break;
-            case 5:
+        int nav = 0;
+        System.out.println("""
+                    Here are your options:
+                    1. See the expected yearly revenue
+                    2. Members in arrear
+                    3. Exit
+                    """);
+        Scanner input = new Scanner(System.in);
+        try {
+            nav = input.nextInt();
+            input.nextLine(); // consume the newline
 
-                break;
-            case 6:
-                break;
-            case 7:
-                break;
-            default:
-                accountantMenu(currentUser, membersContingent, member);
+            switch (nav) {
+                case 1:
+                    ContingentMethods.calculateRevenue(member);
+                    break;
+                case 2: //skal laves igen af Lina
+                    System.out.println("check restance");
+                    ContingentMethods.checkArrears(membersContingent, member);
+                    break;
+                case 3:
+                    System.out.println("Exit.");
+                    System.exit(0);
+                default:
+                    System.out.println("you have entered a wrong number, please try again.");
+                    accountantMenu(currentUser, membersContingent, member);
+            }
+        }catch (InputMismatchException e) {
+            System.out.println("Invalid input. Please enter a number.");
+            input.nextLine(); // consume invalid input.
         }
-    }
+    }// end of accountantMenu
 
     public static void trainerMenu(Employee currentUser) {
-        System.out.println("Here are your options: ");
+        System.out.println("""
+                           Here are your options:
+                           1. View list of all swimmers 
+                           2. Change member type 
+                           3. View a swimmer's result in all disciplines
+                           4. Register a swimmer's best result and date
+                           5. View the top five results for a chosen discipline for each age group
+                           6. Exit
+                           """);
+
         //kald scanner class og brug den i stedet for at have scanner her
         int nav = 1;
         switch(nav){
             case 1:
-                System.out.println("Træner login Success");
+                System.out.println("Træner login Success");//choose between: all swimmers, junior- eller seniorsvømmer, motionist eller konkurrencesvømmer.
                 break;
             case 2:
                 break;
