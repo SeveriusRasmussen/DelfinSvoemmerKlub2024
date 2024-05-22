@@ -1,0 +1,18 @@
+Jørgen Leth,12345678,KokkensVej 42,1939-12-03,1,500.0,false
+Dee Z. Nots,87654321,DragonVej 42,1956-07-12,2,250.0,true
+Joa,3120321,Fghjisdfoå,1985-03-03,3,750.0,false
+Steffen,9876532,på vej,1987-02-20,4,670.0,true
+Oline,098765432,derhjemme eller på vej,1985-12-13,5,755.0,false
+Søren,31248901,kastrupvej 129,1988-11-06,6,1000.5,true
+Søren rasmussen,31248901,kastrupvej 129,1988-11-06,7,1000.5,false
+karsten,66677666,satansvej 666,1995-06-06,8,666.66,true
+Lina,41354222,Nørrebro,1955-05-05,9,666.5,false
+Tobias,12134323,Istedsgade 34,1989-07-17,10,1000.6,true
+Uffe,24135252,CamillaVej,1990-01-07,11,1000.5,false
+Camilla,34363434,Majvej 56,1991-05-04,12,199999.5,false
+Sebastian,13254223,Udbakken 16,2015-09-02,13,1000.5,false
+Maria,21354252,Udbakken 16,1986-08-05,14,1600.0,true
+Ellen,12413524,udbakken 16,2018-11-27,15,1000.0,true
+Heidi,34232232,Skruvby 119,1960-11-19,16,1200.0,true
+Søren,98765432,her,1985-01-20,18,500.0,false
+Lasse,8763251,i do not know,1992-01-01,19,1600.0,true

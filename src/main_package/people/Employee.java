@@ -1,11 +1,15 @@
-public class Employee extends Person{
+package main_package.people;
+
+import java.time.LocalDate;
+
+public class Employee extends Person {
 
     private int accesGroup;
     private String password;
     private String jobtitle;
     private String username;
-    public Employee(String name, String phoneNumber, String adress, int age,int accesGroup, String password, String jobtitle, String username) {
-        super(name, phoneNumber, adress, age);
+    public Employee(String name, String phoneNumber, String adress, LocalDate dateOfBirth, int accesGroup, String password, String jobtitle, String username) {
+        super(name, phoneNumber, adress, dateOfBirth);
         this.accesGroup = accesGroup;
         this.password = password;
         this.jobtitle = jobtitle;
@@ -43,4 +47,14 @@ public class Employee extends Person{
     public void setUsername(String username) {
         this.username = username;
     }
+
+
+    // Bare en anden eksempel.
+    /*public String toString() {
+        return super.toString() +
+               "Access Group: " + accesGroup + "\n" +
+               "Password: Nothing to show. Private" + "\n" +
+               "Jobtitel: " + jobtitle + "\n" +
+               "Username: " + username;
+    }*/
 }
