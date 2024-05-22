@@ -103,11 +103,12 @@ public class Filehandler {
             int memberNr = Integer.parseInt(contingentData[4]);
             double kontingent = Double.parseDouble(contingentData[5]);
             boolean aktiv = Boolean.parseBoolean(contingentData[6]);
-            String dateOfPayment = contingentData[7];
-            String membershipType = contingentData[8];
-            double arrears = Double.parseDouble(contingentData[9]);
+            LocalDate dateOfPayment = LocalDate.parse(contingentData[7]);
+            LocalDate nextPayment = LocalDate.parse(contingentData[8]);
+            String membershipType = contingentData[9];
+            double arrears = Double.parseDouble(contingentData[10]);
 
-            memberContingent = new Contingent(memberName, memberPhoneNumber, memberAddress, memberDateOfBirth, memberNr, kontingent, aktiv,dateOfPayment,membershipType,arrears);
+            memberContingent = new Contingent(memberName, memberPhoneNumber, memberAddress, memberDateOfBirth, memberNr, kontingent, aktiv,dateOfPayment,nextPayment,membershipType,arrears);
             contigents.add(memberContingent);
         }
     }//end of loadMemberTxt
