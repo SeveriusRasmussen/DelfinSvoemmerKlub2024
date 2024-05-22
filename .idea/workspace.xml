@@ -4,13 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1631485a-b898-48d6-b9bd-658763b50935" name="Changes" comment="First Commit 2024/05/13">
-      <change afterPath="$PROJECT_DIR$/src/Login.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="1631485a-b898-48d6-b9bd-658763b50935" name="Changes" comment="Added Login and UI class, updated Main with login calls">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Employee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DelfinSvoemmerKlub2024.iml" beforeDir="false" afterPath="$PROJECT_DIR$/DelfinSvoemmerKlub2024.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Login.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,18 +24,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "Lasse-OT"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Lasse-OT&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/SeveriusRasmussen/DelfinSvoemmerKlub2024",
-    "accountId": "27e1eb71-ac51-481e-9070-5880ac49ab5c"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/SeveriusRasmussen/DelfinSvoemmerKlub2024&quot;,
+    &quot;accountId&quot;: &quot;27e1eb71-ac51-481e-9070-5880ac49ab5c&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
 }</component>
@@ -51,18 +48,36 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;JAR Application.bcrypt-0.10.2.jar.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/lasse/OneDrive/Dokumenter/DelfinSvoemmerKlub2024/src/Main.java&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;advanced.settings&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RunManager">
+    <configuration name="bcrypt-0.10.2.jar" type="JarApplication" temporary="true">
+      <option name="JAR_PATH" value="$PROJECT_DIR$/src/bcrypt-0.10.2.jar" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JAR Application.bcrypt-0.10.2.jar" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -80,7 +95,9 @@
       <option name="presentableId" value="Default" />
       <updated>1715596849209</updated>
       <workItem from="1715596850210" duration="1634000" />
-      <workItem from="1715775658706" duration="1114000" />
+      <workItem from="1715775658706" duration="5221000" />
+      <workItem from="1715781128783" duration="1440000" />
+      <workItem from="1716373146039" duration="281000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit 2024/05/13">
       <option name="closed" value="true" />
@@ -98,7 +115,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715601008055</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Added Login and UI class, updated Main with login calls">
+      <option name="closed" value="true" />
+      <created>1715776965707</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1715776965708</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -106,6 +131,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="First Commit 2024/05/13" />
-    <option name="LAST_COMMIT_MESSAGE" value="First Commit 2024/05/13" />
+    <MESSAGE value="Added Login and UI class, updated Main with login calls" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Login and UI class, updated Main with login calls" />
   </component>
 </project>
