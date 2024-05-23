@@ -13,6 +13,7 @@ public class SwimmingResult {
         private SwimmingDisciplin swimmingDiscipline;
         private int time;
         private LocalDate dateOfResult;
+        private String CompetitionName;
 
         public SwimmingResult(int memberNr, SwimmingDisciplin swimmingDiscipline, int time, LocalDate dateOfResult) {
             this.memberNr=memberNr;
@@ -45,40 +46,20 @@ public class SwimmingResult {
         this.swimmingDiscipline = swimmingDiscipline;
     }
 
+    public String toPrint (){
+            return (getMemberNr()+ " ; " +getDiscipline() + " ; "+time + " ; " + dateOfResult +" ;\n");
+    }
+
+    public String toString(){
+        return ("Number of the swimmer: " + memberNr+
+                "\nDisciplin            : " + swimmingDiscipline+
+                "\nTime                 : " + time+
+                "\nDate of the result   : "+dateOfResult +"\n");
+    }
+
     public SwimmingDisciplin getDiscipline(){
             return swimmingDiscipline;
         }
-        public static void registrerSwimResult(ArrayList <SwimmingResult> swimmingResults){
-            int memberNb= intPrompt("Enter the swimmer ID: ");
-            String discipline = stringPrompt("Enter the discipline: ");
-            int newTime = intPrompt("Enter the swimmer new time: ");
-            SwimmingDisciplin disciplin=disciplin= SwimmingDisciplin.valueOf(discipline);
-            LocalDate date =LocalDateInput();
-
-            //using a forloop to search if the swimmer with this ID already has an old time
-            SwimmingResult resultExist=null;
-            boolean swimmerExist=false;
-            for (SwimmingResult swR: swimmingResults){
-                if ((swR.getMemberNr()==memberNb)&&(swR.getDiscipline().equals(disciplin))){
-                    resultExist=swR;
-                    swimmerExist=true;
-                    System.out.println("match found: the swimmer you are searching for is found: " + swR);
-                    break;
-                }
-            }//end for
-
-            if (swimmerExist){ //once the swimmer is found, we will compare the 2 times
-                if (newTime< resultExist.getTime()){
-                    resultExist.setTime(newTime);
-                    resultExist.setDateOfResult(date);
-                    System.out.println("the swimmer is updated with the new time and date");
-                } else {
-                    System.out.println("the old time was better, the swimmer will not be updated");
-                }
-            } else {
-                System.out.println("No matches found for the swimmer and disciplin you are looking for");
-            }
-        }//end of registrerSwimResult
 
     public int getTime(){
             return time;

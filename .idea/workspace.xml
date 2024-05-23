@@ -4,12 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1631485a-b898-48d6-b9bd-658763b50935" name="Changes" comment="Added Login and UI class, updated Main with login calls">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_16-05-2024_08_16__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_16-05-2024_08_16__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_16-05-2024_19_23__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_16-05-2024_19_23__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_15_2024_3_20_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_15_2024_3_20_PM__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_15_2024_3_22_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_15_2024_3_22_PM__Changes_.xml" afterDir="false" />
+    <list default="true" id="1631485a-b898-48d6-b9bd-658763b50935" name="Changes" comment="testet. til trainer">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main_package/UI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main_package/UI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main_package/db/MemberList.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main_package/db/MemberList.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main_package/db/SwimResultList.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main_package/db/SwimResultList.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main_package/other/Util.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main_package/other/Util.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main_package/people/PersonMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main_package/people/PersonMethods.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -55,7 +55,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Lina/IdeaProjects/honolulu_CarRental2&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Lina/IdeaProjects/DelfinSvoemmerKlub2024&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -94,6 +94,8 @@
       <workItem from="1715937826078" duration="20414000" />
       <workItem from="1716016662297" duration="6359000" />
       <workItem from="1716108161268" duration="7634000" />
+      <workItem from="1716371347823" duration="7820000" />
+      <workItem from="1716400079618" duration="4654000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit 2024/05/13">
       <option name="closed" value="true" />
@@ -183,15 +185,39 @@
       <option name="project" value="LOCAL" />
       <updated>1716335300779</updated>
     </task>
-    <task id="LOCAL-00012" summary="Added Login and UI class, updated Main with login calls">
+    <task id="LOCAL-00012" summary="changes: move methods">
       <option name="closed" value="true" />
-      <created>1716379226605</created>
+      <created>1716362435812</created>
       <option name="number" value="00012" />
       <option name="presentableId" value="LOCAL-00012" />
       <option name="project" value="LOCAL" />
-      <updated>1716379226605</updated>
+      <updated>1716362435812</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="case3: årlige revenue">
+      <option name="closed" value="true" />
+      <created>1716362609129</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1716362609129</updated>
+    </task>
+    <task id="LOCAL-00014" summary="det hele er testet. midt i sprint 2">
+      <option name="closed" value="true" />
+      <created>1716369972959</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1716369972959</updated>
+    </task>
+    <task id="LOCAL-00015" summary="testet. til trainer">
+      <option name="closed" value="true" />
+      <created>1716379950149</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1716379950150</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -219,7 +245,10 @@
     <MESSAGE value="Commit Lina" />
     <MESSAGE value="22 may first commit&#10;Søren R." />
     <MESSAGE value="22 may Second commit&#10;Søren R." />
-    <MESSAGE value="Added Login and UI class, updated Main with login calls" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Login and UI class, updated Main with login calls" />
+    <MESSAGE value="changes: move methods" />
+    <MESSAGE value="case3: årlige revenue" />
+    <MESSAGE value="det hele er testet. midt i sprint 2" />
+    <MESSAGE value="testet. til trainer" />
+    <option name="LAST_COMMIT_MESSAGE" value="testet. til trainer" />
   </component>
 </project>
