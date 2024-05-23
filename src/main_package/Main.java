@@ -44,7 +44,7 @@ public class Main {
 
 
         Employee currentUser = Login.attemptLogin(newLogin.makeLogins(),employees);
-        UI.userRole(currentUser, members, employees,memberContingent);
+        UI.userRole(currentUser, members, employees, memberContingent);
         //main_package.UI.userRole(currentUser);
 
     }

@@ -97,22 +97,17 @@ public class Filehandler {
         Contingent memberContingent;
         while (scan.hasNextLine()) {
             String[] contingentData = scan.nextLine().split(",");
-            String memberName = contingentData[0];
-            String memberPhoneNumber = contingentData[1];
-            String memberAddress = contingentData[2];
-            LocalDate memberDateOfBirth =LocalDate.parse(contingentData[3]);
-            //int memberAge = Integer.parseInt(contingentData[3]);
-            int memberNr = Integer.parseInt(contingentData[4]);
-            double kontingent = Double.parseDouble(contingentData[5]);
-            boolean aktiv = Boolean.parseBoolean(contingentData[6]);
-            LocalDate dateOfPayment = LocalDate.parse(contingentData[7]);
-            LocalDate nextPayment = LocalDate.parse(contingentData[8]);
-            String membershipType = contingentData[9];
-            double debt = Double.parseDouble(contingentData[10]);
-            Contingent newContigent = new Contingent();
+            int memberNr = Integer.parseInt(contingentData[0]);
+            LocalDate dateOfPayment = LocalDate.parse(contingentData[1]);
+            LocalDate nextPayment = LocalDate.parse(contingentData[2]);
+            boolean arrears = Boolean.parseBoolean(contingentData[3]);
+            double debt = Double.parseDouble(contingentData[4]);
 
-            memberContingent = new Contingent(dateOfPayment,nextPayment,false,debt);
+            memberContingent = new Contingent(memberNr, dateOfPayment, nextPayment, arrears, debt);
             contigents.add(memberContingent);
+        }
+        for (Contingent contingent:contigents){
+            System.out.println(contingent);
         }
     }//end of loadMemberTxt
 
@@ -136,6 +131,15 @@ public class Filehandler {
         BufferedWriter out = new BufferedWriter(new FileWriter("src/main_package/db/SwimResultList.txt"));
         for (SwimmingResult swR:swimmingResults){
             out.write(swR.toPrint());
+        }
+        out.close();
+    }
+
+    public static void writeToFileContingent(Contingent newContingent, ArrayList <Contingent> contingents) throws IOException{
+        BufferedWriter out = new BufferedWriter(new FileWriter("src/main_package/db/Contingent.txt"));
+        contingents.add(newContingent);
+        for (Contingent writeContingent : contingents){
+            out.write(writeContingent.toPrint());
         }
         out.close();
     }

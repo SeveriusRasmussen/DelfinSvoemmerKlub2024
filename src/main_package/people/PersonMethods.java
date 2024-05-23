@@ -67,7 +67,7 @@ public class PersonMethods {
 
     //___________MEMBER MENU___________________
     // Create a new member for the Member list
-    public static void createMember(Scanner input, ArrayList<Member> members) throws IOException {
+    public static void createMember(Scanner input, ArrayList<Member> members, ArrayList <Contingent> contingens) throws IOException {
         // Name input
         System.out.println("Enter name:");
         String newName = input.nextLine();
@@ -143,13 +143,15 @@ public class PersonMethods {
                 System.out.println("Unable to determine membership type. Using default contingent.");
             }
         }
-        Contingent newContigent = new Contingent(LocalDate.now(),LocalDate.now().plusDays(90),false,newKontingent);
+        Contingent newContigent = new Contingent(newMemberNr, LocalDate.now(),LocalDate.now().plusDays(90),false,newKontingent);
 
         Member newMember = new Member(newName, newPhoneNumber, newAddress, dateOfBirth, newMemberNr, newContigent, newAktiv);
         members.add(newMember); // Added to the ArrayList in main_package.Main.
 
         Filehandler.writeToFileMember(members);
         System.out.println("New person created and saved successfully.");
+
+        Filehandler.writeToFileContingent(newContigent, contingens);
 
     }//end of create member
 

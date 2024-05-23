@@ -19,3 +19,5 @@ Lasse,8763251,i do not know,1992-01-01,19,true
 Jørgen Rasmussen,78643423,et sted,1989-09-09,20,false
 BinLaden,14314131,terroristgade,1866-06-06,21,false
 lkqjhx,2743612,sdh,2024-11-01,22,true
+Birgitte Larsen,12345678,Ingerslevsgade 170 1705 København,1990-05-04,23,true
+Sel,21½12,somethomsfbs,2000-09-03,24,true

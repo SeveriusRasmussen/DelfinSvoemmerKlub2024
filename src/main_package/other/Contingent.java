@@ -7,6 +7,7 @@ import java.util.List;
 
 public class Contingent {
 
+    private int memberNr;
     private LocalDate dateOfPayment; //I DAG
     private LocalDate nextpayment; //+90 dage
     //private String membershipType; //Senior eller Junior // slet
@@ -19,13 +20,30 @@ public class Contingent {
 
 
 
-    public  Contingent(LocalDate dateOfPayment, LocalDate nextpayment, boolean arrears, double debt) {
+    public  Contingent(int memberNr, LocalDate dateOfPayment, LocalDate nextpayment, boolean arrears, double debt) {
         //super(name, phoneNumber, address, dateOfBirth, memberNr, contingent, aktiv);
+        this.memberNr = memberNr;
         this.dateOfPayment = dateOfPayment;
-        this.nextpayment=nextpayment;
+        this.nextpayment = nextpayment;
         //this.membershipType = membershipType;
         this.arrears = arrears;
         this.debt = debt;
+    }
+
+    public String toPrint() {
+        return (getMemberNr() + "," + getDateOfPayment()+ "," + getNextPayment() + "," + getArrears() + "," + getDebt() + "\n");
+    }
+
+    public int getMemberNr(){
+        return  this.memberNr;
+    }
+
+    public LocalDate getNextPayment(){
+        return this.nextpayment;
+    }
+
+    public double getDebt(){
+        return this.debt;
     }
 
     public LocalDate getDateOfPayment() {
@@ -40,8 +58,11 @@ public class Contingent {
 
     @Override
     public String toString() {
-        return "Last payment: " + this.dateOfPayment + "\nMembership Type: " + "\nArrears: " + arrears + "\nDebt: "+debt+"\n";
+        return "Membership Number: " + memberNr + "\n" +
+                "First payment: " + dateOfPayment + "\n" +
+                "Next payment: " + nextpayment + "\n" +
+                "Is in arrear: " + arrears + "\n" +
+                "Total debt: " + debt + "\n";
+
     }
-
-
 }

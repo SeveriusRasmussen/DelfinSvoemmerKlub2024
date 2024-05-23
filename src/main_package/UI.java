@@ -17,14 +17,14 @@ import java.util.Scanner;
 
 public class UI {
 
-    public static void userRole(Employee currentUser, ArrayList<Member> members, ArrayList<Employee> employees, ArrayList<Contingent> membersContingent) throws IOException {
+    public static void userRole(Employee currentUser, ArrayList<Member> members, ArrayList<Employee> employees, ArrayList<Contingent> contingents) throws IOException {
 
         switch(currentUser.getAccesGroup()){
             case 1:
-                foremanMenu(members, employees);
+                foremanMenu(members, employees, contingents);
                 break;
             case 2:
-                accountantMenu(currentUser, membersContingent, members);
+                accountantMenu(currentUser, contingents, members);
                 break;
             case 3:
                 trainerMenu(currentUser,members);
@@ -35,7 +35,7 @@ public class UI {
     }
 
     // Menu for the Foreman. with CRUD for members and employees.
-    public static void foremanMenu(ArrayList<Member> members, ArrayList<Employee> employees) throws IOException {
+    public static void foremanMenu(ArrayList<Member> members, ArrayList<Employee> employees, ArrayList <Contingent> contingents) throws IOException {
         Scanner input = new Scanner(System.in);
         boolean running = true;
 
@@ -53,7 +53,7 @@ public class UI {
 
                 switch(nav) {
                     case 1:
-                        foremanMemberMenu(members);
+                        foremanMemberMenu(members, contingents);
                         break;
                     case 2:
                         foremanEmployeeMenu(employees);
@@ -73,7 +73,7 @@ public class UI {
     }
 
     // CRUD for Members
-    public static void foremanMemberMenu(ArrayList<Member> members) throws IOException {
+    public static void foremanMemberMenu(ArrayList<Member> members, ArrayList <Contingent> contingens) throws IOException {
         Scanner input = new Scanner(System.in);
         boolean running = true;
 
@@ -93,7 +93,7 @@ public class UI {
                 switch(nav){
                     case 1:
                         System.out.println("Create a member");
-                        PersonMethods.createMember(input, members);
+                        PersonMethods.createMember(input, members, contingens);
                         break;
                     case 2:
                         System.out.println("Print the member list");

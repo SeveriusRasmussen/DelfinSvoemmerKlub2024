@@ -22,7 +22,6 @@ public class ContingentMethods{
         int seniorCount = 0;
         int verySeniorCount = 0;
         int passiveCount = 0;
-
         int juniorRevenue = 0;
         int seniorRevenue = 0;
         int verySeniorRevenue = 0;
