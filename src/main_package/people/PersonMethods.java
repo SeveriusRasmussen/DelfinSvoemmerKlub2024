@@ -18,7 +18,7 @@ public class PersonMethods {
     PersonMethods(ArrayList<Member>listOfMembers){
         this.listOfMembers=listOfMembers;
     }
-
+    //__________CompetitionMember_____________
     public static ArrayList<CompetitionMember> getBestFive(ArrayList<CompetitionMember>members){
         String disciplin = Util.stringPrompt("Which disciplin");
         SwimmingDisciplin disciplin1= SwimmingDisciplin.valueOf(disciplin);
@@ -64,6 +64,8 @@ public class PersonMethods {
         return compMembers;
     }
 
+    //___________MEMBER MENU___________________
+    // Create a new member for the Member list
     public static void createMember(Scanner input, ArrayList<Member> members) throws IOException {
         // Name input
         System.out.println("Enter name:");
@@ -98,13 +100,16 @@ public class PersonMethods {
         }
 
         // Getting the new member a generated number.
-        //try {
         System.out.println("The member is getting an number...");
-            /*Thread.sleep(2000);
+        /*
+        try {
+        System.out.println("The member is getting an number...");
+        Thread.sleep(2000);
         } catch (InterruptedException e) {
             //Thread.currentThread().interrupt();
             System.out.println("Unable to complete operation.");
-        }*/
+        }
+        */
         int newMemberNr = Util.createMemberShipNumber(members);
         System.out.println("The new member got the number: " + newMemberNr);
 
@@ -145,6 +150,7 @@ public class PersonMethods {
 
     }//end of create member
 
+    // Print the Member list to the output.
     public static void printTheMemberList(ArrayList<Member> members) {
         if (members.isEmpty()) {
             System.out.println("No people found.");
@@ -157,13 +163,14 @@ public class PersonMethods {
         System.out.println("___________________________________________");
     }
 
-    // print the person list in a numbered list for edit and delete methods.
+    // print the member list in a numbered list for edit and delete members-methods.
     public static void printNumberedMemberNames(ArrayList<Member> members) {
         for (int i = 0; i < members.size(); i++) {
             System.out.println((i + 1) + ". " + members.get(i).getName());
         }
     }
-    // Edit one of the people in the person list
+
+    // Edit one of the members in the member list
     public static void editMember(Scanner input, ArrayList<Member> members) throws IOException{
         printNumberedMemberNames(members);
 
@@ -231,10 +238,9 @@ public class PersonMethods {
                 System.out.println("Invalid choice");
         }
         Filehandler.writeToFileMember(members);
-    }//end of edit
+    }
 
-
-    // delete one of the people in the person list
+    // delete one of the members in the member list
     public static void deleteMember(Scanner input, ArrayList<Member> members) throws IOException {
         printNumberedMemberNames(members);
 
@@ -250,8 +256,202 @@ public class PersonMethods {
         Member memberToDelete = members.remove(memberNumber - 1);
         System.out.println(memberToDelete.getName() + " deleted successfully.");
         Filehandler.writeToFileMember(members);
-    }//end of deleteMember
+    }
 
+    //____________EMPLOYEE MENU__________________
+    // Create a new employee for the Employee list
+    public static void createEmployee(Scanner input, ArrayList<Employee> employees) throws IOException {
+        // Name input
+        System.out.println("Enter name:");
+        String newName = input.nextLine();
+
+        // Date of Birth input
+        System.out.println("Enter date of birth in the form year-month-day:");
+        LocalDate dateOfBirth =LocalDate.parse(input.next());
+        input.nextLine(); // Consume the newLine
+
+        // Address input
+        System.out.println("Enter address:");
+        String newAdress = input.nextLine();
+
+        // Phone nr input
+        System.out.println("Enter phone number:");
+        String newPhoneNumber = input.nextLine();
+
+        // Access group input
+        System.out.println("""
+                           Choose a group for the employee to work in:
+                           1. Management
+                           2. Cashier
+                           3. Trainer
+                           """);
+        int newAccesGroup = input.nextInt();
+        input.nextLine(); // Consume the newLine
+
+        // Username input
+        System.out.println("Enter a username for the new employee");
+        String newUsername = input.nextLine();
+
+        // Password input
+        System.out.println("Enter Password for the new employee");
+        String newPassword = input.nextLine();
+
+        // Jobtitel choice
+        //Kun formand, træner, kasser? Er der andre?
+        System.out.println("Choose which job titel to give to the new employee");
+        String newJobtitle = input.nextLine();
+
+        Employee newEmployee = new Employee(newName, newPhoneNumber, newAdress, dateOfBirth, newAccesGroup, newPassword, newJobtitle, newUsername);
+        employees.add(newEmployee); // Added to the ArrayList in main_package.Main.
+
+        Filehandler.writeToFileEmployee(employees);
+        System.out.println("New person created and saved successfully.");
+    }
+
+    // Print the Employee list to the output.
+    public static void printTheEmployeeList(ArrayList<Employee> employees) {
+        if (employees.isEmpty()) {
+            System.out.println("No people found.");
+            return;
+        }
+
+        for (Employee employee : employees) {
+            System.out.println(employee);
+        }
+        System.out.println("___________________________________________");
+    }
+
+    // Print the Employee list in a numbered list for edit and delete employee-methods
+    public static void printNumberedEmployeeNames(ArrayList<Employee> employees) {
+        for (int i = 0; i < employees.size(); i++) {
+            System.out.println((i + 1) + ". " + employees.get(i).getName());
+        }
+    }
+
+    // Edit one of the employee in the employee list
+    public static void editEmployee(Scanner input, ArrayList<Employee> employees) throws IOException {
+        printNumberedEmployeeNames(employees);
+
+        // choose one employee to edit
+        System.out.println("Enter the number of the person you want to edit:");
+        int employeeNumber = input.nextInt();
+        input.nextLine(); // consume the newline
+
+        if (employeeNumber < 1 || employeeNumber > employees.size()) {
+            System.out.println("Invalid member number");
+            return;
+        }
+
+        Employee employeeToEdit = employees.get(employeeNumber - 1);
+
+        // display full information of the selected member
+        System.out.println("You have selected the following member:");
+        System.out.println(employeeToEdit + "\n___________________________________________");
+
+        System.out.println("""
+                           Which information do you want to change on the chosen employee?
+                           1. Name
+                           2. Date Of Birth
+                           3. Address
+                           4. Phone Number
+                           5. UserName
+                           6. Password (Need the user's password to process)
+                           7. Job Titel
+                           8. Access Group
+                           9. Cancel
+                           """);
+
+        int attributeChoice = input.nextInt();
+        input.nextLine(); // Consume the newline
+
+        switch (attributeChoice) {
+            case 1:
+                System.out.println("Enter new name:");
+                employeeToEdit.setName(input.nextLine());
+                System.out.println("Name updated successfully.");
+                break;
+            case 2:
+                System.out.println("Enter new date of birth in the form year-month-day:");
+                LocalDate newdateOfBirth=LocalDate.parse(input.next());
+                employeeToEdit.setDateOfBirth(newdateOfBirth);
+                input.nextLine(); // consume the newline
+                System.out.println("Date of birth updated successfully.");
+                break;
+            case 3:
+                System.out.println("Enter new address:");
+                employeeToEdit.setAddress(input.nextLine());
+                System.out.println("Address updated successfully.");
+                break;
+            case 4:
+                System.out.println("Enter new Phone number:");
+                employeeToEdit.setPhoneNumber(input.nextLine());
+                System.out.println("Phone number updated successfully.");
+                break;
+            case 5:
+                System.out.println("Enter new Username:");
+                employeeToEdit.setUsername(input.nextLine());
+                System.out.println("Username updated successfully");
+                break;
+            case 6:
+                System.out.println("Please enter the password to process:");
+                String currentPassword = input.nextLine();
+                if (currentPassword.equals(employeeToEdit.getPassword())) {
+                    System.out.println("Enter new password:");
+                    employeeToEdit.setPassword(input.nextLine());
+                    System.out.println("Password updated successfully");
+                } else {
+                    System.out.println("Incorrect password. Unable to process");
+                }
+                break;
+            case 7:
+                System.out.println("Enter new job title:");
+                employeeToEdit.setJobtitle(input.nextLine());
+                System.out.println("Job title updated successfully.");
+                break;
+            case 8:
+                System.out.println("""
+                                   Choose a new access group for the employee:
+                                   1. Management
+                                   2. Cashier
+                                   3. Trainer
+                                   """);
+                int newAccessGroup = input.nextInt();
+                input.nextLine(); // Consume the newline
+                employeeToEdit.setAccesGroup(newAccessGroup);
+                System.out.println("Access group updated successfully.");
+                break;
+            case 9:
+                System.out.println("Edit cancelled");
+                return;
+            default:
+                System.out.println("Invalid choice");
+        }
+        Filehandler.writeToFileEmployee(employees);
+    }
+
+    // Delete one of the employee in the employee list
+    public static void deleteEmployee(Scanner input, ArrayList<Employee> employees) {
+        printNumberedEmployeeNames(employees);
+
+        System.out.println("Enter the number of the employee you want to delete:");
+        int employeeNumber = input.nextInt();
+        input.nextLine();
+
+        if (employeeNumber < 1 || employeeNumber > employees.size()) {
+            System.out.println("Invalid employee number.");
+            return;
+        }
+
+        Employee employeeToDelete = employees.remove(employeeNumber - 1);
+        System.out.println(employeeToDelete.getName() + " deleted successfully.");
+        try {
+            Filehandler.writeToFileEmployee(employees);
+        } catch (IOException e) {
+            System.out.println("Error saving changes");
+        }
+    }
+
+    //__________________SwimResults_________________
     public static void registrerSwimResult(ArrayList <SwimmingResult> swimmingResults)throws IOException {
         Scanner scan=new Scanner(System.in);
         int memberNb= intPrompt("Enter the swimmer ID: ");

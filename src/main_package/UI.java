@@ -17,11 +17,11 @@ import java.util.Scanner;
 
 public class UI {
 
-    public static void userRole(Employee currentUser, ArrayList<Member> members, ArrayList<Contingent> membersContingent) throws IOException {
+    public static void userRole(Employee currentUser, ArrayList<Member> members, ArrayList<Employee> employees, ArrayList<Contingent> membersContingent) throws IOException {
 
         switch(currentUser.getAccesGroup()){
             case 1:
-                foremanMenu(currentUser, members);
+                foremanMenu(members, employees);
                 break;
             case 2:
                 accountantMenu(currentUser, membersContingent, members);
@@ -34,7 +34,46 @@ public class UI {
         }
     }
 
-    public static void foremanMenu(Employee currentUser, ArrayList<Member> members) throws IOException {
+    // Menu for the Foreman. with CRUD for members and employees.
+    public static void foremanMenu(ArrayList<Member> members, ArrayList<Employee> employees) throws IOException {
+        Scanner input = new Scanner(System.in);
+        boolean running = true;
+
+        while (running) {
+            System.out.println("""
+                               Foreman Menu
+                               What do you want to do?
+                               1. Manage members
+                               2. Manage Employees
+                               3. Exit the program.
+                               """);
+            try {
+                int nav = input.nextInt();
+                input.nextLine();
+
+                switch(nav) {
+                    case 1:
+                        foremanMemberMenu(members);
+                        break;
+                    case 2:
+                        foremanEmployeeMenu(employees);
+                        break;
+                    case 3:
+                        System.out.println("The program is closing.");
+                        running = false;
+                        break;
+                    default:
+                        System.out.println("Invalid input. Please give me a number between 1 and 3.");
+                }
+            } catch (InputMismatchException e) {
+                System.out.println("Invalid input. Please enter a number.");
+                input.nextLine(); // consume invalid input.
+            }
+        }
+    }
+
+    // CRUD for Members
+    public static void foremanMemberMenu(ArrayList<Member> members) throws IOException {
         Scanner input = new Scanner(System.in);
         boolean running = true;
 
@@ -45,7 +84,7 @@ public class UI {
                            2. Print out the list of members
                            3. Edit one of members
                            4. Delete one of members
-                           7. Exit
+                           7. Return to foreman menu
                            """);
             try {
                 int nav = input.nextInt();
@@ -69,7 +108,7 @@ public class UI {
                         PersonMethods.deleteMember(input, members);
                         break;
                     case 7:
-                        System.out.println("The program is closing.");
+                        System.out.println("Going back to the foreman menu");
                         running = false;
                         break;
                     default:
@@ -80,7 +119,56 @@ public class UI {
                 input.nextLine(); // consume invalid input.
             }
         }
-    }// end of formand menu
+    }// End of Member Menu for the foreman
+
+    // CRUD for Employees.
+    public static void foremanEmployeeMenu(ArrayList<Employee> employees) throws IOException {
+        Scanner input = new Scanner(System.in);
+        boolean running = true;
+
+        while (running) {
+            System.out.println("""
+                           Here are your options:
+                           1. Create a new employee
+                           2. Print out the list of employees
+                           3. Edit one of the employees
+                           4. Delete one of the employees
+                           7. Return to foreman menu
+                           """);
+            try {
+                int nav = input.nextInt();
+                input.nextLine(); // consume the newline
+
+                switch(nav){
+                    case 1:
+                        System.out.println("Create a new employee");
+                        PersonMethods.createEmployee(input, employees);
+                        break;
+                    case 2:
+                        System.out.println("Print the employee list");
+                        PersonMethods.printTheEmployeeList(employees);
+                        break;
+                    case 3:
+                        System.out.println("Edit one of the employees");
+                        PersonMethods.editEmployee(input, employees);
+                        break;
+                    case 4:
+                        System.out.println("Delete one of the employees");
+                        PersonMethods.deleteEmployee(input, employees);
+                        break;
+                    case 7:
+                        System.out.println("Going back to the foreman menu");
+                        running = false;
+                        break;
+                    default:
+                        System.out.println("Invalid option. Please try again.");
+                }
+            } catch (InputMismatchException e) {
+                System.out.println("Invalid input. Please enter a number.");
+                input.nextLine(); // consume invalid input.
+            }
+        }
+    }// End of Employee Menu for the foreman.
 
     public static void accountantMenu(Employee currentUser, ArrayList<Contingent> membersContingent, ArrayList<Member> member) {
         //kald scanner class og brug den i stedet for at have scanner her
