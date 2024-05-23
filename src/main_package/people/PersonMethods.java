@@ -1,6 +1,7 @@
 package main_package.people;
 //package main_package.other.Util;
 
+import main_package.other.Contingent;
 import main_package.other.Filehandler;
 import main_package.other.Util;
 
@@ -124,6 +125,7 @@ public class PersonMethods {
               For medlemmer over 60 år gives der 25 % rabat af seniortaksten.
               For passivt medlemskab er taksten 500 kr. årligt”*/
         double newKontingent = 0.0;
+
         if (!newAktiv) {
             System.out.println("Passive Membership for all age: 500 DKK per year.");
             newKontingent = 500;
@@ -141,8 +143,9 @@ public class PersonMethods {
                 System.out.println("Unable to determine membership type. Using default contingent.");
             }
         }
+        Contingent newContigent = new Contingent(LocalDate.now(),LocalDate.now().plusDays(90),false,newKontingent);
 
-        Member newMember = new Member(newName, newPhoneNumber, newAddress, dateOfBirth, newMemberNr, newKontingent, newAktiv);
+        Member newMember = new Member(newName, newPhoneNumber, newAddress, dateOfBirth, newMemberNr, newContigent, newAktiv);
         members.add(newMember); // Added to the ArrayList in main_package.Main.
 
         Filehandler.writeToFileMember(members);

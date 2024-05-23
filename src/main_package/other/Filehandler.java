@@ -42,9 +42,10 @@ public class Filehandler {
             LocalDate memeberDateOfBirth =LocalDate.parse(memberData[3]);
             //int memberAge = Integer.parseInt(memberData[3]);
             int memberNr = Integer.parseInt(memberData[4]);
-            double kontingent = Double.parseDouble(memberData[5]);
-            boolean aktiv = Boolean.parseBoolean(memberData[6]);
-            member = new Member(memberName, memberPhoneNumber, memberAddress, memeberDateOfBirth, memberNr, kontingent, aktiv);
+            //double kontingent = Double.parseDouble(memberData[5]);
+            boolean aktiv = Boolean.parseBoolean(memberData[5]);
+            Contingent contingent = new Contingent();
+            member = new Member(memberName, memberPhoneNumber, memberAddress, memeberDateOfBirth, memberNr,contingent,aktiv);
             members.add(member);
         }
     }//end of loadMemberTxt
@@ -107,9 +108,10 @@ public class Filehandler {
             LocalDate dateOfPayment = LocalDate.parse(contingentData[7]);
             LocalDate nextPayment = LocalDate.parse(contingentData[8]);
             String membershipType = contingentData[9];
-            double arrears = Double.parseDouble(contingentData[10]);
+            double debt = Double.parseDouble(contingentData[10]);
+            Contingent newContigent = new Contingent();
 
-            memberContingent = new Contingent(memberName, memberPhoneNumber, memberAddress, memberDateOfBirth, memberNr, kontingent, aktiv,dateOfPayment,nextPayment,membershipType,arrears);
+            memberContingent = new Contingent(dateOfPayment,nextPayment,false,debt);
             contigents.add(memberContingent);
         }
     }//end of loadMemberTxt

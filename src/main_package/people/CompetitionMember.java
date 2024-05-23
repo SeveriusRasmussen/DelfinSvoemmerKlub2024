@@ -1,6 +1,7 @@
 package main_package.people;
 
 import main_package.other.ComparableBestTime;
+import main_package.other.Contingent;
 import main_package.other.Util;
 
 import java.time.LocalDate;
@@ -12,8 +13,8 @@ public class CompetitionMember extends Member {
     private SwimmingDisciplin disciplin;
     //ArrayList<main_package.people.SwimmingResult> swimmingResults=new ArrayList<>();
 
-    public CompetitionMember(String name, String phoneNumber, String adress, LocalDate dateOfBirth, int memberNr, double kontingent, boolean aktiv, SwimmingDisciplin disciplin, ArrayList<SwimmingResult> swimResults) {
-        super(name, phoneNumber, adress, dateOfBirth, memberNr, kontingent, aktiv);
+    public CompetitionMember(String name, String phoneNumber, String adress, LocalDate dateOfBirth, int memberNr, Contingent contingent, boolean aktiv, SwimmingDisciplin disciplin, ArrayList<SwimmingResult> swimResults) {
+        super(name, phoneNumber, adress, dateOfBirth, memberNr, contingent, aktiv);
         this.disciplin = disciplin;
         this.swimResults = swimResults;
     }

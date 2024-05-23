@@ -190,7 +190,7 @@ public class UI {
                     break;
                 case 2: //skal laves igen af Lina
                     System.out.println("check restance");
-                    ContingentMethods.checkArrears(membersContingent, member);
+                    //ContingentMethods.checkArrears(membersContingent, member);
                     break;
                 case 3:
                     System.out.println("Exit.");

@@ -4,7 +4,7 @@ import java.util.*;
 
 public class ContingentMethods{
 
-    public static void checkArrears(ArrayList<Contingent> memberContingent, ArrayList<Member> memberList) {
+    /*public static void checkArrears(ArrayList<Contingent> memberContingent, ArrayList<Member> memberList) {
         for (Contingent c : memberContingent) {
             if (c.getArrears() > 0) {
                 for (Member m : memberList) {
@@ -13,12 +13,10 @@ public class ContingentMethods{
                         System.out.println(c);
                     }
                 }
-
             }
         }
-    }
-
-    public static void calculateRevenue (List<Member> members){
+    }*/
+    public static void calculateRevenue (List<Member> members) {
 
         int juniorCount = 0;
         int seniorCount = 0;
@@ -55,6 +53,7 @@ public class ContingentMethods{
         System.out.println("There are " + passiveCount + " passive members that generate " + passiveRevenue + " revenue");
         System.out.println("The total yearly revenue is " + totalRevenue + " Kr.");
     }
+
 }
 
 
