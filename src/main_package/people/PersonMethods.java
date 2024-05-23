@@ -552,7 +552,8 @@ public class PersonMethods {
 
     }//end of seSwimmerResultAllDisciplines
 
-    public static void viewListSwimmers(){
+    public static void viewListSwimmingResults(ArrayList<SwimmingResult>swimmingResults){
+
 
     }//end of viewListSwimmers
 

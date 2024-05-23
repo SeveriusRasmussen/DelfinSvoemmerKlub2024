@@ -222,7 +222,7 @@ public class UI {
             //kald scanner class og brug den i stedet for at have scanner her
             switch (nav) {
                 case 1: //LASSE: View list of all swimmers
-                    PersonMethods.viewListSwimmers();
+                    PersonMethods.viewListSwimmingResults(swimmingResults);
                     //choose between: all swimmers, junior- eller seniorsvømmer, motionist eller konkurrencesvømmer.
 
                     break;
