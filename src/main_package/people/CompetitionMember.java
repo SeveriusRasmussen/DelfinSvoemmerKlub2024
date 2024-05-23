@@ -13,7 +13,7 @@ public class CompetitionMember extends Member {
     private SwimmingDisciplin disciplin;
     //ArrayList<main_package.people.SwimmingResult> swimmingResults=new ArrayList<>();
 
-    public CompetitionMember(String name, String phoneNumber, String adress, LocalDate dateOfBirth, int memberNr, Contingent contingent, boolean aktiv, SwimmingDisciplin disciplin, ArrayList<SwimmingResult> swimResults) {
+    public CompetitionMember(String name, String phoneNumber, String adress, LocalDate dateOfBirth, int memberNr, double contingent, boolean aktiv, SwimmingDisciplin disciplin, ArrayList<SwimmingResult> swimResults) {
         super(name, phoneNumber, adress, dateOfBirth, memberNr, contingent, aktiv);
         this.disciplin = disciplin;
         this.swimResults = swimResults;

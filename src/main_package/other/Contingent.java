@@ -46,14 +46,28 @@ public class Contingent {
         return this.debt;
     }
 
+    public double setDebt(double debt) {
+        return this.debt = debt;
+    }
+
     public LocalDate getDateOfPayment() {
         return this.dateOfPayment;
     }
-    /*public String getMembershipType() {
-        return this.membershipType;
-    }*/
+
+    public LocalDate setDateOfPayment(LocalDate today) {
+        return this.dateOfPayment = today;
+    }
+
+    public LocalDate setNextPayment(LocalDate in90days) {
+        return this.nextpayment = in90days;
+    }
+
     public boolean getArrears() {
         return this.arrears;
+    }
+
+    public boolean setArrears(boolean arrears) {
+        return this.arrears = arrears;
     }
 
     @Override
@@ -61,8 +75,8 @@ public class Contingent {
         return "Membership Number: " + memberNr + "\n" +
                 "First payment: " + dateOfPayment + "\n" +
                 "Next payment: " + nextpayment + "\n" +
-                "Is in arrear: " + arrears + "\n" +
-                "Total debt: " + debt + "\n";
+                "Is in arrears: " + arrears + "\n" +
+                "Total debt: " + debt;
 
     }
 }

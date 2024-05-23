@@ -170,14 +170,15 @@ public class UI {
         }
     }// End of Employee Menu for the foreman.
 
-    public static void accountantMenu(Employee currentUser, ArrayList<Contingent> membersContingent, ArrayList<Member> member) {
+    public static void accountantMenu(Employee currentUser, ArrayList<Contingent> membersContingent, ArrayList<Member> member) throws IOException {
         //kald scanner class og brug den i stedet for at have scanner her
         int nav = 0;
         System.out.println("""
                     Here are your options:
                     1. See the expected yearly revenue
-                    2. Members in arrear 
-                    3. Exit
+                    2. Members in arrears
+                    3. Remove arrears
+                    4. Exit
                     """);
         Scanner input = new Scanner(System.in);
         try {
@@ -188,11 +189,13 @@ public class UI {
                 case 1:
                     ContingentMethods.calculateRevenue(member);
                     break;
-                case 2: //skal laves igen af Lina
-                    System.out.println("tjek restance");
-                    //ContingentMethods.checkArrears(membersContingent, member);
+                case 2:
+                    ContingentMethods.checkArrears(membersContingent, member);
                     break;
                 case 3:
+                    ContingentMethods.removeArrears(membersContingent, member);
+                    break;
+                case 4:
                     System.out.println("Exit.");
                     System.exit(0);
                 default:

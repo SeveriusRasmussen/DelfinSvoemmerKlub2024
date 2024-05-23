@@ -29,6 +29,9 @@ public class Main {
         //Reads Contingent.txt and adds them to the ArrayList memberContingent
         Filehandler.loadContingentTxt(memberContingent);
 
+        //Checks and updates Contingent.txt if any of the Members has outstanding debt/in Arrears
+        ContingentMethods.updateArrears(memberContingent, members);
+
         //making a list for the employees
         ArrayList<Employee> employees = new ArrayList<>();
 
