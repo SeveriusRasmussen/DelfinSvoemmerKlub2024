@@ -16,3 +16,5 @@ Ellen,12413524,udbakken 16,2018-11-27,15,1000.0,true
 Heidi,34232232,Skruvby 119,1960-11-19,16,1200.0,true
 Søren,98765432,her,1985-01-20,18,500.0,false
 Lasse,8763251,i do not know,1992-01-01,19,1600.0,true
+Jørgen Rasmussen,78643423,et sted,1989-09-09,20,500.0,false
+BinLaden,14314131,terroristgade,1866-06-06,21,500.0,false

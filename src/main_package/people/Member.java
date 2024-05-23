@@ -50,6 +50,6 @@ public class Member extends Person {
     }
 
     public String toPrint() {
-        return (getName() + "," + getPhoneNumber()+ "," + getAddress() + "," + getDateOfBirth() + "," + memberNr + "," + kontingent + "," + aktiv+"\n");
+        return (getName() + "," + getPhoneNumber()+ "," + getAddress() + "," + getDateOfBirth() + "," + memberNr + "," + kontingent + "," + aktiv + "\n");
     }
 }
