@@ -13,53 +13,75 @@ import java.util.*;
 import static main_package.other.Util.*;
 
 public class PersonMethods {
-    ArrayList<SwimmingResult>listOfResults;
-    ArrayList<Member>listOfMembers;
 
-    PersonMethods(ArrayList<Member>listOfMembers){
-        this.listOfMembers=listOfMembers;
-    }
     //__________CompetitionMember_____________
-    public static ArrayList<CompetitionMember> getBestFive(ArrayList<CompetitionMember>members){
-        String disciplin = Util.stringPrompt("Which disciplin");
-        SwimmingDisciplin disciplin1= SwimmingDisciplin.valueOf(disciplin);
-        ArrayList<Integer>storedTimes = new ArrayList<>();
-        ArrayList<CompetitionMember>bestPerformingMembers=new ArrayList<>();
-        HashMap<Integer, Integer>record=new HashMap<>();
-        for(CompetitionMember cm:members){
-            ArrayList<SwimmingResult> currentSwimmersResults=cm.getResults();
-            for(SwimmingResult sr:currentSwimmersResults ){
-                if(sr.getDiscipline().equals(disciplin1)){
-                    record.put(sr.getTime(),cm.getMemberNr());
-                    storedTimes.add(sr.getTime());
+    public static void getBestFive(ArrayList<CompetitionMember> members) {
+        int agegroup = Util.getIntInputSwitch("Which agegroup?\n1 for senior\n2 for junior\n","Entered number is not one of the specified options",1,2);
 
+        String disciplin = Util.stringPrompt("Which disciplin");
+        SwimmingDisciplin disciplin1 = SwimmingDisciplin.valueOf(disciplin.toUpperCase());
+
+        ArrayList<Integer> storedTimes = new ArrayList<>();
+        ArrayList<CompetitionMember> bestPerformingMembersJunior = new ArrayList<>();
+        ArrayList<CompetitionMember> bestPerformingMembersSenior = new ArrayList<>();
+        HashMap<Integer, Integer> record = new HashMap<>();
+        for (CompetitionMember cm : members) {
+
+            ArrayList<SwimmingResult> currentSwimmersResults = cm.getResults();
+            for (SwimmingResult sr : currentSwimmersResults) {
+
+                if (sr.getDiscipline().equals(disciplin1)) {
+                    record.put(sr.getTime(), cm.getMemberNr());
+                    storedTimes.add(sr.getTime());
                 }
 
             }
         }
-        if(storedTimes.isEmpty()){
-            return null;
+
+
+            int length = (storedTimes.size()<5)? storedTimes.size() : 5;  // True : false
+            Collections.sort(storedTimes);
+                for (int i = 0; i < length; i++) {
+
+                    for (CompetitionMember cm : members) {
+                        if (cm.getMemberNr() == record.get(storedTimes.get(i)) && cm.getAge()>18) {
+                            bestPerformingMembersSenior.add(cm);
+                        }
+                        else if(cm.getMemberNr() == record.get(storedTimes.get(i)) && cm.getAge()<18) {
+                            bestPerformingMembersJunior.add(cm);
+                        }
+
+
+                }
+
+        }
+        if(agegroup==1){
+            if(bestPerformingMembersSenior.isEmpty()){
+                System.out.println("No results found");
+            }else{
+            for(CompetitionMember cm: bestPerformingMembersSenior) {
+                System.out.println(cm);
+            }
+            }
         }
         else {
-            Collections.sort(storedTimes);
-            for (int i = 0; i < 5; i++) {
-                record.get(storedTimes.get(i));
-                for (CompetitionMember cm : members) {
-                    if (cm.getMemberNr() == record.get(storedTimes.get(i))) {
-                        bestPerformingMembers.add(cm);
-                    }
-                }
-
+            if(bestPerformingMembersJunior.isEmpty()){
+                System.out.println("No results found");
             }
-            return bestPerformingMembers;
+            else {
+                for (CompetitionMember cm : bestPerformingMembersJunior) {
+                    System.out.println(cm);
+                }
+            }
         }
     }
 
-    public static ArrayList<CompetitionMember> getCompMembers(ArrayList<Member>members){
-        ArrayList<CompetitionMember>compMembers = new ArrayList<>();
-        for(Member m:members){
-            if (m instanceof CompetitionMember){
+    public static ArrayList<CompetitionMember> getCompMembers(ArrayList<Member> members) {
+        ArrayList<CompetitionMember> compMembers = new ArrayList<>();
+        for (Member m : members) {
+            if (m instanceof CompetitionMember) {
                 compMembers.add((CompetitionMember) m);
+                System.out.println(m);
             }
         }
         return compMembers;
@@ -74,7 +96,7 @@ public class PersonMethods {
 
         // Date of Birth input
         System.out.println("Enter date of birth in the form year-month-day:");
-        LocalDate dateOfBirth =LocalDate.parse(input.next());
+        LocalDate dateOfBirth = LocalDate.parse(input.next());
         input.nextLine(); // Consume the newLine
 
         // Address input
@@ -132,7 +154,7 @@ public class PersonMethods {
         } else if (newAktiv) {
             if (age > 60) {
                 System.out.println("Active Membership for the pensions over 60 years old: 1200 DKK per year.");
-                newKontingent = 1600*0.75;
+                newKontingent = 1600 * 0.75;
             } else if (18 <= age && age < 60) {
                 System.out.println("Active Membership for Seniors between 18-59 years old: 1600 DKK per year.");
                 newKontingent = 1600;
@@ -143,7 +165,7 @@ public class PersonMethods {
                 System.out.println("Unable to determine membership type. Using default contingent.");
             }
         }
-        Contingent newContigent = new Contingent(LocalDate.now(),LocalDate.now().plusDays(90),false,newKontingent);
+        Contingent newContigent = new Contingent(LocalDate.now(), LocalDate.now().plusDays(90), false, newKontingent);
 
         Member newMember = new Member(newName, newPhoneNumber, newAddress, dateOfBirth, newMemberNr, newContigent, newAktiv);
         members.add(newMember); // Added to the ArrayList in main_package.Main.
@@ -174,7 +196,7 @@ public class PersonMethods {
     }
 
     // Edit one of the members in the member list
-    public static void editMember(Scanner input, ArrayList<Member> members) throws IOException{
+    public static void editMember(Scanner input, ArrayList<Member> members) throws IOException {
         printNumberedMemberNames(members);
 
         System.out.println("Enter the number of the person you want to edit:");
@@ -193,14 +215,14 @@ public class PersonMethods {
         System.out.println(memberToEdit + "\n___________________________________________");
 
         System.out.println("""
-                           Which information do you want to change on the chosen person?
-                           1. Name
-                           2. Date Of Birth
-                           3. Address
-                           4. Phone Number
-                           5. Active status
-                           6. Cancel
-                           """);
+                Which information do you want to change on the chosen person?
+                1. Name
+                2. Date Of Birth
+                3. Address
+                4. Phone Number
+                5. Active status
+                6. Cancel
+                """);
 
         int attributeChoice = input.nextInt();
         input.nextLine(); // Consume the newline
@@ -213,7 +235,7 @@ public class PersonMethods {
                 break;
             case 2:
                 System.out.println("Enter new date of birth in the form year-month-day:");
-                LocalDate newdateOfBirth=LocalDate.parse(input.next());
+                LocalDate newdateOfBirth = LocalDate.parse(input.next());
                 memberToEdit.setDateOfBirth(newdateOfBirth);
                 input.nextLine(); // consume the newline
                 System.out.println("Date of birth updated successfully.");
@@ -270,7 +292,7 @@ public class PersonMethods {
 
         // Date of Birth input
         System.out.println("Enter date of birth in the form year-month-day:");
-        LocalDate dateOfBirth =LocalDate.parse(input.next());
+        LocalDate dateOfBirth = LocalDate.parse(input.next());
         input.nextLine(); // Consume the newLine
 
         // Address input
@@ -283,11 +305,11 @@ public class PersonMethods {
 
         // Access group input
         System.out.println("""
-                           Choose a group for the employee to work in:
-                           1. Management
-                           2. Cashier
-                           3. Trainer
-                           """);
+                Choose a group for the employee to work in:
+                1. Management
+                2. Cashier
+                3. Trainer
+                """);
         int newAccesGroup = input.nextInt();
         input.nextLine(); // Consume the newLine
 
@@ -352,17 +374,17 @@ public class PersonMethods {
         System.out.println(employeeToEdit + "\n___________________________________________");
 
         System.out.println("""
-                           Which information do you want to change on the chosen employee?
-                           1. Name
-                           2. Date Of Birth
-                           3. Address
-                           4. Phone Number
-                           5. UserName
-                           6. Password (Need the user's password to process)
-                           7. Job Titel
-                           8. Access Group
-                           9. Cancel
-                           """);
+                Which information do you want to change on the chosen employee?
+                1. Name
+                2. Date Of Birth
+                3. Address
+                4. Phone Number
+                5. UserName
+                6. Password (Need the user's password to process)
+                7. Job Titel
+                8. Access Group
+                9. Cancel
+                """);
 
         int attributeChoice = input.nextInt();
         input.nextLine(); // Consume the newline
@@ -375,7 +397,7 @@ public class PersonMethods {
                 break;
             case 2:
                 System.out.println("Enter new date of birth in the form year-month-day:");
-                LocalDate newdateOfBirth=LocalDate.parse(input.next());
+                LocalDate newdateOfBirth = LocalDate.parse(input.next());
                 employeeToEdit.setDateOfBirth(newdateOfBirth);
                 input.nextLine(); // consume the newline
                 System.out.println("Date of birth updated successfully.");
@@ -413,11 +435,11 @@ public class PersonMethods {
                 break;
             case 8:
                 System.out.println("""
-                                   Choose a new access group for the employee:
-                                   1. Management
-                                   2. Cashier
-                                   3. Trainer
-                                   """);
+                        Choose a new access group for the employee:
+                        1. Management
+                        2. Cashier
+                        3. Trainer
+                        """);
                 int newAccessGroup = input.nextInt();
                 input.nextLine(); // Consume the newline
                 employeeToEdit.setAccesGroup(newAccessGroup);
@@ -455,30 +477,30 @@ public class PersonMethods {
     }
 
     //__________________SwimResults_________________
-    public static void registrerSwimResult(ArrayList <SwimmingResult> swimmingResults)throws IOException {
-        Scanner scan=new Scanner(System.in);
-        int memberNb= intPrompt("Enter the swimmer ID: ");
+    public static void registrerSwimResult(ArrayList<SwimmingResult> swimmingResults) throws IOException {
+        Scanner scan = new Scanner(System.in);
+        int memberNb = intPrompt("Enter the swimmer ID: ");
         String discipline = stringPrompt("Enter the discipline: ");
-        SwimmingDisciplin disciplin= SwimmingDisciplin.valueOf(discipline);
-        int newTime=Integer.MAX_VALUE;
-        LocalDate date=LocalDate.now();
+        SwimmingDisciplin disciplin = SwimmingDisciplin.valueOf(discipline);
+        int newTime = Integer.MAX_VALUE;
+        LocalDate date = LocalDate.now();
 
         //forloop to search if the swimmer with this ID+disciplin already has an old time
-        SwimmingResult resultExist=null;
-        int j=0;
-        for (SwimmingResult swR: swimmingResults){
-            if ((swR.getMemberNr()==memberNb)&&(swR.getDiscipline().equals(disciplin))){
-                resultExist=swR;
-                j=1;
+        SwimmingResult resultExist = null;
+        int j = 0;
+        for (SwimmingResult swR : swimmingResults) {
+            if ((swR.getMemberNr() == memberNb) && (swR.getDiscipline().equals(disciplin))) {
+                resultExist = swR;
+                j = 1;
                 System.out.println("match found: the swimmer you are searching for is found: \n" + swR);
                 newTime = intPrompt("Enter the swimmer new time: ");
-                date =LocalDateInput();
+                date = LocalDateInput();
                 break;
             }
         }//end for
 
-        if (j==1){ //once the swimmer is found, we will compare the 2 times
-            if (newTime< resultExist.getTime()){
+        if (j == 1) { //once the swimmer is found, we will compare the 2 times
+            if (newTime < resultExist.getTime()) {
                 resultExist.setTime(newTime);
                 resultExist.setDateOfResult(date);
                 System.out.println("the swimmer is updated with the new time and date");
@@ -488,11 +510,11 @@ public class PersonMethods {
         } else {
             System.out.println("No matches found for the swimmer and disciplin you are looking for," +
                     "Do you want to add it? Yes / No");
-            String svar=scan.nextLine();
-            if (Util.containsIgnoreCase(svar,"yes")){
+            String svar = scan.nextLine();
+            if (Util.containsIgnoreCase(svar, "yes")) {
                 int time = intPrompt("Enter the swimmer's time: ");
-                LocalDate dateOfResult=Util.LocalDateInput();
-                SwimmingResult newSwimmingResult= new SwimmingResult(memberNb,disciplin,time,dateOfResult);
+                LocalDate dateOfResult = Util.LocalDateInput();
+                SwimmingResult newSwimmingResult = new SwimmingResult(memberNb, disciplin, time, dateOfResult);
                 swimmingResults.add(newSwimmingResult);
                 System.out.println("the new swimming result is successfully added.");
             }
@@ -502,19 +524,19 @@ public class PersonMethods {
 
     }//end of registrerSwimResult
 
-    public static void seSwimmerResultAllDisciplines(ArrayList<Member>members, ArrayList<SwimmingResult>swimmingResults){
-        String name =Util.stringPrompt("what is the name of the swimmer you want to se results? ");
+    public static void seSwimmerResultAllDisciplines(ArrayList<Member> members, ArrayList<SwimmingResult> swimmingResults) {
+        String name = Util.stringPrompt("what is the name of the swimmer you want to se results? ");
         ArrayList<Member> listOFSearchedMembers = new ArrayList<>();
-        int test2=0;
-        for (Member member:members){
-            if (Util.containsIgnoreCase(member.getName(),name)){
+        int test2 = 0;
+        for (Member member : members) {
+            if (Util.containsIgnoreCase(member.getName(), name)) {
                 listOFSearchedMembers.add(member);
-                test2=1;
+                test2 = 1;
             }
         }//end for
-        if (test2==0){
+        if (test2 == 0) {
             System.out.println("No member with this name found \n");
-        }else {
+        } else {
             System.out.println("here is a list of the members who have the same name you searched:");
             for (Member member : listOFSearchedMembers) {
                 System.out.println("Member nr. " + member.getMemberNr() + " : " + member.getName() + "\n");
@@ -530,17 +552,17 @@ public class PersonMethods {
             }
             int test = 0;
             //SwimmingResult swimmingResultTest = null;
-            ArrayList<SwimmingResult>swimmingResultsDisciplin=new ArrayList<>();
+            ArrayList<SwimmingResult> swimmingResultsDisciplin = new ArrayList<>();
             for (SwimmingResult swR : swimmingResults) {
                 if (numberToSee == swR.getMemberNr()) {
                     test = 1;
-                    swimmingResultsDisciplin.add(swR) ;
+                    swimmingResultsDisciplin.add(swR);
                 }
             }
             if (test == 1) {
                 System.out.println("Here is a list of the results of the member: " + nameToSee + " , in all disciplines he/she participated:");
 
-                for(SwimmingResult swR:swimmingResultsDisciplin){
+                for (SwimmingResult swR : swimmingResultsDisciplin) {
                     System.out.println("Name of the discipline: " + swR.getDiscipline() + "\n----------resul: " + swR.getTime() + "\n----------date of the resul: " + swR.getDateOfResult() + "\n");
                 }
             } else {
@@ -550,5 +572,25 @@ public class PersonMethods {
 
     }//end of seSwimmerResultAllDisciplines
 
+    public static ArrayList<CompetitionMember> pairMemberWithResults(ArrayList<Member> members, ArrayList<SwimmingResult> results) {
 
-}
+        ArrayList<CompetitionMember> compMembers = new ArrayList<>();
+        SwimmingDisciplin discipline = null;
+        for (Member m : members) {
+            ArrayList<SwimmingResult> compMembersResults = new ArrayList<>();
+            for (SwimmingResult swr : results) {
+                if (m.getMemberNr() == swr.getMemberNr()) {
+                    compMembersResults.add(swr);
+                }
+            }
+            if (!compMembersResults.isEmpty()) {
+                CompetitionMember compMember = new CompetitionMember(m.getName(), m.getPhoneNumber(), m.getAddress(), m.getDateOfBirth(), m.getMemberNr(), m.getKontingent(), m.getAktiv(), compMembersResults);
+                compMembers.add(compMember);
+
+            }
+        }
+        return compMembers;
+    }
+}//end of PersonMethods Class
+
+
