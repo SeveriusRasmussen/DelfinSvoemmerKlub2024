@@ -4,13 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1631485a-b898-48d6-b9bd-658763b50935" name="Changes" comment="testet. til trainer">
+    <list default="true" id="1631485a-b898-48d6-b9bd-658763b50935" name="Changes" comment="commit igen">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main_package/UI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main_package/UI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main_package/db/MemberList.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main_package/db/MemberList.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main_package/db/SwimResultList.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main_package/db/SwimResultList.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main_package/other/Util.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main_package/other/Util.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main_package/people/PersonMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main_package/people/PersonMethods.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +90,9 @@
       <workItem from="1716016662297" duration="6359000" />
       <workItem from="1716108161268" duration="7634000" />
       <workItem from="1716371347823" duration="7820000" />
-      <workItem from="1716400079618" duration="4654000" />
+      <workItem from="1716400079618" duration="5161000" />
+      <workItem from="1716446717700" duration="10512000" />
+      <workItem from="1716457747201" duration="2537000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit 2024/05/13">
       <option name="closed" value="true" />
@@ -217,7 +214,31 @@
       <option name="project" value="LOCAL" />
       <updated>1716379950150</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="seSwimmerResultAllDisciplines (AND) registrerSwimResultDateTime in the trainer's Menu DONE and TESTED.">
+      <option name="closed" value="true" />
+      <created>1716407452676</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1716407452677</updated>
+    </task>
+    <task id="LOCAL-00017" summary="det hele skal nu være på plads">
+      <option name="closed" value="true" />
+      <created>1716451431003</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1716451431003</updated>
+    </task>
+    <task id="LOCAL-00018" summary="commit igen">
+      <option name="closed" value="true" />
+      <created>1716457639387</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1716457639388</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -249,6 +270,9 @@
     <MESSAGE value="case3: årlige revenue" />
     <MESSAGE value="det hele er testet. midt i sprint 2" />
     <MESSAGE value="testet. til trainer" />
-    <option name="LAST_COMMIT_MESSAGE" value="testet. til trainer" />
+    <MESSAGE value="seSwimmerResultAllDisciplines (AND) registrerSwimResultDateTime in the trainer's Menu DONE and TESTED." />
+    <MESSAGE value="det hele skal nu være på plads" />
+    <MESSAGE value="commit igen" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit igen" />
   </component>
 </project>
