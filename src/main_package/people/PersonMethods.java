@@ -9,8 +9,7 @@ import java.time.LocalDate;
 import java.time.Period;
 import java.util.*;
 
-public class
-PersonMethods {
+public class PersonMethods {
     ArrayList<Member> listOfMembers;
     ArrayList<SwimmingResult>listOfResults;
 
