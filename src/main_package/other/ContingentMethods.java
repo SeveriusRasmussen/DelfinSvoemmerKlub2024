@@ -1,10 +1,8 @@
 package main_package.other;
 import main_package.people.*;
-
 import java.io.IOException;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.temporal.ChronoUnit;
+import java.time.*;
+import java.time.temporal.*;
 import java.util.*;
 
 public class ContingentMethods{
@@ -15,7 +13,7 @@ public class ContingentMethods{
             LocalDate nextPaymentDate = member.getNextPayment();
             long days = ChronoUnit.DAYS.between(nextPaymentDate,today);
             if (days > 0) {
-                for (Member memberIdCheck : memberList) {;
+                for (Member memberIdCheck : memberList) {
                     if (member.getMemberNr() == memberIdCheck.getMemberNr()) {
                         member.setArrears(true);
                         double debt = memberIdCheck.getContingent();
@@ -62,15 +60,15 @@ public class ContingentMethods{
     }
     public static void checkArrears(ArrayList<Contingent> memberContingent, ArrayList<Member> memberList) {
         for (Contingent checkArrears : memberContingent) {
-                if (checkArrears.getArrears()) {
-                    for (Member members : memberList)
-                        if (members.getMemberNr() == checkArrears.getMemberNr())
-                            System.out.println(members);
-                            System.out.println("-------------------------------------------");
-                            System.out.println("      Payment information     ");
-                            System.out.println("-------------------------------------------");
-                            System.out.println(checkArrears);
-                            System.out.println("___________________________________________");
+            if (checkArrears.getArrears()) {
+                for (Member members : memberList)
+                    if (members.getMemberNr() == checkArrears.getMemberNr())
+                        System.out.println(members);
+                        System.out.println("-------------------------------------------");
+                        System.out.println("      Payment information     ");
+                        System.out.println("-------------------------------------------");
+                        System.out.println(checkArrears);
+                        System.out.println("___________________________________________");
                         }
                     }
                 }

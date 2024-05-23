@@ -32,10 +32,6 @@ public class Member extends Person {
         return aktiv;
     }
 
-    public void setKontingent(Contingent kontingent) {
-        this.contingent = contingent;
-    }
-
     public boolean isAktiv() {
         return aktiv;
     }

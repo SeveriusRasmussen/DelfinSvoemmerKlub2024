@@ -1,7 +1,6 @@
 package main_package.people;
 
 import main_package.other.ComparableBestTime;
-import main_package.other.Contingent;
 import main_package.other.Util;
 
 import java.time.LocalDate;

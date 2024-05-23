@@ -14,12 +14,6 @@ public class Contingent {
     private boolean arrears; //restance // boolean til om de er i restance eller ej
     private double debt;
 
-
-
-    public Contingent(){}
-
-
-
     public  Contingent(int memberNr, LocalDate dateOfPayment, LocalDate nextpayment, boolean arrears, double debt) {
         //super(name, phoneNumber, address, dateOfBirth, memberNr, contingent, aktiv);
         this.memberNr = memberNr;

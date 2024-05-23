@@ -8,12 +8,8 @@ import main_package.people.Employee;
 import main_package.people.Member;
 import main_package.people.SwimmingResult;
 
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.lang.reflect.Array;
+import java.io.*;
 import java.util.*;
-
-import static main_package.other.Filehandler.readFromFileSwimResult;
 
 public class Main {
 
