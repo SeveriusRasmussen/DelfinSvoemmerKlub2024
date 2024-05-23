@@ -176,7 +176,7 @@ public class UI {
         System.out.println("""
                     Here are your options:
                     1. See the expected yearly revenue
-                    2. Members in arrear
+                    2. Members in arrear 
                     3. Exit
                     """);
         Scanner input = new Scanner(System.in);
@@ -189,7 +189,7 @@ public class UI {
                     ContingentMethods.calculateRevenue(member);
                     break;
                 case 2: //skal laves igen af Lina
-                    System.out.println("check restance");
+                    System.out.println("tjek restance");
                     //ContingentMethods.checkArrears(membersContingent, member);
                     break;
                 case 3:
@@ -222,7 +222,9 @@ public class UI {
             //kald scanner class og brug den i stedet for at have scanner her
             switch (nav) {
                 case 1: //LASSE: View list of all swimmers
+                    PersonMethods.viewListSwimmers();
                     //choose between: all swimmers, junior- eller seniorsvømmer, motionist eller konkurrencesvømmer.
+
                     break;
                 case 2: //2. Change member type: LASSE
                     //FROM MEMBER TO COMPETITION MEMBER

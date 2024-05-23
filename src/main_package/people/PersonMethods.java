@@ -550,5 +550,9 @@ public class PersonMethods {
 
     }//end of seSwimmerResultAllDisciplines
 
+    public static void viewListSwimmers(){
+
+    }//end of viewListSwimmers
+
 
 }

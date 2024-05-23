@@ -88,9 +88,11 @@ public class Filehandler {
             swimmingResults.add(newSwimminResult);
 
         }//end while
+
         return swimmingResults;
 
     }//end readFromFileSwimResult
+
     public static void loadContingentTxt(ArrayList<Contingent> contigents) throws FileNotFoundException {
         File contigentFile = new File("src/main_package/db/Contingent.txt");
         Scanner scan = new Scanner(contigentFile);
