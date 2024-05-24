@@ -589,6 +589,44 @@ public class PersonMethods {
         }
         return compMembers;
     }
+
+    public static void viewAllMembers (ArrayList<Member> members, ArrayList<CompetitionMember> competitionMembers){
+        Scanner scan = new Scanner(System.in);
+
+        System.out.println("Do you want to look for a specific member type? yes/no");
+        String choice = scan.nextLine();
+
+        if (choice.equalsIgnoreCase("No")){
+            for (Member member : members){
+                System.out.println(member.shortPrint());
+            }
+        } else if (choice.equalsIgnoreCase("Yes")){
+            System.out.println("Enter the membership type to filter: \n" +
+                    "Junior\n" +
+                    "Senior\n" +
+                    "60+\n" +
+                    "Competitive Swimmer\n"
+                    );
+            String type = scan.nextLine();
+
+            if (type.equalsIgnoreCase("Competitive Swimmer")){
+                for (CompetitionMember competitionMember : competitionMembers){
+                    System.out.println(competitionMember.shortPrint());
+                }
+            }
+
+            for (Member member : members) {
+                if (type.equalsIgnoreCase("Junior") && member.getAge() < 18){
+                    System.out.println(member.shortPrint());
+                } else if (type.equalsIgnoreCase("Senior") && member.getAge() >= 18 && member.getAge()< 60){
+                    System.out.println(member.shortPrint());
+                } else if (type.equalsIgnoreCase("60+") && member.getAge() >= 60){
+                    System.out.println(member.shortPrint());
+                }
+            }
+        }
+        }
+
 }//end of PersonMethods Class
 
 

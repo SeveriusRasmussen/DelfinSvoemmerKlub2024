@@ -231,7 +231,9 @@ public class UI {
                     """);
             nav = Util.getIntInputSwitch("choose a number from the list: ", "wrong input, only a number between 1 and 5: ", 1, 5);
             switch (nav) {
-                case 1: //LASSE: View list of all swimmers
+                case 1:
+                    PersonMethods.viewAllMembers (members, compMembers);
+                    //LASSE: View list of all swimmers
 
                     //choose between: all swimmers, junior- eller seniorsvømmer, motionist eller konkurrencesvømmer.
                     break;
