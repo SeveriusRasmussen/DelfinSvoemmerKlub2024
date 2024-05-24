@@ -1,7 +1,7 @@
 package main_package.people;
 //package main_package.other.Util;
 
-import main_package.other.Contingent;
+import main_package.other.*;
 import main_package.other.Filehandler;
 import main_package.other.Util;
 
@@ -33,6 +33,7 @@ public class PersonMethods {
                 if (sr.getDiscipline().equals(disciplin1)) {
                     record.put(sr.getTime(), cm.getMemberNr());
                     storedTimes.add(sr.getTime());
+
                 }
 
             }
@@ -87,7 +88,7 @@ public class PersonMethods {
 
     //___________MEMBER MENU___________________
     // Create a new member for the Member list
-    public static void createMember(Scanner input, ArrayList<Member> members) throws IOException {
+    public static void createMember(Scanner input, ArrayList<Member> members, ArrayList <Contingent> contingens) throws IOException {
         // Name input
         System.out.println("Enter name:");
         String newName = input.nextLine();
@@ -165,11 +166,18 @@ public class PersonMethods {
         }
         Contingent newContigent = new Contingent(LocalDate.now(), LocalDate.now().plusDays(90), false, newKontingent);
 
-        Member newMember = new Member(newName, newPhoneNumber, newAddress, dateOfBirth, newMemberNr, newContigent, newAktiv);
+        Member newMember = new Member(newName, newPhoneNumber, newAddress, dateOfBirth, newMemberNr, newKontingent, newAktiv);
         members.add(newMember); // Added to the ArrayList in main_package.Main.
 
+
+        Contingent newArrearsCheck = new Contingent(newMemberNr, LocalDate.now(),LocalDate.now().plusDays(90),false,0.0);
+        contingens.add(newArrearsCheck);
+
         Filehandler.writeToFileMember(members);
+        Filehandler.writeToFileContingent(contingens);
+
         System.out.println("New person created and saved successfully.");
+
 
     }//end of create member
 

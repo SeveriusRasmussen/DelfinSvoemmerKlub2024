@@ -6,9 +6,7 @@ import main_package.other.Filehandler;
 import main_package.other.Login;
 import main_package.people.*;
 
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.lang.reflect.Array;
+import java.io.*;
 import java.util.*;
 
 import static main_package.other.Filehandler.readFromFileSwimResult;
@@ -26,6 +24,9 @@ public class Main {
         ArrayList<Contingent> memberContingent = new ArrayList<>();
         //Reads Contingent.txt and adds them to the ArrayList memberContingent
         Filehandler.loadContingentTxt(memberContingent);
+
+        //Checks and updates Contingent.txt if any of the Members has outstanding debt/in Arrears
+        ContingentMethods.updateArrears(memberContingent, members);
 
         //making a list for the employees
         ArrayList<Employee> employees = new ArrayList<>();
