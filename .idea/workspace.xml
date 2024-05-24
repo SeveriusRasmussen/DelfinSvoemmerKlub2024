@@ -4,12 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1631485a-b898-48d6-b9bd-658763b50935" name="Changes" comment="Lina Commit">
+    <list default="true" id="1631485a-b898-48d6-b9bd-658763b50935" name="Changes" comment="Commit 24/05/2024&#10;-Arrears calculator bug fix">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_16-05-2024_08_16__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_16-05-2024_08_16__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_16-05-2024_19_23__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_16-05-2024_19_23__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_15_2024_3_20_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_15_2024_3_20_PM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_15_2024_3_22_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_15_2024_3_22_PM__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main_package/UI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main_package/UI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main_package/db/Contingent.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main_package/db/Contingent.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main_package/people/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main_package/people/Member.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main_package/people/PersonMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main_package/people/PersonMethods.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main_package/other/ContingentMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main_package/other/ContingentMethods.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,9 +44,7 @@
   &quot;associatedIndex&quot;: 7
 }</component>
   <component name="ProjectId" id="2gPQh2DPl9dJRKfJktSNDNR3tQU" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -275,7 +275,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716546642779</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Commit 24/05/2024&#10;-Arrears calculator bug fix">
+      <option name="closed" value="true" />
+      <created>1716549524773</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1716549524773</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -311,6 +319,7 @@
     <MESSAGE value="det hele skal nu være på plads" />
     <MESSAGE value="commit igen" />
     <MESSAGE value="Lina Commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Lina Commit" />
+    <MESSAGE value="Commit 24/05/2024&#10;-Arrears calculator bug fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="Commit 24/05/2024&#10;-Arrears calculator bug fix" />
   </component>
 </project>
