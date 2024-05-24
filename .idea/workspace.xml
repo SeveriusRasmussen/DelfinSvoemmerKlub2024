@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1631485a-b898-48d6-b9bd-658763b50935" name="Changes" comment="det hele er TESTET, og virker igen, rettet lidt i nogle metoder">
+    <list default="true" id="1631485a-b898-48d6-b9bd-658763b50935" name="Changes" comment="igen">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main_package/db/Contingent.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main_package/db/Contingent.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main_package/people/PersonMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main_package/people/PersonMethods.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -285,15 +287,7 @@
       <option name="project" value="LOCAL" />
       <updated>1716551841185</updated>
     </task>
-    <task id="LOCAL-00022" summary="det hele er TESTET, og virker igen, rettet lidt i nogle metoder">
-      <option name="closed" value="true" />
-      <created>1716554016920</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1716554016921</updated>
-    </task>
-    <option name="localTasksCounter" value="23" />
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -331,7 +325,6 @@
     <MESSAGE value="Lina Commit" />
     <MESSAGE value="Commit 24/05/2024&#10;-Arrears calculator bug fix" />
     <MESSAGE value="igen" />
-    <MESSAGE value="det hele er TESTET, og virker igen, rettet lidt i nogle metoder" />
-    <option name="LAST_COMMIT_MESSAGE" value="det hele er TESTET, og virker igen, rettet lidt i nogle metoder" />
+    <option name="LAST_COMMIT_MESSAGE" value="igen" />
   </component>
 </project>
