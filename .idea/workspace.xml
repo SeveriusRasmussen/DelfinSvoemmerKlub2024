@@ -6,7 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="1631485a-b898-48d6-b9bd-658763b50935" name="Changes" comment="Lina Commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main_package/db/SwimResultList.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main_package/db/SwimResultList.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main_package/UI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main_package/UI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main_package/db/Contingent.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main_package/db/Contingent.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main_package/people/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main_package/people/Member.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main_package/people/PersonMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main_package/people/PersonMethods.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,7 +42,9 @@
   &quot;associatedIndex&quot;: 7
 }</component>
   <component name="ProjectId" id="2gPQh2DPl9dJRKfJktSNDNR3tQU" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -66,6 +71,26 @@
       <recent name="C:\Users\Lina\IdeaProjects\DelfinSvoemmerKlub2024\src" />
       <recent name="C:\Users\Lina\IdeaProjects\DelfinSvoemmerKlub2024\src\db" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="main_package.Main" />
+      <module name="DelfinSvoemmerKlub2024" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="main_package.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
