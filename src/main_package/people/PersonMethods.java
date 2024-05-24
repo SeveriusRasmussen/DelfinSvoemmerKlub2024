@@ -38,27 +38,35 @@ public class PersonMethods {
 
             }
         }
-            Collections.sort(storedTimes);
-                for (int i = 0; i < storedTimes.size(); i++) {
+        Collections.sort(storedTimes);
+        for (int i = 0; i < storedTimes.size(); i++) {
 
-                    for (CompetitionMember cm : members) {
-                        if (cm.getMemberNr() == record.get(storedTimes.get(i)) && cm.getAge() > 18) {
-                            bestPerformingMembersSenior.add(cm);
-                        } else if (cm.getMemberNr() == record.get(storedTimes.get(i)) && cm.getAge() <= 18) {
-                            bestPerformingMembersJunior.add(cm);
-                        }
-
-
-                    }
+            for (CompetitionMember cm : members) {
+                if (cm.getMemberNr() == record.get(storedTimes.get(i)) && cm.getAge() > 18) {
+                    bestPerformingMembersSenior.add(cm);
+                } else if (cm.getMemberNr() == record.get(storedTimes.get(i)) && cm.getAge() <= 18) {
+                    bestPerformingMembersJunior.add(cm);
                 }
+            }
+        }
 
         if(agegroup==1){
             int length = (bestPerformingMembersSenior.size()<5)? bestPerformingMembersSenior.size() : 5;  // True : false
             if(bestPerformingMembersSenior.isEmpty()){
                 System.out.println("No results found");
-            }else{
+            }else{System.out.println("Here are the best 5 swimmers for the chosen disciplin and agegroup:\n");
             for(int j =0; j<length;j++) {
-                System.out.println(bestPerformingMembersSenior.get(j));
+                CompetitionMember currentMember= bestPerformingMembersSenior.get(j);
+                int time = 0;
+                for(SwimmingResult swr:currentMember.getResults()){
+                    if(swr.getDiscipline()==disciplin1){
+                        time=swr.getTime();
+                    }
+                }
+
+                System.out.println("Navn: "+currentMember.getName()+"\n"+
+                        "Medlemsnummer: "+currentMember.getMemberNr()+ "\n"+
+                        "time: "+time+"ms\n");
             }
             }
         }
@@ -68,8 +76,19 @@ public class PersonMethods {
                 System.out.println("No results found");
             }
             else {
+                System.out.println("Here are the best 5 swimmers for the chosen disciplin and agegroup:\n");
                 for(int k=0; k<length;k++){
-                    System.out.println(bestPerformingMembersJunior.get(k));
+                    CompetitionMember currentMember= bestPerformingMembersJunior.get(k);
+                    int time = 0;
+                    for(SwimmingResult swr:currentMember.getResults()){
+                        if(swr.getDiscipline()==disciplin1){
+                            time=swr.getTime();
+                        }
+                    }
+
+                    System.out.println("Navn: "+currentMember.getName()+"\n"+
+                            "Medlemsnummer: "+currentMember.getMemberNr()+ "\n"+
+                            "time: "+time+"ms\n");
                 }
             }
         }
