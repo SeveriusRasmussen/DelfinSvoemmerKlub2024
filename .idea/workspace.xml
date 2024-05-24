@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1631485a-b898-48d6-b9bd-658763b50935" name="Changes" comment="Lina Commit">
+    <list default="true" id="1631485a-b898-48d6-b9bd-658763b50935" name="Changes" comment="testet. til trainer">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -249,7 +249,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716546642779</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="testet. til trainer">
+      <option name="closed" value="true" />
+      <created>1716550608951</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1716550608952</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -280,11 +288,11 @@
     <MESSAGE value="changes: move methods" />
     <MESSAGE value="case3: årlige revenue" />
     <MESSAGE value="det hele er testet. midt i sprint 2" />
-    <MESSAGE value="testet. til trainer" />
     <MESSAGE value="seSwimmerResultAllDisciplines (AND) registrerSwimResultDateTime in the trainer's Menu DONE and TESTED." />
     <MESSAGE value="det hele skal nu være på plads" />
     <MESSAGE value="commit igen" />
     <MESSAGE value="Lina Commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Lina Commit" />
+    <MESSAGE value="testet. til trainer" />
+    <option name="LAST_COMMIT_MESSAGE" value="testet. til trainer" />
   </component>
 </project>

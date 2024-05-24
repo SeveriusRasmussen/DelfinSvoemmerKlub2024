@@ -75,16 +75,6 @@ public class PersonMethods {
         }
     }
 
-    public static ArrayList<CompetitionMember> getCompMembers(ArrayList<Member> members) {
-        ArrayList<CompetitionMember> compMembers = new ArrayList<>();
-        for (Member m : members) {
-            if (m instanceof CompetitionMember) {
-                compMembers.add((CompetitionMember) m);
-                System.out.println(m);
-            }
-        }
-        return compMembers;
-    }
 
     //___________MEMBER MENU___________________
     // Create a new member for the Member list
