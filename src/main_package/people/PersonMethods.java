@@ -37,40 +37,38 @@ public class PersonMethods {
 
             }
         }
-
-
-            int length = (storedTimes.size()<5)? storedTimes.size() : 5;  // True : false
             Collections.sort(storedTimes);
-                for (int i = 0; i < length; i++) {
+                for (int i = 0; i < storedTimes.size(); i++) {
 
                     for (CompetitionMember cm : members) {
-                        if (cm.getMemberNr() == record.get(storedTimes.get(i)) && cm.getAge()>18) {
+                        if (cm.getMemberNr() == record.get(storedTimes.get(i)) && cm.getAge() > 18) {
                             bestPerformingMembersSenior.add(cm);
-                        }
-                        else if(cm.getMemberNr() == record.get(storedTimes.get(i)) && cm.getAge()<18) {
+                        } else if (cm.getMemberNr() == record.get(storedTimes.get(i)) && cm.getAge() <= 18) {
                             bestPerformingMembersJunior.add(cm);
                         }
 
 
+                    }
                 }
 
-        }
         if(agegroup==1){
+            int length = (bestPerformingMembersSenior.size()<5)? bestPerformingMembersSenior.size() : 5;  // True : false
             if(bestPerformingMembersSenior.isEmpty()){
                 System.out.println("No results found");
             }else{
-            for(CompetitionMember cm: bestPerformingMembersSenior) {
-                System.out.println(cm);
+            for(int j =0; j<length;j++) {
+                System.out.println(bestPerformingMembersSenior.get(j));
             }
             }
         }
         else {
+            int length = (bestPerformingMembersJunior.size()<5)? bestPerformingMembersJunior.size() : 5;  // True : false
             if(bestPerformingMembersJunior.isEmpty()){
                 System.out.println("No results found");
             }
             else {
-                for (CompetitionMember cm : bestPerformingMembersJunior) {
-                    System.out.println(cm);
+                for(int k=0; k<length;k++){
+                    System.out.println(bestPerformingMembersJunior.get(k));
                 }
             }
         }
