@@ -38,7 +38,6 @@ public class Main {
         //Reading swimmingResults from SwimResultList and saving them into an ArrayList
         ArrayList <SwimmingResult> swimmingResults=Filehandler.readFromFileSwimResult ();
 
-
         //make login object
         Login newLogin = new Login(employees);
 
