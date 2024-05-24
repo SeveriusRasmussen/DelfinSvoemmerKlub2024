@@ -570,7 +570,7 @@ public class PersonMethods {
 
     }//end of seSwimmerResultAllDisciplines
 
-    public static ArrayList<CompetitionMember> pairMemberWithResults(ArrayList<Member> members, ArrayList<SwimmingResult> results) {
+    public ArrayList<CompetitionMember> pairMemberWithResults(ArrayList<Member> members, ArrayList<SwimmingResult> results) {
 
         ArrayList<CompetitionMember> compMembers = new ArrayList<>();
         SwimmingDisciplin discipline = null;
