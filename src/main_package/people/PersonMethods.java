@@ -229,36 +229,36 @@ public class PersonMethods {
             case 1:
                 System.out.println("Enter new name:");
                 memberToEdit.setName(input.nextLine());
-                System.out.println("Name updated successfully.");
+                System.out.println("Name updated successfully.\n");
                 break;
             case 2:
                 System.out.println("Enter new date of birth in the form year-month-day:");
                 LocalDate newdateOfBirth = LocalDate.parse(input.next());
                 memberToEdit.setDateOfBirth(newdateOfBirth);
                 input.nextLine(); // consume the newline
-                System.out.println("Date of birth updated successfully.");
+                System.out.println("Date of birth updated successfully.\n");
                 break;
             case 3:
                 System.out.println("Enter new address:");
                 memberToEdit.setAddress(input.nextLine());
-                System.out.println("Address updated successfully.");
+                System.out.println("Address updated successfully.\n");
                 break;
             case 4:
                 System.out.println("Enter new Phone number:");
                 memberToEdit.setPhoneNumber(input.nextLine());
-                System.out.println("Phone number updated successfully.");
+                System.out.println("Phone number updated successfully.\n");
                 break;
             case 5:
                 System.out.println("Is the member active? (true/false):");
                 memberToEdit.setAktiv(input.nextBoolean());
                 input.nextLine(); // Consume the newline
-                System.out.println("Active status updated successfully.");
+                System.out.println("Active status updated successfully.\n");
                 break;
             case 6:
                 System.out.println("Edit cancelled");
                 return;
             default:
-                System.out.println("Invalid choice");
+                System.out.println("Invalid choice, choose only a number between 1 and 6.\n");
         }
         Filehandler.writeToFileMember(members);
     }
@@ -328,7 +328,7 @@ public class PersonMethods {
         employees.add(newEmployee); // Added to the ArrayList in main_package.Main.
 
         Filehandler.writeToFileEmployee(employees);
-        System.out.println("New person created and saved successfully.");
+        System.out.println("New person created and saved successfully.\n");
     }
 
     // Print the Employee list to the output.
@@ -479,7 +479,7 @@ public class PersonMethods {
         Scanner scan = new Scanner(System.in);
         int memberNb = intPrompt("Enter the swimmer ID: ");
         String discipline = stringPrompt("Enter the discipline: ");
-        SwimmingDisciplin disciplin = SwimmingDisciplin.valueOf(discipline);
+        SwimmingDisciplin disciplin = SwimmingDisciplin.valueOf(discipline.toUpperCase());
         int newTime = Integer.MAX_VALUE;
         LocalDate date = LocalDate.now();
 

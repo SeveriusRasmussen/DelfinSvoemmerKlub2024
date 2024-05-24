@@ -188,12 +188,21 @@ public class UI {
             switch (nav) {
                 case 1:
                     ContingentMethods.calculateRevenue(member);
+                    System.out.println("Returning to your menu: ");
+                    accountantMenu(currentUser, membersContingent, member);
+                    System.out.println();
                     break;
                 case 2:
                     ContingentMethods.checkArrears(membersContingent, member);
+                    System.out.println("Returning to your menu: ");
+                    accountantMenu(currentUser, membersContingent, member);
+                    System.out.println();
                     break;
                 case 3:
                     ContingentMethods.removeArrears(membersContingent, member);
+                    System.out.println("Returning to your menu: ");
+                    accountantMenu(currentUser, membersContingent, member);
+                    System.out.println();
                     break;
                 case 4:
                     System.out.println("Exit.");
