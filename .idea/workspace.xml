@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1631485a-b898-48d6-b9bd-658763b50935" name="Changes" comment="commit igen">
+    <list default="true" id="1631485a-b898-48d6-b9bd-658763b50935" name="Changes" comment="Lina Commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main_package/db/SwimResultList.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main_package/db/SwimResultList.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,6 +94,9 @@
       <workItem from="1716400079618" duration="5161000" />
       <workItem from="1716446717700" duration="10512000" />
       <workItem from="1716457747201" duration="2537000" />
+      <workItem from="1716464929204" duration="708000" />
+      <workItem from="1716474703721" duration="2183000" />
+      <workItem from="1716543784049" duration="3587000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit 2024/05/13">
       <option name="closed" value="true" />
@@ -238,7 +242,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716457639388</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Lina Commit">
+      <option name="closed" value="true" />
+      <created>1716546642779</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1716546642779</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -273,6 +285,7 @@
     <MESSAGE value="seSwimmerResultAllDisciplines (AND) registrerSwimResultDateTime in the trainer's Menu DONE and TESTED." />
     <MESSAGE value="det hele skal nu være på plads" />
     <MESSAGE value="commit igen" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit igen" />
+    <MESSAGE value="Lina Commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Lina Commit" />
   </component>
 </project>
