@@ -215,41 +215,35 @@ public class UI {
             System.out.println("""
                     Here are your options:
                     1. View list of all swimmers 
-                    2. Change member type 
-                    3. View a swimmer's result in all disciplines
-                    4. Register a swimmer's best result and date
-                    5. View the top five results for a chosen discipline for each age group
-                    6. Exit
+                    2. View a swimmer's result in all disciplines
+                    3. Register a swimmer's best result and date
+                    4. View the top five results for a chosen discipline for each age group
+                    5. Exit
                     """);
-            nav = Util.getIntInputSwitch("choose a number from the list: ", "wrong input, only a number between 1 and 6: ", 1, 6);
-            //kald scanner class og brug den i stedet for at have scanner her
+            nav = Util.getIntInputSwitch("choose a number from the list: ", "wrong input, only a number between 1 and 5: ", 1, 5);
             switch (nav) {
                 case 1: //LASSE: View list of all swimmers
 
                     //choose between: all swimmers, junior- eller seniorsvømmer, motionist eller konkurrencesvømmer.
-
                     break;
-                case 2: //2. Change member type: LASSE
-                    //FROM MEMBER TO COMPETITION MEMBER
-                    break;
-                case 3: //LINA DONE
+                case 2: //LINA DONE
                     PersonMethods.seSwimmerResultAllDisciplines(members, swimmingResults);
                     break;
-                case 4: //LINA DONE
+                case 3: //LINA DONE
                     System.out.println("Register a swimmer's best result and date");
                     PersonMethods.registrerSwimResult(swimmingResults);
                     break;
-                case 5: //LASSE DONE
+                case 4: //LASSE DONE
                     PersonMethods.getBestFive(compMembers);
                     break;
-                case 6:
+                case 5:
                     System.exit(0);
                     break;
                 default:
                     System.out.println("you should only choose w number between 1 and 6.");
                     trainerMenu(currentUser,members,compMembers);
             }
-        } while (nav != 6);
+        } while (nav != 5);
     }//end of trainer menu
 
 
