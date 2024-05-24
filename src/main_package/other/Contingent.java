@@ -14,11 +14,9 @@ public class Contingent {
     private double debt;
 
     public  Contingent(int memberNr, LocalDate dateOfPayment, LocalDate nextpayment, boolean arrears, double debt) {
-        //super(name, phoneNumber, address, dateOfBirth, memberNr, contingent, aktiv);
         this.memberNr = memberNr;
         this.dateOfPayment = dateOfPayment;
         this.nextpayment = nextpayment;
-        //this.membershipType = membershipType;
         this.arrears = arrears;
         this.debt = debt;
     }

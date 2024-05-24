@@ -17,7 +17,7 @@ import java.util.Scanner;
 
 public class UI {
 
-    public static void userRole(Employee currentUser, ArrayList<Member> members, ArrayList<Employee> employees, ArrayList<Contingent> membersContingent,ArrayList<CompetitionMember>compMembers) throws IOException {
+    public static void userRole(Employee currentUser, ArrayList<Member> members, ArrayList<Employee> employees, ArrayList<Contingent> contingents,ArrayList<CompetitionMember>compMembers) throws IOException {
 
         switch(currentUser.getAccesGroup()){
             case 1:
@@ -225,7 +225,7 @@ public class UI {
             //kald scanner class og brug den i stedet for at have scanner her
             switch (nav) {
                 case 1: //LASSE: View list of all swimmers
-                    PersonMethods.viewListSwimmers();
+
                     //choose between: all swimmers, junior- eller seniorsvømmer, motionist eller konkurrencesvømmer.
 
                     break;

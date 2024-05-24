@@ -9,30 +9,15 @@ import java.util.Collections;
 
 public class CompetitionMember extends Member {
     private ArrayList<SwimmingResult> swimResults;
-    //private SwimmingDisciplin disciplin;
-    //ArrayList<main_package.people.SwimmingResult> swimmingResults=new ArrayList<>();
 
-    public CompetitionMember(String name, String phoneNumber, String adress, LocalDate dateOfBirth, int memberNr, double contingent, boolean aktiv, SwimmingDisciplin disciplin, ArrayList<SwimmingResult> swimResults) {
+    public CompetitionMember(String name, String phoneNumber, String adress, LocalDate dateOfBirth, int memberNr, double contingent, boolean aktiv, ArrayList<SwimmingResult> swimResults) {
         super(name, phoneNumber, adress, dateOfBirth, memberNr, contingent, aktiv);
-        //this.disciplin = disciplin;
         this.swimResults = swimResults;
     }
 
     public ArrayList<SwimmingResult> getResults() {
         return swimResults;
     }
-
-    /*public SwimmingDisciplin getDisciplin() {
-        return disciplin;
-    }
-
-     */
-
-    /*public void setDisciplin(SwimmingDisciplin disciplin) {
-        this.disciplin = disciplin;
-    }
-
-     */
 
     //method that returns for each CompetitionMember his best result by disciplin
     public  SwimmingResult returnBestResultsByDisciplin(SwimmingDisciplin disciplin) {

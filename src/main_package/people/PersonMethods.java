@@ -123,15 +123,7 @@ public class PersonMethods {
 
         // Getting the new member a generated number.
         System.out.println("The member is getting an number...");
-        /*
-        try {
-        System.out.println("The member is getting an number...");
-        Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            //Thread.currentThread().interrupt();
-            System.out.println("Unable to complete operation.");
-        }
-        */
+
         int newMemberNr = Util.createMemberShipNumber(members);
         System.out.println("The new member got the number: " + newMemberNr);
 
@@ -164,7 +156,7 @@ public class PersonMethods {
                 System.out.println("Unable to determine membership type. Using default contingent.");
             }
         }
-        Contingent newContigent = new Contingent(LocalDate.now(), LocalDate.now().plusDays(90), false, newKontingent);
+        Contingent newContigent = new Contingent(newMemberNr,LocalDate.now(), LocalDate.now().plusDays(90), false, newKontingent);
 
         Member newMember = new Member(newName, newPhoneNumber, newAddress, dateOfBirth, newMemberNr, newKontingent, newAktiv);
         members.add(newMember); // Added to the ArrayList in main_package.Main.
@@ -590,7 +582,7 @@ public class PersonMethods {
                 }
             }
             if (!compMembersResults.isEmpty()) {
-                CompetitionMember compMember = new CompetitionMember(m.getName(), m.getPhoneNumber(), m.getAddress(), m.getDateOfBirth(), m.getMemberNr(), m.getKontingent(), m.getAktiv(), compMembersResults);
+                CompetitionMember compMember = new CompetitionMember(m.getName(), m.getPhoneNumber(), m.getAddress(), m.getDateOfBirth(), m.getMemberNr(), m.getContingent(), m.getAktiv(), compMembersResults);
                 compMembers.add(compMember);
 
             }
