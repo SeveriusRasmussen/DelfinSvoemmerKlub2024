@@ -40,11 +40,9 @@ public class Filehandler {
             String memberPhoneNumber = memberData[1];
             String memberAddress = memberData[2];
             LocalDate memeberDateOfBirth =LocalDate.parse(memberData[3]);
-            //int memberAge = Integer.parseInt(memberData[3]);
             int memberNr = Integer.parseInt(memberData[4]);
-            //double kontingent = Double.parseDouble(memberData[5]);
-            boolean aktiv = Boolean.parseBoolean(memberData[5]);
-            Contingent contingent = new Contingent();
+            double contingent = Double.parseDouble(memberData[5]);
+            boolean aktiv = Boolean.parseBoolean(memberData[6]);
             member = new Member(memberName, memberPhoneNumber, memberAddress, memeberDateOfBirth, memberNr,contingent,aktiv);
             members.add(member);
         }
@@ -108,9 +106,6 @@ public class Filehandler {
             memberContingent = new Contingent(memberNr, dateOfPayment, nextPayment, arrears, debt);
             contigents.add(memberContingent);
         }
-        for (Contingent contingent:contigents){
-            System.out.println(contingent);
-        }
     }//end of loadMemberTxt
 
     public static void writeToFileMember(ArrayList<Member> members)throws IOException{
@@ -137,9 +132,9 @@ public class Filehandler {
         out.close();
     }
 
-    public static void writeToFileContingent(Contingent newContingent, ArrayList <Contingent> contingents) throws IOException{
+    public static void writeToFileContingent(ArrayList <Contingent> contingents) throws IOException{
         BufferedWriter out = new BufferedWriter(new FileWriter("src/main_package/db/Contingent.txt"));
-        contingents.add(newContingent);
+
         for (Contingent writeContingent : contingents){
             out.write(writeContingent.toPrint());
         }

@@ -6,11 +6,11 @@ import java.time.LocalDate;
 
 public class Member extends Person {
     private int memberNr;
-    private Contingent contingent;
+    private double contingent;
     private boolean aktiv;
 
 
-    public Member(String name, String phoneNumber, String address, LocalDate dateOfBirth, int memberNr, Contingent contingent, boolean aktiv) {
+    public Member(String name, String phoneNumber, String address, LocalDate dateOfBirth, int memberNr, double contingent, boolean aktiv) {
         super(name, phoneNumber, address, dateOfBirth);
         this.memberNr = memberNr;
         this.contingent = contingent;
@@ -25,15 +25,11 @@ public class Member extends Person {
         this.memberNr = memberNr;
     }
 
-    public Contingent getKontingent() {
+    public double getContingent() {
         return contingent;
     }
     public boolean getAktiv() {
         return aktiv;
-    }
-
-    public void setKontingent(Contingent kontingent) {
-        this.contingent = contingent;
     }
 
     public boolean isAktiv() {
@@ -53,6 +49,6 @@ public class Member extends Person {
     }
 
     public String toPrint() {
-        return (getName() + "," + getPhoneNumber()+ "," + getAddress() + "," + getDateOfBirth() + "," + memberNr + "," + aktiv + "\n");
+        return (getName() + "," + getPhoneNumber()+ "," + getAddress() + "," + getDateOfBirth() + "," + memberNr + "," + getContingent() +"," + aktiv + "\n");
     }
 }

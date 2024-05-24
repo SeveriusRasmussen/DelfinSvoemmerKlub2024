@@ -1,23 +1,23 @@
-Jørgen Leth,12345678,KokkensVej 42,1939-12-03,1,false
-Dee Z. Nots,87654321,DragonVej 42,1956-07-12,2,true
-Joa,3120321,Fghjisdfoå,1985-03-03,3,false
-Steffen,9876532,på vej,1987-02-20,4,true
-Oline,098765432,derhjemme eller på vej,1985-12-13,5,false
-Søren,31248901,kastrupvej 129,1988-11-06,6,true
-Søren rasmussen,31248901,kastrupvej 129,1988-11-06,7,false
-karsten,66677666,satansvej 666,1995-06-06,8,true
-Lina,41354222,Nørrebro,1955-05-05,9,false
-Tobias,12134323,Istedsgade 34,2020-11-12,10,true
-Uffe,24135252,CamillaVej,1990-01-07,11,false
-Camilla,34363434,Majvej 56,1991-05-04,12,false
-Sebastian,13254223,Udbakken 16,2015-09-02,13,false
-Maria,21354252,Udbakken 16,1986-08-05,14,true
-Ellen,12413524,udbakken 16,2018-11-27,15,true
-Heidi,34232232,Skruvby 119,1960-11-19,16,true
-Søren,98765432,her,1985-01-20,18,false
-Lasse,8763251,i do not know,1992-01-01,19,true
-Jørgen Rasmussen,78643423,et sted,1989-09-09,20,false
-BinLaden,14314131,terroristgade,1866-06-06,21,false
-lkqjhx,2743612,sdh,2024-11-01,22,true
-Birgitte Larsen,12345678,Ingerslevsgade 170 1705 København,1990-05-04,23,true
-Sel,21½12,somethomsfbs,2000-09-03,24,true
+Jørgen Leth,12345678,KokkensVej 42,1939-12-03,1,1600,false
+Dee Z. Nots,87654321,DragonVej 42,1956-07-12,2,1600,true
+Joa,3120321,Fghjisdfoå,1985-03-03,3,1600,false
+Steffen,9876532,på vej,1987-02-20,4,1600,true
+Oline,098765432,derhjemme eller på vej,1985-12-13,5,1600,false
+Søren,31248901,kastrupvej 129,1988-11-06,6,1600,true
+Søren rasmussen,31248901,kastrupvej 129,1988-11-06,7,1600,false
+karsten,66677666,satansvej 666,1995-06-06,8,1600,true
+Lina,41354222,Nørrebro,1955-05-05,9,1600,false
+Tobias,12134323,Istedsgade 34,2020-11-12,10,1600,true
+Uffe,24135252,CamillaVej,1990-01-07,11,1600,false
+Camilla,34363434,Majvej 56,1991-05-04,12,1600,false
+Sebastian,13254223,Udbakken 16,2015-09-02,13,1600,false
+Maria,21354252,Udbakken 16,1986-08-05,14,1600,true
+Ellen,12413524,udbakken 16,2018-11-27,15,1600,true
+Heidi,34232232,Skruvby 119,1960-11-19,16,1600,true
+Søren,98765432,her,1985-01-20,18,1600,false
+Lasse,8763251,i do not know,1992-01-01,19,1600,true
+Jørgen Rasmussen,78643423,et sted,1989-09-09,20,1600,false
+BinLaden,14314131,terroristgade,1866-06-06,21,1600,false
+lkqjhx,2743612,sdh,2024-11-01,22,1600,true
+Birgitte Larsen,12345678,Ingerslevsgade 170 1705 København,1990-05-04,23,1600,true
+Sel,215612,somethomsfbs,2000-09-03,24,1600,true

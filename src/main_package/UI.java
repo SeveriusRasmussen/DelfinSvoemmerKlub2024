@@ -17,7 +17,7 @@ import java.util.Scanner;
 
 public class UI {
 
-    public static void userRole(Employee currentUser, ArrayList<Member> members, ArrayList<Employee> employees, ArrayList<Contingent> contingents) throws IOException {
+    public static void userRole(Employee currentUser, ArrayList<Member> members, ArrayList<Employee> employees, ArrayList<Contingent> contingents,ArrayList<CompetitionMember>compMembers) throws IOException {
 
         switch(currentUser.getAccesGroup()){
             case 1:
@@ -27,7 +27,7 @@ public class UI {
                 accountantMenu(currentUser, contingents, members);
                 break;
             case 3:
-                trainerMenu(currentUser,members);
+                trainerMenu(currentUser,members,compMembers);
                 break;
             default:
                 System.out.println("Invalid access group");
@@ -170,14 +170,15 @@ public class UI {
         }
     }// End of Employee Menu for the foreman.
 
-    public static void accountantMenu(Employee currentUser, ArrayList<Contingent> membersContingent, ArrayList<Member> member) {
+    public static void accountantMenu(Employee currentUser, ArrayList<Contingent> membersContingent, ArrayList<Member> member) throws IOException {
         //kald scanner class og brug den i stedet for at have scanner her
         int nav = 0;
         System.out.println("""
                     Here are your options:
                     1. See the expected yearly revenue
-                    2. Members in arrear 
-                    3. Exit
+                    2. Members in arrears
+                    3. Remove arrears
+                    4. Exit
                     """);
         Scanner input = new Scanner(System.in);
         try {
@@ -188,11 +189,13 @@ public class UI {
                 case 1:
                     ContingentMethods.calculateRevenue(member);
                     break;
-                case 2: //skal laves igen af Lina
-                    System.out.println("tjek restance");
-                    //ContingentMethods.checkArrears(membersContingent, member);
+                case 2:
+                    ContingentMethods.checkArrears(membersContingent, member);
                     break;
                 case 3:
+                    ContingentMethods.removeArrears(membersContingent, member);
+                    break;
+                case 4:
                     System.out.println("Exit.");
                     System.exit(0);
                 default:
@@ -205,7 +208,7 @@ public class UI {
         }
     }// end of accountantMenu
 
-    public static void trainerMenu(Employee currentUser,ArrayList<Member> members) throws IOException{
+    public static void trainerMenu(Employee currentUser,ArrayList<Member> members,ArrayList<CompetitionMember>compMembers) throws IOException{
         ArrayList <SwimmingResult> swimmingResults= Filehandler.readFromFileSwimResult ();
         int nav;
         do {
@@ -222,7 +225,7 @@ public class UI {
             //kald scanner class og brug den i stedet for at have scanner her
             switch (nav) {
                 case 1: //LASSE: View list of all swimmers
-                    PersonMethods.viewListSwimmingResults(swimmingResults);
+
                     //choose between: all swimmers, junior- eller seniorsvømmer, motionist eller konkurrencesvømmer.
 
                     break;
@@ -237,18 +240,14 @@ public class UI {
                     PersonMethods.registrerSwimResult(swimmingResults);
                     break;
                 case 5: //LASSE DONE
-                    ArrayList<CompetitionMember> compMembers = PersonMethods.getCompMembers(members);
-                    compMembers=PersonMethods.getBestFive(compMembers);
-                    for(CompetitionMember cm: compMembers){
-                        cm.toPrint();
-                    }
+                    PersonMethods.getBestFive(compMembers);
                     break;
                 case 6:
                     System.exit(0);
                     break;
                 default:
                     System.out.println("you should only choose w number between 1 and 6.");
-                    trainerMenu(currentUser,members);
+                    trainerMenu(currentUser,members,compMembers);
             }
         } while (nav != 6);
     }//end of trainer menu

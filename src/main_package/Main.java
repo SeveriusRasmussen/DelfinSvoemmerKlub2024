@@ -4,13 +4,9 @@ import main_package.other.Contingent;
 import main_package.other.ContingentMethods;
 import main_package.other.Filehandler;
 import main_package.other.Login;
-import main_package.people.Employee;
-import main_package.people.Member;
-import main_package.people.SwimmingResult;
+import main_package.people.*;
 
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.lang.reflect.Array;
+import java.io.*;
 import java.util.*;
 
 import static main_package.other.Filehandler.readFromFileSwimResult;
@@ -29,6 +25,9 @@ public class Main {
         //Reads Contingent.txt and adds them to the ArrayList memberContingent
         Filehandler.loadContingentTxt(memberContingent);
 
+        //Checks and updates Contingent.txt if any of the Members has outstanding debt/in Arrears
+        ContingentMethods.updateArrears(memberContingent, members);
+
         //making a list for the employees
         ArrayList<Employee> employees = new ArrayList<>();
 
@@ -38,13 +37,13 @@ public class Main {
         //Reading swimmingResults from SwimResultList and saving them into an ArrayList
         ArrayList <SwimmingResult> swimmingResults=Filehandler.readFromFileSwimResult ();
 
+        //pair competition members with their results
+        ArrayList<CompetitionMember>compMembers =PersonMethods.pairMemberWithResults(members,swimmingResults);
         //make login object
+
         Login newLogin = new Login(employees);
 
-
         Employee currentUser = Login.attemptLogin(newLogin.makeLogins(),employees);
-        UI.userRole(currentUser, members, employees, memberContingent);
-        //main_package.UI.userRole(currentUser);
-
+        UI.userRole(currentUser, members, employees,memberContingent,compMembers);
     }
 }

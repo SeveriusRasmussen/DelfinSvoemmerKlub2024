@@ -1,7 +1,6 @@
 package main_package.people;
 
 import main_package.other.ComparableBestTime;
-import main_package.other.Contingent;
 import main_package.other.Util;
 
 import java.time.LocalDate;
@@ -9,13 +8,10 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 public class CompetitionMember extends Member {
-    private static ArrayList<SwimmingResult> swimResults;
-    private SwimmingDisciplin disciplin;
-    //ArrayList<main_package.people.SwimmingResult> swimmingResults=new ArrayList<>();
+    private ArrayList<SwimmingResult> swimResults;
 
-    public CompetitionMember(String name, String phoneNumber, String adress, LocalDate dateOfBirth, int memberNr, Contingent contingent, boolean aktiv, SwimmingDisciplin disciplin, ArrayList<SwimmingResult> swimResults) {
+    public CompetitionMember(String name, String phoneNumber, String adress, LocalDate dateOfBirth, int memberNr, double contingent, boolean aktiv, ArrayList<SwimmingResult> swimResults) {
         super(name, phoneNumber, adress, dateOfBirth, memberNr, contingent, aktiv);
-        this.disciplin = disciplin;
         this.swimResults = swimResults;
     }
 
@@ -23,16 +19,8 @@ public class CompetitionMember extends Member {
         return swimResults;
     }
 
-    public SwimmingDisciplin getDisciplin() {
-        return disciplin;
-    }
-
-    public void setDisciplin(SwimmingDisciplin disciplin) {
-        this.disciplin = disciplin;
-    }
-
     //method that returns for each CompetitionMember his best result by disciplin
-    public static SwimmingResult returnBestResultsByDisciplin(SwimmingDisciplin disciplin) {
+    public  SwimmingResult returnBestResultsByDisciplin(SwimmingDisciplin disciplin) {
         SwimmingResult bestResults = null;
         int bestTime = Integer.MAX_VALUE;
         //SwimmingResult(int memberNr, SwimmingDisciplin swimmingDiscipline, int time, LocalDate dateOfResult) {
@@ -47,7 +35,7 @@ public class CompetitionMember extends Member {
         return bestResults;
     }
 
-    public static void bestFive(ArrayList<CompetitionMember> competitionMembers) {
+    public void bestFive(ArrayList<CompetitionMember> competitionMembers) {
         String disciplin = Util.stringPrompt("Which disciplin");
         SwimmingDisciplin disciplin1 = SwimmingDisciplin.valueOf(disciplin);
 
