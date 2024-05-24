@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1631485a-b898-48d6-b9bd-658763b50935" name="Changes" comment="23 May First commit&#10;Employee menu&#10;And bug fix with EmployeeList.txt">
+    <list default="true" id="1631485a-b898-48d6-b9bd-658763b50935" name="Changes" comment="commit igen">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -66,6 +66,13 @@
       <recent name="C:\Users\Lina\IdeaProjects\DelfinSvoemmerKlub2024\src\db" />
     </key>
   </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-21.0.2-openjdk-21.0.2-4caba194b151-4f524021" />
+      </set>
+    </attachedChunks>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -83,10 +90,9 @@
       <workItem from="1716016662297" duration="6359000" />
       <workItem from="1716108161268" duration="7634000" />
       <workItem from="1716371347823" duration="7820000" />
-      <workItem from="1716400079618" duration="4654000" />
-      <workItem from="1716419466552" duration="9092000" />
-      <workItem from="1716428608751" duration="312000" />
-      <workItem from="1716540731158" duration="855000" />
+      <workItem from="1716400079618" duration="5161000" />
+      <workItem from="1716446717700" duration="10512000" />
+      <workItem from="1716457747201" duration="2537000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit 2024/05/13">
       <option name="closed" value="true" />
@@ -208,15 +214,31 @@
       <option name="project" value="LOCAL" />
       <updated>1716379950150</updated>
     </task>
-    <task id="LOCAL-00016" summary="23 May First commit&#10;Employee menu&#10;And bug fix with EmployeeList.txt">
+    <task id="LOCAL-00016" summary="seSwimmerResultAllDisciplines (AND) registrerSwimResultDateTime in the trainer's Menu DONE and TESTED.">
       <option name="closed" value="true" />
-      <created>1716427988256</created>
+      <created>1716407452676</created>
       <option name="number" value="00016" />
       <option name="presentableId" value="LOCAL-00016" />
       <option name="project" value="LOCAL" />
-      <updated>1716427988256</updated>
+      <updated>1716407452677</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="det hele skal nu være på plads">
+      <option name="closed" value="true" />
+      <created>1716451431003</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1716451431003</updated>
+    </task>
+    <task id="LOCAL-00018" summary="commit igen">
+      <option name="closed" value="true" />
+      <created>1716457639387</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1716457639388</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -248,7 +270,9 @@
     <MESSAGE value="case3: årlige revenue" />
     <MESSAGE value="det hele er testet. midt i sprint 2" />
     <MESSAGE value="testet. til trainer" />
-    <MESSAGE value="23 May First commit&#10;Employee menu&#10;And bug fix with EmployeeList.txt" />
-    <option name="LAST_COMMIT_MESSAGE" value="23 May First commit&#10;Employee menu&#10;And bug fix with EmployeeList.txt" />
+    <MESSAGE value="seSwimmerResultAllDisciplines (AND) registrerSwimResultDateTime in the trainer's Menu DONE and TESTED." />
+    <MESSAGE value="det hele skal nu være på plads" />
+    <MESSAGE value="commit igen" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit igen" />
   </component>
 </project>

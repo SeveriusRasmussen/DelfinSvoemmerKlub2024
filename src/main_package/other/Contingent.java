@@ -5,35 +5,72 @@ import main_package.people.Member;
 import java.time.LocalDate;
 import java.util.List;
 
-public class Contingent extends Member{
+public class Contingent {
 
+    private int memberNr;
     private LocalDate dateOfPayment; //I DAG
     private LocalDate nextpayment; //+90 dage
-    private String membershipType;
-    private double arrears;
+    //private String membershipType; //Senior eller Junior // slet
+    private boolean arrears; //restance // boolean til om de er i restance eller ej
+    private double debt;
 
-    public  Contingent(String name, String phoneNumber, String address, LocalDate dateOfBirth, int memberNr, double kontingent, boolean aktiv, LocalDate dateOfPayment, LocalDate nextpayment, String membershipType, double arrears) {
-        super(name, phoneNumber, address, dateOfBirth, memberNr, kontingent, aktiv);
+    public  Contingent(int memberNr, LocalDate dateOfPayment, LocalDate nextpayment, boolean arrears, double debt) {
+        //super(name, phoneNumber, address, dateOfBirth, memberNr, contingent, aktiv);
+        this.memberNr = memberNr;
         this.dateOfPayment = dateOfPayment;
-        this.nextpayment=nextpayment;
-        this.membershipType = membershipType;
+        this.nextpayment = nextpayment;
+        //this.membershipType = membershipType;
         this.arrears = arrears;
+        this.debt = debt;
+    }
+
+    public String toPrint() {
+        return (getMemberNr() + "," + getDateOfPayment()+ "," + getNextPayment() + "," + getArrears() + "," + getDebt() + "\n");
+    }
+
+    public int getMemberNr(){
+        return  this.memberNr;
+    }
+
+    public LocalDate getNextPayment(){
+        return this.nextpayment;
+    }
+
+    public double getDebt(){
+        return this.debt;
+    }
+
+    public double setDebt(double debt) {
+        return this.debt = debt;
     }
 
     public LocalDate getDateOfPayment() {
         return this.dateOfPayment;
     }
-    public String getMembershipType() {
-        return this.membershipType;
+
+    public LocalDate setDateOfPayment(LocalDate today) {
+        return this.dateOfPayment = today;
     }
-    public double getArrears() {
+
+    public LocalDate setNextPayment(LocalDate in90days) {
+        return this.nextpayment = in90days;
+    }
+
+    public boolean getArrears() {
         return this.arrears;
+    }
+
+    public boolean setArrears(boolean arrears) {
+        return this.arrears = arrears;
     }
 
     @Override
     public String toString() {
-        return "Last payment: " + this.dateOfPayment + "\nMembership Type: " + this.membershipType + "\nArrears: " + arrears;
+        return "Membership Number: " + memberNr + "\n" +
+                "First payment: " + dateOfPayment + "\n" +
+                "Next payment: " + nextpayment + "\n" +
+                "Is in arrears: " + arrears + "\n" +
+                "Total debt: " + debt;
+
     }
-
-
 }

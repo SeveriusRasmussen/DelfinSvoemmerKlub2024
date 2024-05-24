@@ -1,16 +1,19 @@
 package main_package.people;
 
+import main_package.other.Contingent;
+
 import java.time.LocalDate;
 
 public class Member extends Person {
     private int memberNr;
-    private double kontingent;
+    private double contingent;
     private boolean aktiv;
 
-    public Member(String name, String phoneNumber, String address, LocalDate dateOfBirth, int memberNr, double kontingent, boolean aktiv) {
+
+    public Member(String name, String phoneNumber, String address, LocalDate dateOfBirth, int memberNr, double contingent, boolean aktiv) {
         super(name, phoneNumber, address, dateOfBirth);
         this.memberNr = memberNr;
-        this.kontingent = kontingent;
+        this.contingent = contingent;
         this.aktiv = aktiv;
     }
 
@@ -22,15 +25,11 @@ public class Member extends Person {
         this.memberNr = memberNr;
     }
 
-    public double getKontingent() {
-        return kontingent;
+    public double getContingent() {
+        return contingent;
     }
     public boolean getAktiv() {
         return aktiv;
-    }
-
-    public void setKontingent(double kontingent) {
-        this.kontingent = kontingent;
     }
 
     public boolean isAktiv() {
@@ -45,11 +44,11 @@ public class Member extends Person {
         String aktivString = aktiv? "Aktivt medlem" : "Passivt medlem";  // True : false
         return super.toString() +
                 "Member Number: " + memberNr + "\n" +
-                "Kontingent   : " + kontingent + "\n" +
+                "Contingent   : " + contingent + "\n" +
                 aktivString;
     }
 
     public String toPrint() {
-        return (getName() + "," + getPhoneNumber()+ "," + getAddress() + "," + getDateOfBirth() + "," + memberNr + "," + kontingent + "," + aktiv + "\n");
+        return (getName() + "," + getPhoneNumber()+ "," + getAddress() + "," + getDateOfBirth() + "," + memberNr + "," + getContingent() +"," + aktiv + "\n");
     }
 }

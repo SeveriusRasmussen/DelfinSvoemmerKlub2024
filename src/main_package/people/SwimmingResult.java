@@ -13,6 +13,7 @@ public class SwimmingResult {
         private SwimmingDisciplin swimmingDiscipline;
         private int time;
         private LocalDate dateOfResult;
+        private String CompetitionName;
 
         public SwimmingResult(int memberNr, SwimmingDisciplin swimmingDiscipline, int time, LocalDate dateOfResult) {
             this.memberNr=memberNr;
