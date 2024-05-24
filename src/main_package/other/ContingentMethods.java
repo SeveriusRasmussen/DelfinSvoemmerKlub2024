@@ -16,7 +16,7 @@ public class ContingentMethods{
                 for (Member memberIdCheck : memberList) {
                     if (member.getMemberNr() == memberIdCheck.getMemberNr()) {
                         member.setArrears(true);
-                        double debt = memberIdCheck.getContingent();
+                        double debt = memberIdCheck.getContingent() * 0.25;
                         int periods = (int) ((days/90)+1);
                         double newDebt = -debt*periods;
                         member.setDebt(newDebt);
