@@ -10,16 +10,13 @@ public class Contingent {
     private int memberNr;
     private LocalDate dateOfPayment; //I DAG
     private LocalDate nextpayment; //+90 dage
-    //private String membershipType; //Senior eller Junior // slet
     private boolean arrears; //restance // boolean til om de er i restance eller ej
     private double debt;
 
     public  Contingent(int memberNr, LocalDate dateOfPayment, LocalDate nextpayment, boolean arrears, double debt) {
-        //super(name, phoneNumber, address, dateOfBirth, memberNr, contingent, aktiv);
         this.memberNr = memberNr;
         this.dateOfPayment = dateOfPayment;
         this.nextpayment = nextpayment;
-        //this.membershipType = membershipType;
         this.arrears = arrears;
         this.debt = debt;
     }
