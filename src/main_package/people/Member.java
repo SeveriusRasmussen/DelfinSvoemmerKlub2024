@@ -48,6 +48,13 @@ public class Member extends Person {
                 aktivString;
     }
 
+    public String shortPrint() {
+
+        return "Member name: " + super.getName() + "\n" +
+                "Member age: " + super.getAge() + "\n" +
+                "Member Number: " + memberNr + "\n";
+    }
+
     public String toPrint() {
         return (getName() + "," + getPhoneNumber()+ "," + getAddress() + "," + getDateOfBirth() + "," + memberNr + "," + getContingent() +"," + aktiv + "\n");
     }

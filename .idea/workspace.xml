@@ -4,8 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1631485a-b898-48d6-b9bd-658763b50935" name="Changes" comment="testet. til trainer">
+    <list default="true" id="1631485a-b898-48d6-b9bd-658763b50935" name="Changes" comment="igen">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main_package/UI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main_package/UI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main_package/db/Contingent.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main_package/db/Contingent.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main_package/db/EmployeeList.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main_package/db/EmployeeList.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main_package/db/MemberList.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main_package/db/MemberList.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main_package/db/SwimResultList.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main_package/db/SwimResultList.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main_package/people/PersonMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main_package/people/PersonMethods.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,6 +71,26 @@
       <recent name="C:\Users\Lina\IdeaProjects\DelfinSvoemmerKlub2024\src" />
       <recent name="C:\Users\Lina\IdeaProjects\DelfinSvoemmerKlub2024\src\db" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="main_package.Main" />
+      <module name="DelfinSvoemmerKlub2024" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="main_package.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -249,15 +275,23 @@
       <option name="project" value="LOCAL" />
       <updated>1716546642779</updated>
     </task>
-    <task id="LOCAL-00020" summary="testet. til trainer">
+    <task id="LOCAL-00020" summary="Commit 24/05/2024&#10;-Arrears calculator bug fix">
       <option name="closed" value="true" />
-      <created>1716550608951</created>
+      <created>1716549524773</created>
       <option name="number" value="00020" />
       <option name="presentableId" value="LOCAL-00020" />
       <option name="project" value="LOCAL" />
-      <updated>1716550608952</updated>
+      <updated>1716549524773</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="igen">
+      <option name="closed" value="true" />
+      <created>1716551841185</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1716551841185</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -288,11 +322,13 @@
     <MESSAGE value="changes: move methods" />
     <MESSAGE value="case3: årlige revenue" />
     <MESSAGE value="det hele er testet. midt i sprint 2" />
+    <MESSAGE value="testet. til trainer" />
     <MESSAGE value="seSwimmerResultAllDisciplines (AND) registrerSwimResultDateTime in the trainer's Menu DONE and TESTED." />
     <MESSAGE value="det hele skal nu være på plads" />
     <MESSAGE value="commit igen" />
     <MESSAGE value="Lina Commit" />
-    <MESSAGE value="testet. til trainer" />
-    <option name="LAST_COMMIT_MESSAGE" value="testet. til trainer" />
+    <MESSAGE value="Commit 24/05/2024&#10;-Arrears calculator bug fix" />
+    <MESSAGE value="igen" />
+    <option name="LAST_COMMIT_MESSAGE" value="igen" />
   </component>
 </project>
