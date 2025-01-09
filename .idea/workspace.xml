@@ -5,13 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1631485a-b898-48d6-b9bd-658763b50935" name="Changes" comment="c1">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main_package/db/Contingent.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main_package/db/Contingent.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main_package/db/EmployeeList.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main_package/db/EmployeeList.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main_package/db/MemberList.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main_package/db/MemberList.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main_package/db/SwimResultList.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main_package/db/SwimResultList.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main_package/other/Util.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main_package/other/Util.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main_package/people/PersonMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main_package/people/PersonMethods.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +22,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -36,8 +32,8 @@
 }</component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/SeveriusRasmussen/DelfinSvoemmerKlub2024&quot;,
-    &quot;accountId&quot;: &quot;27e1eb71-ac51-481e-9070-5880ac49ab5c&quot;
+    &quot;url&quot;: &quot;https://github.com/SeveriusRasmussen/DelfinSvoemmerKlub2024.git&quot;,
+    &quot;accountId&quot;: &quot;44579350-f48c-4fa2-9da2-e8346f9e7cc4&quot;
   }
 }</component>
   <component name="ProjectColorInfo">{
@@ -54,9 +50,10 @@
     &quot;Application.Main.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Lina/IdeaProjects/DelfinSvoemmerKlub2024&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/MSI/IdeaProjects/DelfinSvoemmerKlub2024&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -95,7 +92,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="jdk-21.0.2-openjdk-21.0.2-4caba194b151-4f524021" />
+        <option value="bundled-jdk-9823dce3aa75-fdfe4dae3a2d-intellij.indexing.shared.core-IU-243.22562.218" />
+        <option value="bundled-js-predefined-d6986cc7102b-deb605915726-JavaScript-IU-243.22562.218" />
       </set>
     </attachedChunks>
   </component>
@@ -125,6 +123,11 @@
       <workItem from="1716576748276" duration="1152000" />
       <workItem from="1716659516079" duration="75000" />
       <workItem from="1716665619235" duration="3071000" />
+      <workItem from="1736433687873" duration="261000" />
+      <workItem from="1736434090434" duration="892000" />
+      <workItem from="1736435118028" duration="121000" />
+      <workItem from="1736435258639" duration="113000" />
+      <workItem from="1736435394701" duration="107000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit 2024/05/13">
       <option name="closed" value="true" />
